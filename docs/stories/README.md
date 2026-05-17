@@ -3,7 +3,8 @@
 Stories are work packets. They turn product intent into bounded implementation
 and validation work.
 
-No story packets are active yet.
+Active brownfield story packets now live under `docs/stories/epics/` and map the
+current game-source state to validation evidence.
 
 ## Normal Story
 

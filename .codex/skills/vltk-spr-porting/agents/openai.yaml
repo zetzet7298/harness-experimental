@@ -1,3 +1,4 @@
-display_name: VLTK SPR Porting
-short_description: Port VLTKPC SPR visuals with preview gates.
-default_prompt: Use this skill to resolve aliases, generate port packets, cache PAK SPR manifests, preview, copy, compose, and wire VLTKPC SPR assets without reading PC source paths at runtime.
+interface:
+  display_name: "VLTK SPR Porting"
+  short_description: "Port and debug VLTK SPR visuals in H5."
+  default_prompt: "Use this skill to port, compose, and debug VLTK character/equipment SPR visuals, including per-direction layer issues and runtime cache/preset pitfalls."

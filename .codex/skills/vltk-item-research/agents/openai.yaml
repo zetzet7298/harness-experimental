@@ -1,3 +1,4 @@
-display_name: VLTK Item Research
-short_description: Trace VLTK items, aliases, PAKs, options, and tiers.
-default_prompt: Use this skill to inspect VLTK/JX items, equipment aliases, magic attributes, quality tiers, source rows, and decoded PAK tables before any SPR porting handoff.
+interface:
+  display_name: "VLTK Item Research"
+  short_description: "Research VLTK item/table evidence safely."
+  default_prompt: "Use this skill to identify VLTK item rows, aliases, and engine mapping evidence before any SPR/runtime wiring."

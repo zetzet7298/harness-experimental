@@ -1,14 +1,15 @@
 # Product Docs
 
-This directory is intentionally generic and mostly empty in Harness v0.
+This directory is the living product contract for the brownfield H5 game source
+at `/var/www/vltk-h5-survivors/game-source`.
 
-When a user provides a project spec, derive smaller product contract files here
-instead of keeping one large spec as the living plan. Name files by the product
-domains that actually exist in that spec, for example `overview.md`,
-`billing.md`, `workflows.md`, `permissions.md`, or `api-conventions.md`.
+Start with:
 
-Do not create domain files before the spec just to fill the folder. Empty
-structure is healthier than fake product truth.
+- `overview.md`: product goal, surfaces, non-goals, and source-of-truth routing.
+- `current-state.md`: everything already built, currently active, and not done.
+- `vltkpc-porting.md`: VLTKPC data/asset provenance, preview gates, and runtime
+  asset rules.
+- `roadmap.md`: near-term planned work and blocked/unknown items.
 
 ## Update Rule
 

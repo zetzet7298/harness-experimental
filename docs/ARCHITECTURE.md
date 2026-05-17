@@ -1,10 +1,52 @@
 # Architecture
 
-No application stack is selected yet.
+The active implementation lives outside this harness repo at
+`/var/www/vltk-h5-survivors/game-source`.
 
-No application code exists yet. This document defines generic architecture
-questions and boundary rules that future implementation should adapt after a
-user-provided spec and stack decision exist.
+Current stack:
+
+- Vite + TypeScript + Phaser for the browser game runtime.
+- Local JSON fixtures through an offline gateway.
+- Python tooling for VLTKPC data/SPR normalization, extraction, preview, and
+  composition.
+- No backend, database, auth, CI, deployment, or native shell is currently part
+  of the product contract.
+
+## Brownfield Boundaries
+
+```text
+src/domain
+  <- src/systems
+      <- src/gateway
+          <- src/game/scenes
+              <- src/main.ts
+
+data/vltk-normalized + public/assets/character/vltkpc/source
+  <- scripts
+      <- composed runtime assets under public/assets/character/vltkpc
+```
+
+Keep these boundaries unless a story records a new architecture decision.
+
+## Current Runtime Shape
+
+- `src/domain/types.ts` defines transport-neutral game, inventory, VLTK bridge,
+  and debug types.
+- `src/systems/simulation.ts` owns the offline survivor loop and should not load
+  Phaser, DOM, or VLTKPC files directly.
+- `src/gateway/offlineGateway.ts` adapts local fixtures into run state.
+- `src/game/scenes/*` renders Phaser scenes and consumes simulation snapshots.
+- `src/ui/hudText.ts` formats HUD text from debug stats.
+
+## Current Asset Tooling Shape
+
+- Normalized data lives under `game-source/data/vltk-normalized/`.
+- Preview reports live under `game-source/data/vltk-normalized/previews/`.
+- Copied raw SPR sources live under
+  `game-source/public/assets/character/vltkpc/source/`.
+- Runtime sheets live under `game-source/public/assets/character/vltkpc/`.
+- Scripts under `game-source/scripts/` may read legacy evidence during build-time
+  tooling, but runtime code must not read `/var/www/vltkpc`.
 
 ## Discovery Before Shape
 

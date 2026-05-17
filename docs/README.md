@@ -1,7 +1,7 @@
 # Documentation Map
 
-This directory holds the project harness and any product contract derived from a
-future user-provided spec.
+This directory holds the project harness and the living product contract for the
+brownfield H5 game source at `/var/www/vltk-h5-survivors/game-source`.
 
 ## Main Files
 
@@ -14,7 +14,7 @@ future user-provided spec.
 
 ## Folders
 
-- `product/`: current product truth, empty until a spec is derived.
+- `product/`: current product truth for the H5 prototype and VLTKPC porting lane.
 - `stories/`: feature packets and backlog.
 - `decisions/`: durable decisions and tradeoffs.
 - `demo/`: concrete walkthroughs that show how the harness transforms input
@@ -24,6 +24,6 @@ future user-provided spec.
 
 ## Current State
 
-Harness v0 exists before implementation. These docs define how the project will
-grow; they do not imply that app code, tests, CI, or deployment automation exist
-yet.
+Harness v0 now controls a brownfield implementation outside this Git root. These
+docs describe what exists, what is active, what proof is available, and what the
+next agent should do before changing game-source.

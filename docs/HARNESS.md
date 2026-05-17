@@ -1,7 +1,7 @@
 # Harness
 
-The project goal is to provide a reusable operating harness that lets humans and
-agents turn a future product spec into safe, validated work.
+The project goal is to provide an operating harness that lets humans and agents
+turn brownfield H5 game work into safe, validated, documented changes.
 
 The app is what users touch. The harness is what agents touch.
 
@@ -56,25 +56,23 @@ Every task has two possible outputs:
 
 ## Harness v0 Scope
 
-Harness v0 includes:
+Harness v0 now controls a brownfield implementation that lives outside this Git
+root at `/var/www/vltk-h5-survivors/game-source`. It includes:
 
 - Agent entrypoint.
-- Empty product documentation structure.
+- Product documentation for the current H5 prototype.
 - Feature intake and risk lanes.
-- Story templates.
+- Story templates and selected brownfield story packets.
 - Decision log template.
 - Validation report template.
-- Test matrix placeholder.
+- Test matrix rows for current prototype and VLTKPC porting gates.
 - Harness growth backlog.
 
 Harness v0 deliberately excludes:
 
-- A project-specific `SPEC.md`.
-- Pre-sliced product domains.
-- A locked application stack.
-- App source scaffolding.
-- Package scripts.
-- Test runner config.
+- A monolithic project-specific `SPEC.md`.
+- Moving game-source implementation files into this harness repo.
+- Backend, database, auth, CI, deployment, or native shell scaffolding.
 - CI workflows.
 - Database migrations or infrastructure.
 
@@ -104,10 +102,10 @@ product docs plus executable tests become the living contract.
 
 ## Spec Lifecycle
 
-Harness v0 starts without a tracked project spec. When the human provides a
-specification, treat it as input material, not as a permanent operating manual.
-Use it to populate product docs, story packets, architecture decisions, and
-validation expectations during the first buildout.
+This project is currently driven by a brownfield prompt and inspected source
+state rather than a tracked monolithic spec. Treat the current game-source state,
+user prompts, product docs, story packets, validation reports, and decisions as
+the living contract.
 
 After the specification has been decomposed, do not keep extending it as the
 living product plan. Ongoing work should update the smaller product docs,
@@ -153,8 +151,9 @@ either improve the harness directly or add a proposal to `HARNESS_BACKLOG.md`.
 
 ## Future Validation Ladder
 
-No validation scripts exist yet. When implementation begins, the expected ladder
-is:
+Current game-source validation commands include `npm run typecheck`,
+`npm run build`, and `python3 tests/test_vltk_porting_smoke.py`. Future validation
+should grow toward this ladder as stories need it:
 
 ```text
 validate:quick

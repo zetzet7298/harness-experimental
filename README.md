@@ -31,11 +31,18 @@ https://openai.com/index/harness-engineering/
 
 This repository is in Harness v0.
 
-There is no application implementation and no baked-in product specification
-yet. The current work is the reusable project harness: the file structure,
-agent operating model, feature intake process, story templates, and validation
-expectations that help humans and agents turn a future user-provided spec into
-implementation work.
+The active product is now a brownfield H5 game prototype that lives outside this
+Git root at `/var/www/vltk-h5-survivors/game-source`. This repository remains the
+agent harness/control workspace: it stores product truth, story packets,
+validation expectations, architecture notes, and decisions for that brownfield
+codebase.
+
+Use the routing in `AGENTS.md` before editing anything:
+
+- Harness/process/docs changes: `/var/www/vltk-h5-survivors/harness-experimental`.
+- H5 Phaser/Vite game source and runtime assets:
+  `/var/www/vltk-h5-survivors/game-source`.
+- Legacy VLTKPC source/tables/assets: `/var/www/vltkpc`.
 
 ## What Counts As A Harness
 
@@ -62,18 +69,20 @@ The fastest way to understand the harness is to inspect a tiny example:
 
 ## Product Sources
 
-No product contract is currently defined.
+The current product contract is defined in `docs/product/` from the brownfield
+state of `/var/www/vltk-h5-survivors/game-source` and the ongoing VLTKPC porting
+work.
 
-When a user provides a project specification, add or reference it as the input
-spec for the first buildout, then derive smaller living artifacts from it:
+Current living artifacts:
 
-- `docs/product/`: current product contract files, created from the spec.
-- `docs/stories/`: story packets and backlog created from selected work.
+- `docs/product/overview.md`: product goal and non-goals.
+- `docs/product/current-state.md`: what has been built, what is active, and
+  what remains.
+- `docs/product/vltkpc-porting.md`: VLTKPC data/asset provenance and gates.
+- `docs/product/roadmap.md`: near-term next work.
+- `docs/stories/`: story packets and backlog created from current work.
 - `docs/TEST_MATRIX.md`: behavior-to-proof control panel.
 - `docs/decisions/`: durable decisions and tradeoffs.
-
-Do not keep a project-specific spec or product breakdown in this harness until
-a real project supplies one.
 
 ## Harness Sources
 

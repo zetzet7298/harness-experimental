@@ -22,6 +22,17 @@ Never make the runtime app read `/var/www/vltkpc` directly.
 7. Compose runtime spritesheets from copied source only, update metadata, then wire runtime.
 8. Validate with script smoke tests, build/typecheck, and a browser/game screenshot when runtime visuals changed.
 
+## Runtime Debug Fast Path
+
+Use this branch when the user says “vẫn sai visual” after a claimed fix:
+
+1. Reproduce in browser first (`agent-browser`), capture screenshot for the exact direction/state.
+2. Check whether runtime is showing default sheet or auto-applied wardrobe combo/preset.
+3. If mismatch comes from saved preset, clear/reset local preset before remapping assets.
+4. Check per-direction layer order, especially north (12 giờ), before remapping item rows again.
+5. Patch the smallest artifact first (packet `layerOrderByDirection`, metadata, cache version), then re-test.
+6. Use full combo rebuild only when necessary; prefer metadata/catalog patch for fast turnaround.
+
 ## H5 Toolchain
 
 From `/var/www/vltk-h5-survivors/game-source`:
@@ -51,6 +62,7 @@ Check these source pivots before finalizing resource rows:
 - `KItemChangeRes::GetWeaponRes`: `row = particular * 10 + level + 2`; common result uses `tableValue - 2` plus client table selector.
 - `KItemChangeRes::GetHorseRes`: `row = particular * 10 + level + 2`; common result uses `tableValue - 2` plus client table selector.
 - NpcRes tables may use sex, mount state, action, and part-specific selectors; preview before trusting the row.
+- Runtime visual correctness also depends on per-direction layer order (`layerOrderByDirection`), not only NpcRes row mapping.
 
 Known-good examples:
 
@@ -65,8 +77,16 @@ Known-good examples:
 - GBK, TCVN3, CP1258, Chinese, Vietnamese, and mojibake aliases can refer to the same item.
 - Resource tables can name missing SPRs; keep `missing-*`/candidate status instead of guessing.
 - Wrong sex, action, direction, layer order, center/anchor, or frame count can make a visually wrong sheet even when files decode.
+- Cached runtime sheets or stale query-string versions can mask fixes; bump asset version in runtime constants after regenerate.
+- Auto-applied local preset (e.g., wardrobe `localStorage`) can override newly fixed default sheets.
+- Invalid spritesheet metadata (`frameWidth`/`frameHeight`/`endFrame`) can cause flicker, duplicate silhouettes, or disappearing sprites.
 - Preview report paths can be stale; ensure `--local-source-root` points at the current `<slug>` source folder and report status matches human review.
 
 ## Report Back
 
 Answer in Vietnamese when the user is Vietnamese. Include concrete file paths, table lines, resolved SPRs, preview image/report paths, copied source folder, PAK manifest entry, validation commands, and uncertainty notes.
+
+When runtime bugfix is requested, also include:
+- Repro steps used in browser automation.
+- Before/after screenshot artifact paths.
+- Whether preset/cache was reset and whether combo or default sheet is active.

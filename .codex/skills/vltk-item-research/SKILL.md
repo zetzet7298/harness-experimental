@@ -37,6 +37,11 @@ Useful flags:
 
 If research will feed SPR/H5 work, stop at identity and evidence: canonical name, aliases, source row, item fields, resource table inputs, and uncertainty. Do not choose or wire runtime animation SPRs here; hand off to `vltk-spr-porting`, which owns preview gates, copied SPR source, PAK manifest cache, and composer/wire decisions.
 
+When handing off, always include:
+- Active package-order evidence (`package.ini` + extracted `update*.pak` row).
+- Duplicated-name rows (same Vietnamese name, different `particular/level`) and which row is currently active.
+- Exact `tableValue`, computed engine index (`tableValue - 2` when code path confirms), and unresolved ambiguity notes.
+
 ## References
 
 Read only what is needed:
@@ -54,3 +59,4 @@ Read only what is needed:
 - If the task moves from lookup into character SPR porting, switch to `vltk-spr-porting`.
 - When a corrected alias is discovered, update `data/vltk-normalized/aliases.json` instead of relying on memory.
 - Treat inventory sprites such as `obj-*.spr` and `horse*.spr` as item evidence only, not character animation proof.
+- If the user reports “đúng item name nhưng sai visual”, do not re-argue item mapping in this skill; hand off immediately with row evidence to `vltk-spr-porting` for layer/direction/runtime diagnosis.
