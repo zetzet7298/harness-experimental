@@ -1,0 +1,72 @@
+---
+name: vltk-spr-porting
+description: "Port VLTK/JX/SwordOnline .spr assets and character equipment animations into H5/game runtimes safely. Use this skill for port, preview, extract, convert, normalize, compose, or wire VLTKPC character sprites, NpcRes parts, equipment visuals, title/effect SPRs, PAK assets, Phaser, H5, spritesheets, or copied runtime assets."
+---
+
+# VLTK SPR Porting
+
+## Core Rule
+
+Porting is not item lookup. Resolve table evidence, verify engine mapping, preview candidate SPRs, copy source SPRs into the target repo, then compose runtime assets from copied local source.
+
+Never make the runtime app read `/var/www/vltkpc` directly.
+
+## Workflow
+
+1. Start from the exact user target: item/loadout/skill/effect name, sex, mount state, action, and target runtime.
+2. Read project rules first when in `/var/www/vltk-h5-survivors/game-source`: `AGENTS.md`, `scripts/README.md`, and `docs/VLTKPC_SPR_PORTING_PLAYBOOK.md`.
+3. Prefer the loadout gate script for H5 work: resolve aliases, create packet, update PAK manifest cache, copy required SPRs, and generate preview report.
+4. Verify engine mapping before choosing NpcRes rows. Do not map table values directly unless the code path confirms it.
+5. Treat preview reports as the gate: `status=pending|failed` blocks compose and runtime wiring; only `status=passed` may compose/wire.
+6. Extract/copy required source SPRs into the target repo before compose; runtime must never read `/var/www/vltkpc`.
+7. Compose runtime spritesheets from copied source only, update metadata, then wire runtime.
+8. Validate with script smoke tests, build/typecheck, and a browser/game screenshot when runtime visuals changed.
+
+## H5 Toolchain
+
+From `/var/www/vltk-h5-survivors/game-source`:
+
+```bash
+python3 scripts/vltk-normalize-equipment-index.py
+python3 scripts/vltk-port-loadout.py "Phiên Vũ" "Địch Khái" --slug <slug>
+python3 scripts/vltk-port-loadout.py "Phiên Vũ" "Địch Khái" --slug <slug> --preview-status passed --reviewer-note "Preview checked." --compose
+python3 scripts/vltk-preview-candidates.py --input data/vltk-normalized/port-packets/<packet>.json --report-out data/vltk-normalized/previews/<slug>.report.json
+python3 scripts/port-vltkpc-equipped-character.py --packet data/vltk-normalized/port-packets/<packet>.json --preview-report data/vltk-normalized/previews/<slug>.report.json
+```
+
+Useful outputs:
+
+- `data/vltk-normalized/equipment-index.json`
+- `data/vltk-normalized/aliases.json`
+- `data/vltk-normalized/pak-spr-manifest.json`
+- `data/vltk-normalized/port-packets/*.json`
+- `data/vltk-normalized/previews/*.png` and `*.report.json`
+- `public/assets/character/vltkpc/source/<slug>/`
+- `public/assets/character/vltkpc/*.png` and matching metadata JSON
+
+## Engine Mapping Guardrails
+
+Check these source pivots before finalizing resource rows:
+
+- `KItemChangeRes::GetWeaponRes`: `row = particular * 10 + level + 2`; common result uses `tableValue - 2` plus client table selector.
+- `KItemChangeRes::GetHorseRes`: `row = particular * 10 + level + 2`; common result uses `tableValue - 2` plus client table selector.
+- NpcRes tables may use sex, mount state, action, and part-specific selectors; preview before trusting the row.
+
+Known-good examples:
+
+- `Phiên Vũ`: `HorseRes` row 73 value `13` resolves to white horse `MA_HH/HB/HT_012_HR01.spr`, not `*_013`.
+- `Địch Khái Trúc Trượng`: `GoldItem.txt:97`, `particular=2`, `level=10`, `MeleeRes` row 32 value `28` resolves to `MA_RW_026_HR01.spr`.
+- Known-good smoke tests live in `tests/test_vltk_porting_smoke.py`; keep them passing when changing mapping or alias logic.
+
+## Failure Cases To Record
+
+- Inventory icon SPR is not a character animation part (`obj-staff13.spr`, `horse012.spr`, `obj-ma-cap*.spr`).
+- Loose tables can be stale; PAK package order can override rows.
+- GBK, TCVN3, CP1258, Chinese, Vietnamese, and mojibake aliases can refer to the same item.
+- Resource tables can name missing SPRs; keep `missing-*`/candidate status instead of guessing.
+- Wrong sex, action, direction, layer order, center/anchor, or frame count can make a visually wrong sheet even when files decode.
+- Preview report paths can be stale; ensure `--local-source-root` points at the current `<slug>` source folder and report status matches human review.
+
+## Report Back
+
+Answer in Vietnamese when the user is Vietnamese. Include concrete file paths, table lines, resolved SPRs, preview image/report paths, copied source folder, PAK manifest entry, validation commands, and uncertainty notes.
