@@ -41,6 +41,8 @@ source SPRs, normalized packets, preview reports, or runtime spritesheets.
   never load directly from `/var/www/vltkpc`.
 - Validation gate: packet and alias behavior must remain covered by smoke tests
   when the porting scripts or known loadout artifacts change.
+- Skill gate: VLTKPC skill/effect packets (for example `Bổng Đả ác Cẩu` and `Kháng Long Hữu Hối`) require
+  source SPR/SFX copy plus side-by-side parity artifacts before any `100%` claim.
 
 ## Current Limits
 
@@ -53,3 +55,12 @@ source SPRs, normalized packets, preview reports, or runtime spritesheets.
 - The known runtime sheets now cover 8 mounted-run directions and 8 mounted-idle
   directions with 10 frames per direction; this is still one known loadout, not
   generalized equipment swapping.
+- The `Bổng Đả ác Cẩu` skill packet and runtime assets now include byte-accurate
+  legacy-path extraction evidence, generated skill sheets, and side-by-side
+  PNG/GIF parity artifacts.
+
+- The `Kháng Long Hữu Hối` skill packet and runtime assets now include active PAK row evidence, `SKILL_MF_Spread` level-20 behavior, frame-compressed SPR extraction, generated skill sheets, and side-by-side PNG/GIF artifacts.
+
+- The `Phi Long Tại Thiên` skill packet and runtime assets now include active PAK row evidence, `SKILL_MF_Wall` level-20 behavior, `MISSLE_MMK_Follow` homing, frame-compressed SPR extraction, generated skill sheets, all-directions visual proof, and a documented H5 `player-forward` adapter for forward-launch Wall/Follow skills.
+- `Thiên Hạ Vô Cẩu` runtime evidence was corrected to active `SkillId=359`, `MissileId=168`, `tianxia_wugou` level-20 data, including 3 follow projectiles launched from the `player-forward` adapter.
+- Current Cái Bang skill hit visuals are wired from VLTKPC `MS_DoCollision` / `AnimFile4`: BDAC and THVC use `mag_bz_huo3`, while KLHH and PLTT use `mag_gb_bz5`; H5 spawns the effect at the enemy collision point instead of inventing a new explosion.

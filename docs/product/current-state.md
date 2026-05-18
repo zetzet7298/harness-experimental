@@ -24,6 +24,9 @@
 - Runtime-copied SPR sources exist under `public/assets/character/vltkpc/source/`.
 - Smoke tests exist for the VLTKPC porting packet and alias behavior in
   `tests/test_vltk_porting_smoke.py`.
+- Normalized skill packet for Cái Bang `Bổng Đả ác Cẩu` (`SkillId=125`,
+  `MissleId=47`) is wired into auto-fire with extracted source SPR/SFX, generated
+  runtime sheets, and side-by-side PNG/GIF parity artifacts.
 
 ## In Progress
 
@@ -40,11 +43,11 @@
 - No production persistence, backend, auth, economy, networking, deployment, or
   release pipeline is defined.
 - No end-to-end browser smoke test has been captured in the harness yet.
-- No visual approval artifact is tracked in the harness beyond paths to preview
-  PNG/report files in game-source.
+- Visual approval is still manual; side-by-side PNG/GIF artifacts now exist for
+  `Bổng Đả ác Cẩu`, but no automatic pixel-diff gate exists yet.
 - No generalized VLTK item/stat import has replaced `src/data/vltk-samples.json`.
-- No generalized action animation set beyond the current mounted-run sheet is
-  wired into the gameplay runtime.
+- No generalized multi-skill VLTK action animation set beyond the current mounted
+  loadout plus `Bổng Đả ác Cẩu` auto-fire lane is wired into runtime gameplay.
 - No CI exists for `game-source` validation commands.
 
 ## Evidence Snapshot
