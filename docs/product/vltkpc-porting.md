@@ -4,7 +4,8 @@
 
 This contract covers legacy VLTKPC/JX data and SPR assets used by the H5 game
 prototype. It applies whenever work touches item identity, equipment visuals,
-source SPRs, normalized packets, preview reports, or runtime spritesheets.
+map identity, minimap/background assets, enemy visual types, source SPRs,
+normalized packets, preview reports, or runtime spritesheets.
 
 ## Required Workflow
 
@@ -12,9 +13,10 @@ source SPRs, normalized packets, preview reports, or runtime spritesheets.
 2. Normalize item/equipment evidence into packet or index artifacts under
    `game-source/data/vltk-normalized/`.
 3. Generate or update preview PNG/report evidence before runtime wiring.
-4. Copy required raw SPR sources into `game-source/public/assets/character/vltkpc/source/`.
-5. Compose runtime sheets from local copied sources only.
-6. Update this harness when the product contract, validation gates, or repeated
+4. Copy required raw SPR/map sources into `game-source/public/assets/**/vltkpc/` before runtime use.
+5. Compose runtime sheets or generated map backgrounds from local copied sources only.
+6. For map ports, derive map identity from active `MapList`, `.wor`, minimap image, and server region/NPC evidence before selecting enemy templates.
+7. Update this harness when the product contract, validation gates, or repeated
    porting workflow changes.
 
 ## Current Known Loadout
@@ -43,6 +45,8 @@ source SPRs, normalized packets, preview reports, or runtime spritesheets.
   when the porting scripts or known loadout artifacts change.
 - Skill gate: VLTKPC skill/effect packets (for example `Bổng Đả ác Cẩu` and `Kháng Long Hữu Hối`) require
   source SPR/SFX copy plus side-by-side parity artifacts before any `100%` claim.
+- Map gate: VLTKPC map ports require active `MapList` identity, `.wor`/minimap PAK extraction evidence, copied local runtime assets, client `Region_C.dat` ground-layer evidence for gameplay background, and server region/NPC filtering evidence.
+- Enemy gate: Map enemy templates may include only mobile combat NPC rows (`kind_normal=0` and positive `WalkSpeed` or `RunSpeed`); NPC dialogs and immobile templates such as `Bao cát` must remain excluded unless a later story explicitly changes scope.
 
 ## Current Limits
 
@@ -64,3 +68,4 @@ source SPRs, normalized packets, preview reports, or runtime spritesheets.
 - The `Phi Long Tại Thiên` skill packet and runtime assets now include active PAK row evidence, `SKILL_MF_Wall` level-20 behavior, `MISSLE_MMK_Follow` homing, frame-compressed SPR extraction, generated skill sheets, all-directions visual proof, and a documented H5 `player-forward` adapter for forward-launch Wall/Follow skills.
 - `Thiên Hạ Vô Cẩu` runtime evidence was corrected to active `SkillId=359`, `MissileId=168`, `tianxia_wugou` level-20 data, including 3 follow projectiles launched from the `player-forward` adapter.
 - Current Cái Bang skill hit visuals are wired from VLTKPC `MS_DoCollision` / `AnimFile4`: BDAC and THVC use `mag_bz_huo3`, while KLHH and PLTT use `mag_gb_bz5`; H5 spawns the effect at the enemy collision point instead of inventing a new explosion.
+- The `Ba Lăng huyện` map port now includes active `MapList` identity (`mapId=53`, path `两湖区\巴陵县`), `.wor`/`24.jpg` extraction evidence from `maps.pak`, generated runtime map metadata, a copied minimap, a `Region_C.dat`/`Ground.dat` rendered background, and mobile enemy templates `ani063`, `ani049`, and `ani061`; NPC labels and immobile templates are intentionally excluded.
