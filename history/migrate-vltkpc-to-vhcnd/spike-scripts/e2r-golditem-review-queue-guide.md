@@ -44,3 +44,11 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
   - `e2r-gate-readiness.json`
 - File quyết định provisional (human-controlled):
   - `e2r-gate-decision.json`
+
+
+## One-shot operator command
+- Chạy toàn bộ vòng theo dõi (snapshot + gate check) và in 1 dòng trạng thái:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py`
+- Output:
+  - `e2r-ops-one-shot-summary.md`
+  - `e2r-ops-one-shot-summary.json`

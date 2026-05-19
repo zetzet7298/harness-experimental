@@ -131,3 +131,14 @@ Added gate-check artifacts for `mig-ja5` close criteria:
 - `e2r-gate-decision.json` (human-controlled provisional acceptance flag)
 
 Current computed status: `blocked` (remaining Gold rows 100, provisional acceptance flag false).
+
+
+## 2026-05-19 One-shot operator status
+
+Added one-shot wrapper for swarming operator loop:
+- `e2r-ops-one-shot.py`
+- `e2r-ops-one-shot-summary.md`
+- `e2r-ops-one-shot-summary.json`
+
+Current one-line output:
+`E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0`
