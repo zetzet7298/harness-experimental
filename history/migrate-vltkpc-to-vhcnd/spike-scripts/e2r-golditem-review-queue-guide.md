@@ -154,3 +154,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Output:
   - `e2r-finalize-preflight.md`
   - `e2r-finalize-preflight.json`
+
+
+## Auto-generate next step
+- Chạy generator:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-generate-next-step.py`
+- Output:
+  - `e2r-next-step.md`
+  - `e2r-next-step.json`

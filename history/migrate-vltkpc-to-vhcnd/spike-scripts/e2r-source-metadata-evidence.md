@@ -298,3 +298,14 @@ Added preflight checker before running final close paths:
 - `e2r-finalize-preflight.json`
 
 Current preflight indicates technical readiness for provisional decision request, with human approval still required to finalize/close.
+
+
+## 2026-05-19 Next-step generator
+
+Added preflight-driven next-step generator:
+- `e2r-generate-next-step.py`
+- `e2r-next-step.md`
+- `e2r-next-step.json`
+
+Current generated label:
+- `await-human-approval-then-finalize-provisional`
