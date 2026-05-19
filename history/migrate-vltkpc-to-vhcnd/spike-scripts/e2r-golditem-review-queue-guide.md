@@ -129,3 +129,12 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason "<reason>" --append-verdict-note`
 - Report:
   - `e2r-close-mig-ja5-report.json`
+
+
+## Finalize provisional (guarded)
+- Precheck (không có approve sẽ không làm gì):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py`
+- Finalize thật (cần human explicit):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by "<human>" --reason "<reason>"`
+- Report:
+  - `e2r-finalize-provisional-report.json`

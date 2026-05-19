@@ -250,3 +250,14 @@ Resulting technical state:
 - manual-map validator: `status=pass`, `issue_count=0`
 - gate status remains `blocked` only because human provisional decision flag is still false
 - decision packet refreshed to reflect new baseline (map issues now 0)
+
+
+## 2026-05-19 Guarded provisional finalize runner
+
+Added final-step runner with hard human-approval guard:
+- `e2r-finalize-provisional.py`
+- `e2r-finalize-provisional-report.json`
+
+Baseline precheck run result:
+- `result_status=blocked-missing-human-approval`
+- `bead_closed=false`
