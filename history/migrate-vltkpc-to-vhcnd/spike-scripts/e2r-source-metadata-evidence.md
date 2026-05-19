@@ -365,3 +365,11 @@ Generated preview-only simulation for both finalize modes:
 - consolidated comparison (`e2r-decision-simulation.*`)
 
 Both remain blocked in preview mode by design (no `--apply`).
+
+
+## 2026-05-19 Operator evidence bundle
+
+Added a single-file operator bundle for handoff/final decision:
+- `history/migrate-vltkpc-to-vhcnd/e2r-operator-evidence-bundle.md`
+
+Bundle contains current status snapshot + indexed links + quick-copy finalize commands for both decision paths.
