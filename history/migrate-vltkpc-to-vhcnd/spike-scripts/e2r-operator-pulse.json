@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-05-19T16:01:44.835205+00:00",
+  "gate_status": "blocked",
+  "bead_status": "in_progress",
+  "map_issue_count": 0,
+  "remaining_rows": 100,
+  "accept_provisional": false,
+  "preflight": {
+    "option_a_canonical_ready": false,
+    "option_b_ready_to_finalize": false,
+    "option_b_ready_to_request_human": true
+  },
+  "next_step_label": "await-human-approval-then-finalize-provisional",
+  "next_step_command": "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by \"<human>\" --reason \"Provisional accepted by human\"",
+  "completion_audit_overall": "incomplete",
+  "completion_audit_blockers": [
+    "R3",
+    "R4"
+  ]
+}

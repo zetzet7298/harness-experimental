@@ -309,3 +309,14 @@ Added preflight-driven next-step generator:
 
 Current generated label:
 - `await-human-approval-then-finalize-provisional`
+
+
+## 2026-05-19 Operator pulse artifact
+
+Added consolidated operator pulse:
+- `e2r-operator-pulse.py`
+- `e2r-operator-pulse.md`
+- `e2r-operator-pulse.json`
+
+Current pulse next-step label:
+- `await-human-approval-then-finalize-provisional`

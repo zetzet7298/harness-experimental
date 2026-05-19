@@ -162,3 +162,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Output:
   - `e2r-next-step.md`
   - `e2r-next-step.json`
+
+
+## Operator pulse
+- Chạy pulse (refresh dashboard + preflight + next-step):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-operator-pulse.py`
+- Output:
+  - `e2r-operator-pulse.md`
+  - `e2r-operator-pulse.json`
