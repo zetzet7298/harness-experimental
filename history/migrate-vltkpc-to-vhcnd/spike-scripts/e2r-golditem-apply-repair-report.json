@@ -1,8 +1,9 @@
 {
-  "generated_at_utc": "2026-05-19T15:20:35.371145+00:00",
+  "generated_at_utc": "2026-05-19T15:26:43.653689+00:00",
   "mode": "dry-run",
   "template": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
   "proposals": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-selected-repair-proposals.csv",
+  "backup_path": null,
   "change_count": 48,
   "changes_preview": [
     {
@@ -245,5 +246,7 @@
       "from": "1211",
       "to": "872"
     }
-  ]
+  ],
+  "verify_requested": false,
+  "verify_runs": []
 }

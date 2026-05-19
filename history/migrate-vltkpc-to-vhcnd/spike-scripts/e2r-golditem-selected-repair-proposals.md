@@ -25,3 +25,5 @@ Mục tiêu: sửa nhanh các dòng đã chọn nhưng không nằm trong candid
 ## Operator command
 - Dry-run: `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py`
 - Apply: `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply`
+
+- Apply + verify: `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply --verify`

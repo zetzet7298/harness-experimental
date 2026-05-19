@@ -187,3 +187,14 @@ Latest preview result:
 - canonical issues: 48
 - preview issues: 0
 - delta issues: -48
+
+
+## 2026-05-19 Apply helper hardening
+
+`e2r-golditem-apply-repair-proposals.py` now supports:
+- automatic canonical backup on `--apply` (`e2r-golditem-manual-map-backups/`)
+- optional post-apply verify chain via `--verify`:
+  - run `e2r-golditem-manual-map-validate.py`
+  - run `e2r-ops-one-shot.py`
+
+This reduces operator risk when moving from proposal to canonical update.

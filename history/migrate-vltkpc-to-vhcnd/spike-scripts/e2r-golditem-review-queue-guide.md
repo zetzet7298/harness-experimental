@@ -75,6 +75,8 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py`
 - Apply thật (ghi vào template):
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply`
+- Apply + verify chain (validate + one-shot):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply --verify`
 - Báo cáo thay đổi:
   - `e2r-golditem-apply-repair-report.json`
 
@@ -86,3 +88,6 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
   - `e2r-golditem-manual-map-template.preview.csv`
   - `e2r-preview-repair-impact.json`
   - `e2r-preview-repair-impact.md`
+
+- Backup canonical sẽ được tạo tự động khi `--apply`:
+  - thư mục `e2r-golditem-manual-map-backups/`
