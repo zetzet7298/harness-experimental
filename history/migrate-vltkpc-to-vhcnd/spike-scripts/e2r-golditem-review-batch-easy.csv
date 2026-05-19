@@ -1,0 +1,8 @@
+priority_tier,H5_ID,candidate_count,old_line_heuristic,recommended_line,recommended_name,line_distance,heuristic_confidence,heuristic_reason,candidate_vhcnd_lines
+T1-easy,无尘软履,0,,,,,low,no-parseable-candidate,
+T1-easy,凌岳道袍,2,,119,L篓ng Nh鹿c N茅 L芦i Gi铆i,,low,fallback-first-candidate-no-old-line,119(L篓ng Nh鹿c N茅 L芦i Gi铆i) | 129(S颅卢ng Tinh Thanh Phong L蹋 庐赂i)
+T1-easy,咒缚腰带,2,,1331,V漏n L茅c L颅虂ng Nghi 搂鹿o B碌o,,low,fallback-first-candidate-no-old-line,1331(V漏n L茅c L颅虂ng Nghi 搂鹿o B碌o) | 4659(脭脝脗鹿脰庐脫帽脫掳虊脗)
+T1-easy,天光纵绦,2,,1291,V漏n L茅c H忙 搂露m C赂i Y,,low,fallback-first-candidate-no-old-line,1291(V漏n L茅c H忙 搂露m C赂i Y) | 1321(V漏n L茅c Li脰t Di脰m Gi赂p)
+T1-easy,无间缁衣,2,,34,V芦 Gian Ph脢t V漏n Ti 庐赂i,,low,fallback-first-candidate-no-old-line,34(V芦 Gian Ph脢t V漏n Ti 庐赂i) | 39(V芦 Ma B篓ng Tinh Ch脴 Ho碌n)
+T1-easy,无间软剑,2,,5387,膼脟脣陋脰庐驴脿脷膼脡庐膼卢,,low,fallback-first-candidate-no-old-line,5387(膼脟脣陋脰庐驴脿脷膼脡庐膼卢) | 5678(脭脗膬脷脰庐脰脴陆脵脡庐膼卢)
+T1-easy,霜晶道袍,2,,119,L篓ng Nh鹿c N茅 L芦i Gi铆i,,low,fallback-first-candidate-no-old-line,119(L篓ng Nh鹿c N茅 L芦i Gi铆i) | 129(S颅卢ng Tinh Thanh Phong L蹋 庐赂i)

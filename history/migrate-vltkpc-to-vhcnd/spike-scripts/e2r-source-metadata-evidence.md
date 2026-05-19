@@ -74,3 +74,15 @@ Use:
 1. Reviewer cross-checks each `recommended_line` in `GoldItem.txt`.
 2. Copy confirmed values into `e2r-golditem-manual-map-template.csv`.
 3. Re-run stat audit to confirm no-fabrication remains pass.
+
+
+## 2026-05-19 Review queue batching for gate mig-ja5
+
+Added queue artifacts to prioritize remaining canonical review:
+- `e2r-golditem-review-queue.csv` (100 rows, sorted by review priority)
+- `e2r-golditem-review-batch-easy.csv` (7 rows)
+- `e2r-golditem-review-batch-medium.csv` (30 rows)
+- `e2r-golditem-review-batch-hard.csv` (63 rows)
+- `e2r-golditem-review-queue-guide.md`
+
+These files are assist-only and do not mutate canonical mapping.
