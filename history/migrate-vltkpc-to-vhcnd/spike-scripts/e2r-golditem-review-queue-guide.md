@@ -106,3 +106,15 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
 - `e2r-gate-decision-packet.json`
 
 Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi từng bước.
+
+
+## Runbook scripts theo Option A/B
+- Option A (canonical-first check run):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-option-a.py`
+  - report: `e2r-run-option-a-report.json`
+
+- Option B (provisional path execution):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-option-b.py`
+  - Để bật cờ provisional accept ngay trong runbook:
+    - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-option-b.py --accept-provisional --decided-by "<human>"`
+  - report: `e2r-run-option-b-report.json`

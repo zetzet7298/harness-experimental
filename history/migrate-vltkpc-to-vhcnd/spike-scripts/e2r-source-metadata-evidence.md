@@ -219,3 +219,13 @@ Added structured decision packet to accelerate final gate choice:
 - `e2r-gate-decision-packet.json`
 
 Packet includes Option A (canonical-first) and Option B (provisional-accept) with expected gate status and command sequence.
+
+
+## 2026-05-19 Option runbook scripts
+
+Added executable runbooks aligned to decision packet:
+- `e2r-run-option-a.py`
+- `e2r-run-option-b.py`
+- reports: `e2r-run-option-a-report.json`, `e2r-run-option-b-report.json`
+
+Current Option A baseline run result: `gate_status=blocked`.
