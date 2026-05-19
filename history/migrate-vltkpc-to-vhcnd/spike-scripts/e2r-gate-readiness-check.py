@@ -10,6 +10,7 @@ out_md = base / 'e2r-gate-readiness.md'
 # Inputs
 manual_template = base / 'e2r-golditem-manual-map-template.csv'
 stat_audit = base / 'outputs/e2r-equipment-stat-coverage.audit.json'
+map_validate = base / 'e2r-golditem-manual-map-validate.json'
 verdict_md = base.parent / 'e2r-verdict.md'
 decision_file = base / 'e2r-gate-decision.json'
 
@@ -34,6 +35,9 @@ stat_top_pass = (stat.get('status') == 'pass')
 
 decision = json.loads(decision_file.read_text(encoding='utf-8'))
 accept_provisional = bool(decision.get('accept_provisional_for_e_m3_to_e_m7'))
+mapv = json.loads(map_validate.read_text(encoding='utf-8')) if map_validate.exists() else {}
+mapv_status = mapv.get('status')
+mapv_issue_count = mapv.get('issue_count')
 
 canonical_ready = (remaining == 0 and stat_top_pass and no_fab)
 provisional_ready = (remaining > 0 and stat_top_pass and no_fab and accept_provisional)
@@ -55,6 +59,8 @@ payload = {
         'stat_audit_status': stat.get('status'),
         'no_fabrication_status': (stat.get('noFabricationCheck') or {}).get('status'),
         'accept_provisional_for_e_m3_to_e_m7': accept_provisional,
+        'map_validate_status': mapv_status,
+        'map_validate_issue_count': mapv_issue_count,
     },
     'required_to_close_mig_ja5': {
         'path_a_canonical': [
@@ -85,6 +91,7 @@ md = [
     f"- Stat audit status: **{payload['facts']['stat_audit_status']}**",
     f"- No-fabrication status: **{payload['facts']['no_fabrication_status']}**",
     f"- Human accepts provisional: **{accept_provisional}**",
+    f"- Manual-map validate status: **{mapv_status}** (issues: **{mapv_issue_count}**)",
     '',
     '## Close mig-ja5 when',
     '',

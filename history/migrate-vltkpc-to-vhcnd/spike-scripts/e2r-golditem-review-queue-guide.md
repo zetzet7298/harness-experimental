@@ -52,3 +52,11 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 - Output:
   - `e2r-ops-one-shot-summary.md`
   - `e2r-ops-one-shot-summary.json`
+
+
+## Validate manual selections
+- Kiểm tra các dòng đã điền `selected_vhcnd_line` có hợp lệ không:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.py`
+- Output:
+  - `e2r-golditem-manual-map-validate.md`
+  - `e2r-golditem-manual-map-validate.json`

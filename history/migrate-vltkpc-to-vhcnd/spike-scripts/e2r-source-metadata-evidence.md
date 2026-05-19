@@ -142,3 +142,14 @@ Added one-shot wrapper for swarming operator loop:
 
 Current one-line output:
 `E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0`
+
+
+## 2026-05-19 Manual map validation artifact
+
+Added manual-map validator to catch invalid canonical inputs early:
+- `e2r-golditem-manual-map-validate.py`
+- `e2r-golditem-manual-map-validate.md`
+- `e2r-golditem-manual-map-validate.json`
+
+Current baseline: `status=fail`, `issue_count=48` (mostly `not-in-candidate-list` on provisional selected rows).
+Gate checker now surfaces this validation status for operator visibility.

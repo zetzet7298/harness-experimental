@@ -1,0 +1,253 @@
+{
+  "generated_at_utc": "2026-05-19T15:13:50.518865+00:00",
+  "template_path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
+  "golditem_path": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/GoldItem.txt",
+  "golditem_data_line_count": 5945,
+  "total_rows": 149,
+  "selected_rows": 49,
+  "missing_selected_rows": 100,
+  "issue_count": 48,
+  "issues": [
+    {
+      "H5_ID": "伏魔僧鞋",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "伏魔戒衫",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "伏魔软绦",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "伏魔铜棍",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冥幻护腕",
+      "selected_vhcnd_line": "487",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冥幻暗衣",
+      "selected_vhcnd_line": "487",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冥幻毒刃",
+      "selected_vhcnd_line": "487",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冥幻腰带",
+      "selected_vhcnd_line": "487",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冰寒护腕",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冰寒纵绦",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冰寒速靴",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "冰寒飞刀",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定业战靴",
+      "selected_vhcnd_line": "149",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定业扳指",
+      "selected_vhcnd_line": "149",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定业护腕",
+      "selected_vhcnd_line": "149",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定业腰带",
+      "selected_vhcnd_line": "149",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定国之紫藤护腕",
+      "selected_vhcnd_line": "158",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定国之赤绢软靴",
+      "selected_vhcnd_line": "159",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定国之钨砂发冠",
+      "selected_vhcnd_line": "155",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定国之银蚕腰带",
+      "selected_vhcnd_line": "157",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "定国之青纱长衫",
+      "selected_vhcnd_line": "156",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "无魇之冰晶金丝带",
+      "selected_vhcnd_line": "34",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "无魇之摩尼冠",
+      "selected_vhcnd_line": "34",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "无魇之洗象玉扣",
+      "selected_vhcnd_line": "34",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "无魇之红缁软禢鞋",
+      "selected_vhcnd_line": "34",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "栖凰仪刀",
+      "selected_vhcnd_line": "470",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "栖凰护腕",
+      "selected_vhcnd_line": "470",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "栖凰指环",
+      "selected_vhcnd_line": "470",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "梦龙僧鞋",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "梦龙戒衫",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "梦龙法冠",
+      "selected_vhcnd_line": "1361",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "森荒护腕",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "森荒纵绦",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "森荒飞镖",
+      "selected_vhcnd_line": "454",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "洞察之白玉乾坤佩",
+      "selected_vhcnd_line": "1137",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "洞察之白金锈凤戒",
+      "selected_vhcnd_line": "1137",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "洞察之白金雕龙戒",
+      "selected_vhcnd_line": "1137",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "碧海之环珠雨链",
+      "selected_vhcnd_line": "190",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "碧海之红铃波",
+      "selected_vhcnd_line": "190",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "碧海之红铃金丝带",
+      "selected_vhcnd_line": "190",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "碧海之鸳鸯连环刀",
+      "selected_vhcnd_line": "190",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔嗜头冠",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔嗜战靴",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔嗜护腕",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔嗜项链",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔煌之按出虎项圈",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔煌之蹬踏靴",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    },
+    {
+      "H5_ID": "魔煌之金甲盔",
+      "selected_vhcnd_line": "1211",
+      "issue": "not-in-candidate-list"
+    }
+  ],
+  "status": "fail"
+}
