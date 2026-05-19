@@ -1,0 +1,1375 @@
+{
+  "catalog": "/var/www/vltk-h5-survivors/game-source/src/data/equipmentCatalog.json",
+  "catalogAttributeCounts": {
+    "magic_addcolddamage_v": 6,
+    "magic_adddefense_v": 139,
+    "magic_addfiredamage_v": 7,
+    "magic_addlightingdamage_v": 10,
+    "magic_addphysicsdamage_p": 160,
+    "magic_addphysicsdamage_v": 20,
+    "magic_addpoisondamage_v": 6,
+    "magic_allres_p": 84,
+    "magic_allskill_v": 15,
+    "magic_armordefense_v": 830,
+    "magic_attackratingenhance_p": 181,
+    "magic_attackratingenhance_v": 91,
+    "magic_coldres_p": 7,
+    "magic_damagetomana_p": 14,
+    "magic_dexterity_v": 9,
+    "magic_durability_v": 1062,
+    "magic_earthskill_v": 2,
+    "magic_fasthitrecover_v": 9,
+    "magic_fastwalkrun_p": 82,
+    "magic_fireres_p": 7,
+    "magic_fireskill_v": 4,
+    "magic_freezetimereduce_p": 3,
+    "magic_lifemax_v": 503,
+    "magic_lifereplenish_v": 9,
+    "magic_lightingres_p": 55,
+    "magic_lucky_v": 5,
+    "magic_manamax_v": 67,
+    "magic_manareplenish_v": 1,
+    "magic_metalskill_v": 3,
+    "magic_physicsres_p": 7,
+    "magic_poisonres_p": 450,
+    "magic_poisontimereduce_p": 1,
+    "magic_requirementreduce_p": 4,
+    "magic_staminamax_v": 91,
+    "magic_staminareplenish_v": 166,
+    "magic_steallifeenhance_p": 22,
+    "magic_stealmanaenhance_p": 24,
+    "magic_strength_v": 1,
+    "magic_stuntimereduce_p": 3,
+    "magic_visionradius_p": 17,
+    "magic_vitality_v": 10,
+    "magic_waterskill_v": 7,
+    "magic_weapondamagemax_v": 196,
+    "magic_weapondamagemin_v": 196,
+    "magic_woodskill_v": 4
+  },
+  "catalogAttributeKeyCount": 45,
+  "completeForCurrentCatalog": true,
+  "flags": {
+    "element_add_damage_participates_in_damage": {
+      "citation": "magic_add{fire,cold,lighting,poison}damage_v -> stats.{fire,cold,lightning,poison}Damage -> resolveSkillDamageBreakdown",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "skillFire.min + stats.fireDamage + stats.fireDamageMin",
+      "requiredCases": [
+        "magic_addfiredamage_v",
+        "magic_addcolddamage_v",
+        "magic_addlightingdamage_v",
+        "magic_addpoisondamage_v"
+      ],
+      "requiredDamageFields": [
+        "stats.fireDamage",
+        "stats.coldDamage",
+        "stats.lightningDamage",
+        "stats.poisonDamage"
+      ],
+      "status": "pass"
+    },
+    "pc_active_equip_links": {
+      "citation": "ACTIVED_EQUIP_BY_SLOT covers head/body/belt/weapon/foot/cuff/amulet/ring1/ring2/pendant/horse (KItemList.cpp:41-58)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "ACTIVED_EQUIP_BY_SLOT",
+      "status": "pass"
+    },
+    "pc_hidden_magic_activation": {
+      "citation": "activeMagicAttributes(item, activeCount) — KItemList.cpp:1019-1040 KItem::ApplyHiddenMagicAttribToNPC",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "activeMagicAttributes",
+      "status": "pass"
+    },
+    "pc_resist_cap": {
+      "citation": "export const PC_MAX_RESIST = 95 (GameDataDef.h:128 #define MAX_RESIST 95)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "PC_MAX_RESIST = 95",
+      "status": "pass"
+    },
+    "pc_resist_damage_formula": {
+      "citation": "applyPcResistDamage(damage, resist, resistMax) = floor(damage * (100 - clamp(resist, resistMax, PC_MAX_RESIST)) / 100) (KNpc.cpp:2151/2184/2211/2238/2266)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "damage * (100 - cappedByGlobalMax) / 100",
+      "status": "pass"
+    },
+    "pc_series_accrue_table": {
+      "citation": "SERIES_ACCRUE_TARGET = {0:2, 1:3, 2:1, 3:4, 4:0} (KMath.cpp:336-348 g_nAccrueSeries)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "SERIES_ACCRUE_TARGET",
+      "status": "pass"
+    },
+    "pc_series_conquer_table": {
+      "citation": "SERIES_CONQUER_TARGET = {0:1, 1:4, 2:3, 3:0, 4:2} (KMath.cpp:336-348 g_nConquerSeries)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "SERIES_CONQUER_TARGET",
+      "status": "pass"
+    },
+    "pc_typed_damage_breakdown": {
+      "citation": "resolveSkillDamageBreakdown references stats.{fire,cold,lightning,poison}Damage (KPlayer.cpp damage path)",
+      "evidence": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+      "marker": "resolveSkillDamageBreakdown",
+      "status": "pass"
+    }
+  },
+  "formulaMarkers": {
+    "add_physics_percent_bucket_pc": true,
+    "all_resist_expands_elements": true,
+    "attack_rating_percent": true,
+    "base_attack_rating": true,
+    "base_dexterity_defense": true,
+    "base_strength_damage": true,
+    "current_add_physics_damage_pc": true,
+    "element_add_damage_participates_in_damage": true,
+    "leveladd_base_resists": true,
+    "leveladd_energy_mana": true,
+    "leveladd_vitality_life": true,
+    "lifemax_flat": true,
+    "lifemax_percent": true,
+    "pc_active_equip_links": true,
+    "pc_hidden_magic_activation": true,
+    "pc_resist_cap": true,
+    "pc_resist_damage_formula": true,
+    "pc_series_accrue_table": true,
+    "pc_series_conquer_table": true,
+    "pc_typed_damage_breakdown": true,
+    "weapon_damage_enhance_pc": true,
+    "weapon_dexterity_damage": true,
+    "weapon_strength_damage": true
+  },
+  "handledCaseCount": 79,
+  "missingFormulaMarkers": [],
+  "missingRuntimeCases": [],
+  "noFabricationCheck": {
+    "fileLineCounts": {
+      "Client/Settings/item/GoldItem.txt": -1,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/amulet.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/armor.txt": 292,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/belt.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/boot.txt": 42,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/cuff.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/helm.txt": 143,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/horse.txt": 333,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/meleeweapon.txt": 72,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/pendant.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/rangeweapon.txt": 32,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/ring.txt": 12
+    },
+    "itemsChecked": 1231,
+    "mismatches": [
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-梦龙法冠-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 2,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-梦龙戒衫-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 3,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-梦龙软绦-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 4,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-梦龙护腕-5-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 5,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-梦龙僧鞋-6-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 6,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-伏魔铜棍-7-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 7,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-伏魔戒衫-8-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 8,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-伏魔软绦-9-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 9,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-伏魔护腕-10-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 10,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-伏魔僧鞋-11-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 11,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-四空戒刀-12-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 12,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-四空戒衫-13-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 13,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-四空软绦-14-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 14,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-四空护腕-15-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 15,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-四空法戒-16-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 16,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-撼天神锤-17-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 17,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-撼天战甲-18-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 18,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-撼天腰环-19-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 19,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-撼天护腕-20-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 20,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-撼天战靴-21-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 21,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-继业之奔雷钻龙枪-22-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 22,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-继业之玄武黄金铠-23-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 23,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-继业之白虎无双扣-24-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 24,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-继业之火云麒麟手-25-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 25,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-继业之朱雀凌云靴-26-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 26,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-御龙宝刀-27-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 27,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-御龙战甲-28-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 28,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-御龙腰环-29-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 29,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-御龙护腕-30-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 30,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-御龙戒指-31-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 31,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无间软剑-32-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 32,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无间缁衣-33-7-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 33,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无间丝带-34-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 34,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无间护腕-35-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 35,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无间软履-36-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 36,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无魇之摩尼冠-37-7-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 37,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无魇之紫襟袈裟-38-7-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 38,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无魇之冰晶金丝带-39-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 39,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无魇之洗象玉扣-40-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 40,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无魇之红缁软禢鞋-41-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 41,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无尘法冠-42-7-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 42,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无尘颈坠-43-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 43,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无尘丝带-44-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 44,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无尘腰配-45-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 45,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-无尘软履-46-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 46,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-栖凰仪刀-47-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 47,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-栖凰项链-48-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 48,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-栖凰束带-49-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 49,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-栖凰护腕-50-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 50,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-栖凰指环-51-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 51,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-碧海之鸳鸯连环刀-52-5-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 52,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-碧海之环珠雨链-53-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 53,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-碧海之红铃金丝带-54-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 54,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-碧海之红铃波-55-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 55,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-碧海之纤细指环-56-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 56,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-幽胧之金蛇发带-57-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 57,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-幽胧之赤蝎秘装-58-16-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 58,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-幽胧之青蜈缠腰-59-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 59,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-幽胧之银蟾护手-60-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 60,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-幽胧之墨蛛软履-61-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 61,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冥幻毒刃-62-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 62,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冥幻暗衣-63-16-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 63,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冥幻腰带-64-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 64,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冥幻护腕-65-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 65,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冥幻战鞋-66-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 66,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-咒缚头冠-67-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 67,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-咒缚颈符-68-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 68,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-咒缚腰带-69-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 69,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-咒缚护腕-70-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 70,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-咒缚战鞋-71-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 71,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冰寒飞刀-72-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 72,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冰寒束甲-73-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 73,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冰寒纵绦-74-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 74,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冰寒护腕-75-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 75,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-冰寒速靴-76-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 76,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-天光袖箭-77-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 77,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-天光项链-78-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 78,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-天光纵绦-79-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 79,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-天光护腕-80-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 80,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-天光扳指-81-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 81,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-森荒飞镖-82-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 82,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-森荒束甲-83-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 83,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-森荒纵绦-84-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 84,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-森荒护腕-85-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 85,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-森荒速靴-86-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 86,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-地魄头冠-87-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 87,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-地魄项链-88-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 88,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-地魄纵绦-89-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 89,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-地魄护腕-90-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 90,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-地魄速靴-91-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 91,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-同仇之飞龙头环-92-5-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 92,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-同仇之降龙丐衣-93-5-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 93,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-同仇之潜龙腰带-94-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 94,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-同仇之亢龙护手-95-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 95,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-同仇之见龙扳指-96-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 96,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-đich-khai-luc-ngoc-truong-97-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 97,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-敌忾丐衫-98-5-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 98,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-敌忾腰带-99-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 99,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-敌忾护腕-100-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 100,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-敌忾戒指-101-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 101,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煞神针-102-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 102,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煞战衣-103-16-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 103,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煞环条-104-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 104,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煞护腕-105-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 105,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煞指环-106-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 106,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煌之金甲盔-107-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 107,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煌之按出虎项圈-108-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 108,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煌之溪谷束腰带-109-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 109,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煌之血衣兽镯-110-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 110,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔煌之蹬踏靴-111-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 111,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔嗜头冠-112-2-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 112,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔嗜项链-113-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 113,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔嗜环条-114-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 114,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔嗜护腕-115-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 115,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-魔嗜战靴-116-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 116,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-凌岳之真武剑-117-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 117,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-凌岳道袍-118-15-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 118,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-凌岳法绦-119-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 119,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-凌岳护腕-120-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 120,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-凌岳扳指-121-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 121,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-及丰之五龙冠-122-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 122,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-及丰之三清符-123-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 123,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-及丰之玄丝三段锦-124-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 124,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-及丰之翠玉玄黄佩-125-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 125,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-及丰之法戒-126-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 126,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-霜晶寒铁-127-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 127,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-霜晶道袍-128-15-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 128,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-霜晶缕带-129-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 129,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-霜晶护腕-130-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 130,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-霜晶指环-131-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 131,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雷琼宝剑-132-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 132,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雷琼颈坠-133-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 133,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雷琼缕带-134-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 134,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雷琼腰配-135-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 135,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雷琼指环-136-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 136,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雾幻琼冠-137-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 137,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雾幻颈坠-138-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 138,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雾幻缕带-139-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 139,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雾幻腰配-140-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 140,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雾幻指环-141-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 141,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-雅典之魂-142-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 142,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-北京之梦-143-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 143,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-洞察之白金雕龙戒-144-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 144,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-洞察之白玉乾坤佩-145-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 145,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-洞察之白金锈凤戒-146-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 146,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-洞察之翡翠玉项圈-147-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 147,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业头冠-148-6-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 148,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业战袍-149-20-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 149,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业腰带-150-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 150,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业护腕-151-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 151,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业战靴-152-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 152,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定业扳指-153-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 153,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国头冠-154-4-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 154,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国战袍-155-18-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 155,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国腰箍-156-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 156,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国护腕-157-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 157,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国战靴-158-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 158,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国扳指-159-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 159,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国之青纱长衫-160-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 160,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国之钨砂发冠-161-3-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 161,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国之赤绢软靴-162-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 162,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国之紫藤护腕-163-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 163,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-定国之银蚕腰带-164-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 164,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦之冰晶石项链-165-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 165,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦之菊花石指环-166-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 166,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦之田黄石玉佩-167-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 167,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦之鸡血石戒指-168-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 168,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦冰晶石项链-169-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 169,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦菊花石指环-170-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 170,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦田黄石玉佩-171-1-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 171,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      },
+      {
+        "fileLineCount": null,
+        "itemId": "vltkpc-安邦鸡血石戒指-172-10",
+        "reason": "source-file-unreadable",
+        "sourceLine": 172,
+        "sourcePath": "Client/Settings/item/GoldItem.txt"
+      }
+    ],
+    "sourceLinesValid": 1060,
+    "sourcePathPrefixesRequired": [
+      "Client/Settings/",
+      "ServerNew/_bin_v2_/gs/Settings/"
+    ],
+    "sourceRoot": "/var/www/vhcnd/sources",
+    "status": "fail"
+  },
+  "noopKeysPresentInCatalog": [],
+  "notes": [
+    "flags[].status=pass means equipment.ts contains the literal PC-parity marker for that flag (Req 14.3).",
+    "noFabricationCheck enforces every catalog item has a non-empty source.path under Client/Settings/ and a source.line within the actual VLTKPC source file (Req 14.5).",
+    "catalogAttributeCounts + missingRuntimeCases + noopKeysPresentInCatalog audit runtime stat-handling coverage for every key produced by the seed builder (Req 14.7).",
+    "Output is sort_keys=True / UTF-8 / trailing newline so reruns produce byte-identical files (Req 13.6 spillover for audit determinism)."
+  ],
+  "schemaVersion": 2,
+  "source": "/var/www/vltk-h5-survivors/game-source/src/domain/equipment.ts",
+  "status": "fail"
+}
