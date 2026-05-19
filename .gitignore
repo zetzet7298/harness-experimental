@@ -13,3 +13,16 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# bv (beads viewer) local config and caches
+.bv/
+
+# Beads local database/history; canonical issue state is .beads/issues.jsonl
+.beads/beads.db
+.beads/.br_history/
+
+# Large generated spike raw output; keep summary/evidence instead
+history/*/spike-scripts/fnv1a-probe.csv
+.beads/beads.db-*
+.beads/.sync.lock
+.beads/last-touched

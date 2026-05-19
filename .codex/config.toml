@@ -20,5 +20,9 @@ After completing these steps, briefly confirm what context you restored and only
 command = "gitnexus"
 args = ["mcp"]
 
+
+[mcp_servers.agent-mail]
+url = "http://127.0.0.1:8765/mcp"
+
 [features]
 hooks = true
