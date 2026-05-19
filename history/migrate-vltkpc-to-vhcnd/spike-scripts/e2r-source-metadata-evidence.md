@@ -261,3 +261,19 @@ Added final-step runner with hard human-approval guard:
 Baseline precheck run result:
 - `result_status=blocked-missing-human-approval`
 - `bead_closed=false`
+
+
+## 2026-05-19 Control dashboard
+
+Added consolidated control dashboard:
+- `e2r-control-dashboard.py`
+- `e2r-control-dashboard.md`
+- `e2r-control-dashboard.json`
+
+Current snapshot:
+- gate_status=blocked
+- map_issue_count=0
+- remaining_rows=100
+- accept_provisional=false
+
+This confirms only human decision path remains for provisional opening.

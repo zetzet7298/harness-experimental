@@ -138,3 +138,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by "<human>" --reason "<reason>"`
 - Report:
   - `e2r-finalize-provisional-report.json`
+
+
+## Control dashboard (1-file view)
+- Refresh dashboard:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-control-dashboard.py`
+- Output:
+  - `e2r-control-dashboard.md`
+  - `e2r-control-dashboard.json`
