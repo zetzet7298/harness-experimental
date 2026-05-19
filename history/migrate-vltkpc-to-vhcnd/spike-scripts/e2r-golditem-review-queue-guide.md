@@ -91,3 +91,11 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
 
 - Backup canonical sẽ được tạo tự động khi `--apply`:
   - thư mục `e2r-golditem-manual-map-backups/`
+
+
+## Gate forecast theo kịch bản
+- Chạy forecast:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-gate-forecast.py`
+- Output:
+  - `e2r-gate-forecast.md`
+  - `e2r-gate-forecast.json`

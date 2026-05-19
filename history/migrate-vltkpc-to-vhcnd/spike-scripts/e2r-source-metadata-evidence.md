@@ -198,3 +198,15 @@ Latest preview result:
   - run `e2r-ops-one-shot.py`
 
 This reduces operator risk when moving from proposal to canonical update.
+
+
+## 2026-05-19 Gate forecast scenarios
+
+Added scenario forecast artifact to help human decision speed:
+- `e2r-gate-forecast.py`
+- `e2r-gate-forecast.md`
+- `e2r-gate-forecast.json`
+
+Forecast highlights:
+- current-state: blocked
+- after-apply-proposals + provisional accept: ready-provisional-approved
