@@ -179,3 +179,13 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-and-audit.py --human-approved --decided-by "<human>" --reason "..."`
 - Output:
   - `e2r-finalize-and-audit-report.json`
+
+
+## Capture human decision (structured)
+- Preview receipt (không ghi decision file):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-capture-human-decision.py --decided-by "<human>" --mode accept-provisional --note "..."`
+- Apply vào `e2r-gate-decision.json`:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-capture-human-decision.py --decided-by "<human>" --mode accept-provisional --note "..." --apply`
+- Artifacts:
+  - `e2r-human-decision-receipt.md`
+  - `e2r-human-decision-receipt.json`

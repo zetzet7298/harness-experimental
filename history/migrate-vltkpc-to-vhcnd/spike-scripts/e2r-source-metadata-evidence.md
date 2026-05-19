@@ -333,3 +333,13 @@ Current wrapper baseline (no human approval):
 - gate=blocked
 - bead_closed=false
 - audit=incomplete
+
+
+## 2026-05-19 Structured human decision capture
+
+Added decision capture utility to reduce manual JSON edits:
+- `e2r-capture-human-decision.py`
+- `e2r-human-decision-receipt.md`
+- `e2r-human-decision-receipt.json`
+
+Supports preview mode (no write) and apply mode (writes `e2r-gate-decision.json`).
