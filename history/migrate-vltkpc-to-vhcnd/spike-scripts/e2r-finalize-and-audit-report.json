@@ -1,0 +1,59 @@
+{
+  "generated_at_utc": "2026-05-19T16:05:18.811019+00:00",
+  "human_approved": false,
+  "decided_by": "",
+  "steps": [
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "finalize_status=blocked-missing-human-approval bead_closed=False\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional-report.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-control-dashboard.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "dashboard gate=blocked remaining=100 issues=0 accept=False\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-control-dashboard.md\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-control-dashboard.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-swarming-completion-audit.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "wrote completion audit; overall=incomplete\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-operator-pulse.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "wrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-operator-pulse.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-operator-pulse.md\npulse_next=await-human-approval-then-finalize-provisional\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-generate-next-step.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "wrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-next-step.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-next-step.md\nnext_label=await-human-approval-then-finalize-provisional\nnext_cmd=python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by \"<human>\" --reason \"Provisional accepted by human\"\n",
+      "stderr_tail": ""
+    }
+  ],
+  "bead_closed": false,
+  "gate_status": "blocked",
+  "completion_audit_overall": "incomplete",
+  "completion_audit_blockers": [
+    "R3",
+    "R4"
+  ]
+}

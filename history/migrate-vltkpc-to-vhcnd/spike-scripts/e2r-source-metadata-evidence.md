@@ -320,3 +320,16 @@ Added consolidated operator pulse:
 
 Current pulse next-step label:
 - `await-human-approval-then-finalize-provisional`
+
+
+## 2026-05-19 Finalize-and-audit wrapper
+
+Added wrapper to run finalize then refresh completion artifacts in one execution:
+- `e2r-finalize-and-audit.py`
+- `e2r-finalize-and-audit-report.json`
+- `e2r-swarming-completion-audit.py` (refreshable audit generator)
+
+Current wrapper baseline (no human approval):
+- gate=blocked
+- bead_closed=false
+- audit=incomplete

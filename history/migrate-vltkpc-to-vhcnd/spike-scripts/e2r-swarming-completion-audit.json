@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-19T15:53:29.248654+00:00",
+  "generated_at_utc": "2026-05-19T16:05:18.418469+00:00",
   "objective": "$khuym:swarming for E_M2R gate mig-ja5",
   "requirements": [
     {
       "id": "R1",
-      "text": "Technical mapping validity ready (selected mapping has no validator issues).",
+      "text": "Technical mapping validity ready",
       "status": "proven",
       "evidence": {
         "validate_status": "pass",
@@ -13,7 +13,7 @@
     },
     {
       "id": "R2",
-      "text": "Gate readiness computed and available in canonical artifact.",
+      "text": "Gate readiness artifact exists",
       "status": "proven",
       "evidence": {
         "gate_status": "blocked"
@@ -21,7 +21,7 @@
     },
     {
       "id": "R3",
-      "text": "Bead mig-ja5 closed only when guard conditions satisfied.",
+      "text": "Bead mig-ja5 closed with guard",
       "status": "missing",
       "evidence": {
         "close_report_closed": false,
@@ -30,18 +30,19 @@
     },
     {
       "id": "R4",
-      "text": "Human decision explicit for provisional path.",
+      "text": "Human provisional decision explicit (or canonical ready path)",
       "status": "missing",
       "evidence": {
-        "accept_provisional": false
+        "accept_provisional": false,
+        "gate_status": "blocked"
       }
     },
     {
       "id": "R5",
-      "text": "Operator has single-command next step guidance.",
+      "text": "Operator next-step command exists",
       "status": "proven",
       "evidence": {
-        "finalize_next_command_exists": true
+        "next_step_exists": true
       }
     }
   ],
@@ -50,5 +51,6 @@
     "R3",
     "R4"
   ],
-  "current_one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0"
+  "current_one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0",
+  "dashboard_next_action": "Human decision required: set accept_provisional=true OR continue canonical completion."
 }
