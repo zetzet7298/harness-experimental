@@ -118,3 +118,14 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - Để bật cờ provisional accept ngay trong runbook:
     - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-option-b.py --accept-provisional --decided-by "<human>"`
   - report: `e2r-run-option-b-report.json`
+
+
+## Safe-close script cho mig-ja5
+- Precheck (không close):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py`
+- Close thật (chỉ chạy khi gate ready):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason "<reason>"`
+- Close + ghi addendum vào verdict:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason "<reason>" --append-verdict-note`
+- Report:
+  - `e2r-close-mig-ja5-report.json`

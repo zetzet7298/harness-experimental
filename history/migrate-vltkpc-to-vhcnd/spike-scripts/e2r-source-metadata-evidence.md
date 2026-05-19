@@ -229,3 +229,14 @@ Added executable runbooks aligned to decision packet:
 - reports: `e2r-run-option-a-report.json`, `e2r-run-option-b-report.json`
 
 Current Option A baseline run result: `gate_status=blocked`.
+
+
+## 2026-05-19 Safe gate close automation
+
+Added guarded close utility:
+- `e2r-close-mig-ja5.py`
+- `e2r-close-mig-ja5-report.json`
+
+Behavior:
+- never closes unless `gate_status` is ready (`ready-canonical` or `ready-provisional-approved`) AND `--confirm` is provided.
+- optional verdict addendum write with `--append-verdict-note`.
