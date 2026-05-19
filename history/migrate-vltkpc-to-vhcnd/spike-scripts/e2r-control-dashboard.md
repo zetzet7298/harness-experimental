@@ -1,6 +1,6 @@
 # E2R Control Dashboard
 
-Generated (UTC): `2026-05-19T16:20:16.474173+00:00`
+Generated (UTC): `2026-05-19T16:22:25.295239+00:00`
 
 - Bead `mig-ja5`: **in_progress**
 - Gate status: **blocked**

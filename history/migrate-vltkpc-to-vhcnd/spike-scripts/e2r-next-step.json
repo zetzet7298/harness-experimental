@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-19T16:20:16.178647+00:00",
+  "generated_at_utc": "2026-05-19T16:22:25.369402+00:00",
   "label": "await-human-approval-then-finalize-provisional",
   "command": "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by \"<human>\" --reason \"Provisional accepted by human\"",
   "source_preflight": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-preflight.json",
