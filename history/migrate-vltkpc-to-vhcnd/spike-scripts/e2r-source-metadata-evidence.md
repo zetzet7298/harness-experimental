@@ -110,3 +110,13 @@ Baseline at generation time:
 - canonical selected rows: 49/149
 - remaining rows: 100
 - checklist ticks: easy 0/7, medium 0/30, hard 0/63
+
+
+## 2026-05-19 Snapshot diff tracking
+
+Progress snapshot automation upgraded with history + latest diff artifacts:
+- `e2r-golditem-progress-history/snapshot-*.json`
+- `e2r-golditem-progress-diff-latest.md`
+- `e2r-golditem-progress-diff-latest.json`
+
+This allows quick verification of reviewer movement between consecutive checks.

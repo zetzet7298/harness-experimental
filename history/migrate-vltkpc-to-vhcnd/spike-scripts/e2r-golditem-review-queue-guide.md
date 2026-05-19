@@ -23,6 +23,12 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 
 
 ## Theo dõi tiến độ
+
+- Xem diff so với snapshot trước:
+  - `e2r-golditem-progress-diff-latest.md`
+  - `e2r-golditem-progress-diff-latest.json`
+- Lịch sử snapshot theo thời gian:
+  - thư mục `e2r-golditem-progress-history/`
 - Chạy snapshot:
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.py`
 - Xem kết quả:

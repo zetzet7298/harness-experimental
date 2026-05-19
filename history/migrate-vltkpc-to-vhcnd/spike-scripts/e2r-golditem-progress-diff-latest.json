@@ -1,0 +1,24 @@
+{
+  "generated_at_utc": "2026-05-19T15:05:35.578832+00:00",
+  "current_snapshot_id": "20260519T150535Z",
+  "previous_snapshot_id": "20260519T150522Z",
+  "delta": {
+    "selected_rows": 0,
+    "remaining_rows": 0,
+    "completion_pct": 0.0,
+    "checklists": {
+      "easy": {
+        "done_delta": 0,
+        "open_delta": 0
+      },
+      "medium": {
+        "done_delta": 0,
+        "open_delta": 0
+      },
+      "hard": {
+        "done_delta": 0,
+        "open_delta": 0
+      }
+    }
+  }
+}
