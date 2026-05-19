@@ -288,3 +288,13 @@ Added requirement-by-requirement completion audit:
 Current audit result: `overall=incomplete`, blocked by:
 - R3: bead close not executed yet
 - R4: human provisional acceptance not set
+
+
+## 2026-05-19 Finalize preflight artifact
+
+Added preflight checker before running final close paths:
+- `e2r-finalize-preflight.py`
+- `e2r-finalize-preflight.md`
+- `e2r-finalize-preflight.json`
+
+Current preflight indicates technical readiness for provisional decision request, with human approval still required to finalize/close.

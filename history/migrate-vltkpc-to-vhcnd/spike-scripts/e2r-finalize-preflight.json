@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-05-19T15:57:52.233549+00:00",
+  "facts": {
+    "remaining_rows": 100,
+    "issue_count": 0,
+    "stat_pass": true,
+    "no_fabrication_pass": true,
+    "accept_provisional": false,
+    "gate_status": "blocked"
+  },
+  "option_a_canonical_ready": false,
+  "option_b_ready_to_finalize": false,
+  "option_b_ready_to_request_human": true,
+  "recommended_next_command": "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-provisional.py --human-approved --decided-by \"<human>\" --reason \"Provisional accepted by human\""
+}

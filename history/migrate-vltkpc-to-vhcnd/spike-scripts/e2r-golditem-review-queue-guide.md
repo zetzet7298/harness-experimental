@@ -146,3 +146,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Output:
   - `e2r-control-dashboard.md`
   - `e2r-control-dashboard.json`
+
+
+## Finalize preflight
+- Chạy preflight trước khi finalize:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-finalize-preflight.py`
+- Output:
+  - `e2r-finalize-preflight.md`
+  - `e2r-finalize-preflight.json`
