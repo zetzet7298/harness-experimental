@@ -1,0 +1,44 @@
+{
+  "generated_at_utc": "2026-05-19T15:32:17.154940+00:00",
+  "current_one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0",
+  "current_gate_status": "blocked",
+  "options": [
+    {
+      "id": "A_canonical_first",
+      "label": "Hoàn tất canonical mapping trước khi mở E_M3..E_M7",
+      "expected_gate_status_after_action": "ready-canonical",
+      "commands": [
+        "Hoàn tất selected_vhcnd_line cho 100 dòng còn lại trong e2r-golditem-manual-map-template.csv",
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.py",
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py"
+      ],
+      "preconditions": [
+        "remaining_rows phải về 0",
+        "validator status phải pass",
+        "stat/no-fabrication phải pass"
+      ]
+    },
+    {
+      "id": "B_provisional_accept",
+      "label": "Áp repair proposals + chấp nhận provisional để mở tiếp",
+      "expected_gate_status_after_action": "ready-provisional-approved",
+      "commands": [
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply --verify",
+        "Sửa e2r-gate-decision.json: accept_provisional_for_e_m3_to_e_m7=true + decided_by + decided_at",
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-gate-readiness-check.py",
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py"
+      ],
+      "preconditions": [
+        "repair apply thành công",
+        "validator status pass (dự kiến)",
+        "human chấp thuận provisional rõ ràng"
+      ]
+    }
+  ],
+  "facts": {
+    "selected_rows": 49,
+    "total_rows": 149,
+    "missing_selected_rows": 100,
+    "map_issue_count": 48
+  }
+}

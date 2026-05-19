@@ -99,3 +99,10 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
 - Output:
   - `e2r-gate-forecast.md`
   - `e2r-gate-forecast.json`
+
+
+## Gate decision packet (A/B)
+- `e2r-gate-decision-packet.md`
+- `e2r-gate-decision-packet.json`
+
+Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi từng bước.

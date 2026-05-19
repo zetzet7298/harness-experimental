@@ -210,3 +210,12 @@ Added scenario forecast artifact to help human decision speed:
 Forecast highlights:
 - current-state: blocked
 - after-apply-proposals + provisional accept: ready-provisional-approved
+
+
+## 2026-05-19 Decision packet for mig-ja5 close
+
+Added structured decision packet to accelerate final gate choice:
+- `e2r-gate-decision-packet.md`
+- `e2r-gate-decision-packet.json`
+
+Packet includes Option A (canonical-first) and Option B (provisional-accept) with expected gate status and command sequence.
