@@ -30,3 +30,10 @@ Verdict: **go-with-constraints**
 - Recommended next action:
   1. Reviewer confirms/fixes remaining Gold mappings in template.
   2. Regenerate/prepare visual manifests if US-011 full audit completeness is required now.
+
+
+## Pending human review packet
+
+- Remaining canonical Gold mappings to review: `history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-remaining.csv` (100 rows).
+- Working template to update: `history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv`.
+- Once reviewed, rerun stat audit and replace provisional notes with reviewer-confirmed mapping notes.
