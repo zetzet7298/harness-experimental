@@ -1,0 +1,11 @@
+{
+  "generated_at_utc": "2026-05-19T16:27:58.991212+00:00",
+  "preview_file": "history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-canonical-autofill.preview.csv",
+  "autofilled_rows": 99,
+  "selected_rows": 148,
+  "total_rows": 149,
+  "remaining_rows": 1,
+  "issue_count": 0,
+  "status": "fail",
+  "issues_sample": []
+}

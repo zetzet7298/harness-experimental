@@ -417,3 +417,15 @@ Added command-printer utility to reduce env typo risk:
 - `e2r-print-approval-command.py`
 
 Outputs a copy-paste safe command with `E2R_CONFIRM=YES` and all required variables.
+
+
+## 2026-05-19 Canonical autofill preview
+
+Generated non-destructive canonical autofill previews:
+- `e2r-canonical-autofill.preview.csv`
+- `e2r-canonical-autofill-plus-fallback.preview.csv`
+- reports for both preview runs
+
+Observed state:
+- reached 148/149 selected rows with zero validation issues
+- one unresolved row remains without candidate list: `无尘软履`

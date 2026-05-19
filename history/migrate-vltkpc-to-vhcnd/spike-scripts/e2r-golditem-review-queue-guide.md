@@ -222,3 +222,13 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Output:
   - `e2r-go-no-go.md`
   - `e2r-go-no-go.json`
+
+
+## Canonical autofill previews
+- `e2r-canonical-autofill.preview.csv` + report
+- `e2r-canonical-autofill-plus-fallback.preview.csv` + report
+
+Latest preview result:
+- selected_rows: 148/149
+- issue_count: 0
+- 1 row still missing (`无尘软履`) because no candidate lines available.
