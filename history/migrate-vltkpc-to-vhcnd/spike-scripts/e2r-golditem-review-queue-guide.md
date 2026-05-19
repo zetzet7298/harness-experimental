@@ -77,3 +77,12 @@ Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đón
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply`
 - Báo cáo thay đổi:
   - `e2r-golditem-apply-repair-report.json`
+
+
+## Preview impact (không đụng canonical)
+- Chạy mô phỏng áp repair proposals trên template preview:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-preview-repair-impact.py`
+- Artifacts:
+  - `e2r-golditem-manual-map-template.preview.csv`
+  - `e2r-preview-repair-impact.json`
+  - `e2r-preview-repair-impact.md`

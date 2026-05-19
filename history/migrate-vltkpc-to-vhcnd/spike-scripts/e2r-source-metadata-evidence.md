@@ -172,3 +172,18 @@ Added helper script to operationalize repair proposals:
 - `e2r-golditem-apply-repair-report.json`
 
 Baseline dry-run result: `change_count=48` (no template mutation in dry-run mode).
+
+
+## 2026-05-19 Preview repair impact
+
+Added non-destructive preview impact script:
+- `e2r-preview-repair-impact.py`
+- `e2r-golditem-manual-map-template.preview.csv`
+- `e2r-preview-repair-impact.json`
+- `e2r-preview-repair-impact.md`
+
+Latest preview result:
+- applied changes in preview: 48
+- canonical issues: 48
+- preview issues: 0
+- delta issues: -48

@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-05-19T15:23:57.179748+00:00",
+  "canonical_template": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
+  "preview_template": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.preview.csv",
+  "applied_changes_in_preview": 48,
+  "canonical": {
+    "selected": 49,
+    "issue_count": 48
+  },
+  "preview": {
+    "selected": 49,
+    "issue_count": 0
+  },
+  "delta": {
+    "issue_count": -48,
+    "selected": 0
+  }
+}
