@@ -153,3 +153,13 @@ Added manual-map validator to catch invalid canonical inputs early:
 
 Current baseline: `status=fail`, `issue_count=48` (mostly `not-in-candidate-list` on provisional selected rows).
 Gate checker now surfaces this validation status for operator visibility.
+
+
+## 2026-05-19 Candidate-safe repair proposals
+
+Generated proposal set for 48 invalid selected lines (`not-in-candidate-list`):
+- `e2r-golditem-selected-repair-proposals.csv`
+- `e2r-golditem-selected-repair-proposals.md`
+- `e2r-golditem-selected-repair-simulation.json`
+
+Simulation result indicates proposal application would reduce validator issues from 48 to 0 without changing selected-row count.

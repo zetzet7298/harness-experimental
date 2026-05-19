@@ -60,3 +60,11 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 - Output:
   - `e2r-golditem-manual-map-validate.md`
   - `e2r-golditem-manual-map-validate.json`
+
+
+## Repair proposals cho selected line lỗi
+- `e2r-golditem-selected-repair-proposals.csv`
+- `e2r-golditem-selected-repair-proposals.md`
+- `e2r-golditem-selected-repair-simulation.json`
+
+Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đóng gate.
