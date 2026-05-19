@@ -189,3 +189,12 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Artifacts:
   - `e2r-human-decision-receipt.md`
   - `e2r-human-decision-receipt.json`
+
+
+## Approve + finalize orchestrator
+- Preview orchestration:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-approve-and-finalize.py --decided-by "<human>" --mode accept-provisional --note "..."`
+- Apply thật (decision + finalize chain):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-approve-and-finalize.py --decided-by "<human>" --mode accept-provisional --note "..." --apply`
+- Output:
+  - `e2r-approve-and-finalize-report.json`

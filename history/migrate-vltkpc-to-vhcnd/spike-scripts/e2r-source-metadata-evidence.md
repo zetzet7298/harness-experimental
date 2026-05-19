@@ -343,3 +343,15 @@ Added decision capture utility to reduce manual JSON edits:
 - `e2r-human-decision-receipt.json`
 
 Supports preview mode (no write) and apply mode (writes `e2r-gate-decision.json`).
+
+
+## 2026-05-19 Approve-and-finalize orchestrator
+
+Added single-entry orchestrator for human decision + finalize path:
+- `e2r-approve-and-finalize.py`
+- `e2r-approve-and-finalize-report.json`
+
+Baseline preview run:
+- mode=accept-provisional
+- apply=false
+- gate=blocked, bead_closed=false, audit=incomplete
