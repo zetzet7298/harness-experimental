@@ -120,3 +120,14 @@ Progress snapshot automation upgraded with history + latest diff artifacts:
 - `e2r-golditem-progress-diff-latest.json`
 
 This allows quick verification of reviewer movement between consecutive checks.
+
+
+## 2026-05-19 Gate readiness automation
+
+Added gate-check artifacts for `mig-ja5` close criteria:
+- `e2r-gate-readiness-check.py`
+- `e2r-gate-readiness.md`
+- `e2r-gate-readiness.json`
+- `e2r-gate-decision.json` (human-controlled provisional acceptance flag)
+
+Current computed status: `blocked` (remaining Gold rows 100, provisional acceptance flag false).

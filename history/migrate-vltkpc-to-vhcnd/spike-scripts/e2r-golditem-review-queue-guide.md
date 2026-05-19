@@ -34,3 +34,13 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 - Xem kết quả:
   - `e2r-golditem-progress-snapshot.md`
   - `e2r-golditem-progress-snapshot.json`
+
+
+## Gate readiness check
+- Chạy kiểm tra gate:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-gate-readiness-check.py`
+- Xem kết quả:
+  - `e2r-gate-readiness.md`
+  - `e2r-gate-readiness.json`
+- File quyết định provisional (human-controlled):
+  - `e2r-gate-decision.json`

@@ -1,0 +1,6 @@
+{
+  "accept_provisional_for_e_m3_to_e_m7": false,
+  "decision_note": "Set true only when human explicitly accepts provisional Gold mapping.",
+  "decided_by": "",
+  "decided_at": ""
+}
