@@ -1,0 +1,237 @@
+{
+  "generatedBy": "scripts/vltk-audit-equipment-formula-parity.py",
+  "markers": {
+    "LEVEL_ADD_BY_SERIES": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 18,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 45,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 67,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 159,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 159,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 429,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 429,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 436,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 436,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 861,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 862,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "PC_MAX_RESIST = 95": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 27,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "activeMagicAttributes": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 646,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 661,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 687,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 864,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 875,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "applyAddPhysicsDamagePercent": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 360,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 367,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 382,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 385,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 572,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 606,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "applyPcResistDamage": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 798,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 814,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 1,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 449,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 450,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 451,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 452,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 453,
+          "target": "src/systems/simulation.ts"
+        }
+      ]
+    },
+    "calculateEquipEnhance": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 678,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 688,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 863,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 874,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "damage * (100 - cappedByGlobalMax) / 100": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 817,
+          "target": "src/domain/equipment.ts"
+        }
+      ]
+    },
+    "resolveSkillDamageBreakdown": {
+      "found": true,
+      "occurrences": [
+        {
+          "line": 364,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 605,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 749,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 763,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 795,
+          "target": "src/domain/equipment.ts"
+        },
+        {
+          "line": 1,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 429,
+          "target": "src/systems/simulation.ts"
+        },
+        {
+          "line": 591,
+          "target": "src/systems/simulation.ts"
+        }
+      ]
+    }
+  },
+  "schemaVersion": 2,
+  "series_conquer_multiplier": {
+    "evidence": "src/domain/equipment.ts:DEFAULT_SERIES_CONQUER",
+    "unit": "milli",
+    "value": 1000
+  },
+  "summary": {
+    "foundMarkers": 8,
+    "missingMarkers": [],
+    "status": "pass",
+    "totalMarkers": 8
+  },
+  "targets": [
+    "src/domain/equipment.ts",
+    "src/systems/simulation.ts"
+  ]
+}

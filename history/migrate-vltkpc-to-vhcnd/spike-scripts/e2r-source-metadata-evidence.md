@@ -40,3 +40,18 @@ The VHCND source for `GoldItem.txt` is significantly expanded compared to legacy
     1. Implement a stat-matching algorithm to find the correct VHCND row.
     2. Request a manual "Source Line" map from the developer for the 171 critical Gold items.
     3. Block E_M3 until GoldItem provenance is resolved.
+
+
+## 2026-05-19 Provisional Gold remap unblock
+
+- Applied provisional Gold manual map from `e2r-golditem-manual-map-template.csv` after auto-filling 49 suggested rows.
+- Updated `game-source/src/data/equipmentCatalog.json`:
+  - `171/171` Gold items now use `ServerNew/_bin_v2_/gs/Settings/item/004/GoldItem.txt`.
+  - `49` Gold items received provisional `source.line` from `selected_vhcnd_line`.
+  - Remaining Gold rows keep prior line index pending human canonical review.
+- Validation checks:
+  - `python3 -m py_compile scripts/vltk-audit-equipment-stat-coverage.py scripts/vltk-normalize-equipment-index.py` ✅
+  - `vltk-audit-equipment-stat-coverage.py ... --vltkpc-root /var/www/vhcnd/sources` ✅ (`noFabricationCheck.status=pass`, `sourceLinesValid=1231/1231`).
+  - Catalog now has `0` `Client/Settings/*` source paths and no `/var/www/vltkpc`/`/var/www/vltkunity` absolute source paths.
+
+> Note: This is an unblock pass for swarming continuity. Final canonical Gold mapping still requires reviewer confirmation for non-suggested rows.
