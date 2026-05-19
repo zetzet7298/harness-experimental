@@ -1,6 +1,6 @@
 # E2R Swarming Completion Audit
 
-Generated (UTC): `2026-05-19T16:13:12.689305+00:00`
+Generated (UTC): `2026-05-19T16:20:16.679596+00:00`
 
 Overall: **incomplete**
 One-line: `E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0`

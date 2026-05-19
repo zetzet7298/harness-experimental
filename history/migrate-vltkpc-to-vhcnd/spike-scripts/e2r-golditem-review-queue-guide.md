@@ -214,3 +214,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
 - Output:
   - `e2r-artifact-integrity-check.md`
   - `e2r-artifact-integrity-check.json`
+
+
+## Go/No-Go verdict
+- Chạy tổng hợp verdict:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-go-no-go.py`
+- Output:
+  - `e2r-go-no-go.md`
+  - `e2r-go-no-go.json`
