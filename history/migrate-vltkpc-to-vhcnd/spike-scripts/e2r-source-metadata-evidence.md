@@ -393,3 +393,11 @@ Added consolidated verdict generator:
 - `e2r-go-no-go.json`
 
 Current verdict: `GO-WAITING-HUMAN-APPROVAL`.
+
+
+## 2026-05-19 Approval-run shell entrypoint
+
+Added shell entrypoint for post-approval execution:
+- `e2r-run-on-approval.sh`
+
+This runs preflight -> approve-and-finalize -> go/no-go + pulse refresh in one command using env vars.

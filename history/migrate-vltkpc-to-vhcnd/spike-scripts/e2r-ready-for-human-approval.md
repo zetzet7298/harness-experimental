@@ -23,3 +23,10 @@ Nếu không chấp nhận provisional:
 cd /var/www/vltk-h5-survivors/harness-experimental
 python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-approve-and-finalize.py   --decided-by "<human>"   --mode canonical-first   --note "Canonical completion required"   --apply
 ```
+
+
+## One-command execution after approval
+
+```bash
+E2R_DECIDED_BY="<human>" E2R_MODE="accept-provisional" E2R_NOTE="Provisional accepted by human" bash history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-on-approval.sh
+```
