@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-05-19T16:11:02.185870+00:00",
+  "generated_at_utc": "2026-05-19T16:15:28.654264+00:00",
   "decided_by": "preview-operator",
-  "mode": "accept-provisional",
-  "accept_provisional_for_e_m3_to_e_m7": true,
-  "note": "preview orchestration",
+  "mode": "canonical-first",
+  "accept_provisional_for_e_m3_to_e_m7": false,
+  "note": "decision-sim",
   "applied": false
 }

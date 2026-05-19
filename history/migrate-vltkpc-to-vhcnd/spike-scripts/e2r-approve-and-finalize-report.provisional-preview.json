@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-05-19T16:15:28.660222+00:00",
+  "generated_at_utc": "2026-05-19T16:15:28.568808+00:00",
   "decided_by": "preview-operator",
-  "mode": "canonical-first",
+  "mode": "accept-provisional",
   "apply": false,
   "steps": [
     {
@@ -11,12 +11,12 @@
         "--decided-by",
         "preview-operator",
         "--mode",
-        "canonical-first",
+        "accept-provisional",
         "--note",
         "decision-sim"
       ],
       "exit_code": 0,
-      "stdout_tail": "decision_mode=canonical-first accept=False applied=False\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-human-decision-receipt.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-human-decision-receipt.md\n",
+      "stdout_tail": "decision_mode=accept-provisional accept=True applied=False\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-human-decision-receipt.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-human-decision-receipt.md\n",
       "stderr_tail": ""
     }
   ],

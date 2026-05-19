@@ -355,3 +355,13 @@ Baseline preview run:
 - mode=accept-provisional
 - apply=false
 - gate=blocked, bead_closed=false, audit=incomplete
+
+
+## 2026-05-19 Decision simulation A/B
+
+Generated preview-only simulation for both finalize modes:
+- provisional preview report
+- canonical preview report
+- consolidated comparison (`e2r-decision-simulation.*`)
+
+Both remain blocked in preview mode by design (no `--apply`).

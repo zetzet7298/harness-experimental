@@ -198,3 +198,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-approve-and-finalize.py --decided-by "<human>" --mode accept-provisional --note "..." --apply`
 - Output:
   - `e2r-approve-and-finalize-report.json`
+
+
+## Decision simulation (preview A/B)
+- Artifacts:
+  - `e2r-decision-simulation.md`
+  - `e2r-decision-simulation.json`
+  - `e2r-approve-and-finalize-report.provisional-preview.json`
+  - `e2r-approve-and-finalize-report.canonical-preview.json`
