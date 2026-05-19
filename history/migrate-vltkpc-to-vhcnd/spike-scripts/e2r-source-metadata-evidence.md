@@ -97,3 +97,16 @@ Added markdown checklist pack so reviewer can process queue in tracked batches:
 - `e2r-golditem-review-checklist-hard.md`
 
 Master checklist includes canonical target reminder + stat-audit verify command.
+
+
+## 2026-05-19 Progress snapshot automation
+
+Added tracking script and generated baseline snapshot:
+- `e2r-golditem-progress-snapshot.py`
+- `e2r-golditem-progress-snapshot.md`
+- `e2r-golditem-progress-snapshot.json`
+
+Baseline at generation time:
+- canonical selected rows: 49/149
+- remaining rows: 100
+- checklist ticks: easy 0/7, medium 0/30, hard 0/63

@@ -20,3 +20,11 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 - T3-hard: `candidate_count > 5`
 
 > Queue này là artifact hỗ trợ review, không tự động cập nhật template canonical.
+
+
+## Theo dõi tiến độ
+- Chạy snapshot:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.py`
+- Xem kết quả:
+  - `e2r-golditem-progress-snapshot.md`
+  - `e2r-golditem-progress-snapshot.json`
