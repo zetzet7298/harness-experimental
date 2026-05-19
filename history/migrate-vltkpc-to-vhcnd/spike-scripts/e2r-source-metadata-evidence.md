@@ -86,3 +86,14 @@ Added queue artifacts to prioritize remaining canonical review:
 - `e2r-golditem-review-queue-guide.md`
 
 These files are assist-only and do not mutate canonical mapping.
+
+
+## 2026-05-19 Checklist pack for human canonical review
+
+Added markdown checklist pack so reviewer can process queue in tracked batches:
+- `e2r-golditem-review-checklist-master.md`
+- `e2r-golditem-review-checklist-easy.md`
+- `e2r-golditem-review-checklist-medium.md`
+- `e2r-golditem-review-checklist-hard.md`
+
+Master checklist includes canonical target reminder + stat-audit verify command.
