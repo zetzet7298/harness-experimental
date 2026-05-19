@@ -19,6 +19,22 @@ normalized packets, preview reports, or runtime spritesheets.
 7. Update this harness when the product contract, validation gates, or repeated
    porting workflow changes.
 
+## Equipment System
+
+- Generated equipment catalog: `game-source/src/data/equipmentCatalog.json`.
+- Seed inventory: `game-source/src/data/inventory.json`, schema v2, all VLTKPC equip
+  slots represented as `head`, `body`, `belt`, `weapon`, `foot`, `cuff`,
+  `amulet`, `ring1`, `ring2`, `pendant`, and `horse`.
+- Mobile bag policy: every equipment item occupies one grid cell even when the
+  source VLTKPC item has larger legacy width/height.
+- Runtime persistence key: `vltkpc-equipment-state-v1`.
+- Supported formula coverage lives in `game-source/src/domain/equipment.ts`;
+  every key present in the current generated equipment catalog must be mapped into
+  stat/audit fields or explicitly tracked in `unsupportedAttributes` until PC
+  source parity is implemented.
+- Long SPR copy/extract phases should use the auto parallel worker path such as
+  `scripts/vltk-extract-required-sprs.py --workers auto`.
+
 ## Current Known Loadout
 
 - Horse: `Phiên Vũ`.
@@ -41,8 +57,9 @@ normalized packets, preview reports, or runtime spritesheets.
   evidence is present.
 - Runtime gate: H5 runtime loads only assets copied into `game-source`; it must
   never load directly from `/var/www/vltkpc`.
-- Validation gate: packet and alias behavior must remain covered by smoke tests
-  when the porting scripts or known loadout artifacts change.
+- Validation gate: packet, alias, equipment catalog, slot coverage, seed inventory,
+  and known item option behavior must remain covered by smoke tests when porting
+  scripts or generated equipment artifacts change.
 - Skill gate: VLTKPC skill/effect packets (for example `Bổng Đả ác Cẩu` and `Kháng Long Hữu Hối`) require
   source SPR/SFX copy plus side-by-side parity artifacts before any `100%` claim.
 - Map gate: VLTKPC map ports require active `MapList` identity, `.wor`/minimap PAK extraction evidence, copied local runtime assets, client `Region_C.dat` ground-layer evidence for gameplay background, and server region/NPC filtering evidence.
@@ -50,15 +67,17 @@ normalized packets, preview reports, or runtime spritesheets.
 
 ## Current Limits
 
-- The workflow proves one known equipped character path, not the full VLTKPC
-  equipment catalog.
+- The workflow now imports the equipment catalog and maps every attribute key
+  present in that catalog; future attributes outside the current catalog must be
+  traced to PC source before being claimed.
 - SPR extraction and composition are build-time/tooling operations, not runtime
-  gameplay systems.
+  direct reads from legacy PC folders.
 - Visual approval is still manual unless a later story adds automated screenshot
   comparison or browser playtest artifacts.
 - The known runtime sheets now cover 8 mounted-run directions and 8 mounted-idle
-  directions with 10 frames per direction; this is still one known loadout, not
-  generalized equipment swapping.
+  directions. Runtime can select approved head/body wardrobe combo sheets from
+  equipped items when a generated combo exists; arbitrary weapon/horse visual
+  composition remains a preview-gated follow-up.
 - The `Bổng Đả ác Cẩu` skill packet and runtime assets now include byte-accurate
   legacy-path extraction evidence, generated skill sheets, and side-by-side
   PNG/GIF parity artifacts.

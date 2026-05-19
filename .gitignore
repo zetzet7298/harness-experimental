@@ -1,0 +1,15 @@
+# Khuym/agent runtime state (local-only)
+.khuym/
+
+# Kiro IDE local state
+.kiro/
+
+# VSCode workspace files (per-developer)
+*.code-workspace
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
