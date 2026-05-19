@@ -1,0 +1,1030 @@
+{
+  "catalog": "/var/www/vltk-h5-survivors/game-source/src/data/equipmentCatalog.json",
+  "catalogItems": 1231,
+  "compileCheck": {
+    "exitCode": 0,
+    "scripts": [
+      "vltk-audit-equipment-stat-coverage.py",
+      "vltk-normalize-equipment-index.py"
+    ]
+  },
+  "createdAt": "2026-05-19T14:45:00+07:00",
+  "currentStatAuditProbe": {
+    "command": "python3 scripts/vltk-audit-equipment-stat-coverage.py --catalog src/data/equipmentCatalog.json --source src/domain/equipment.ts --out /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/outputs/e2r-validation-current-stat.audit.json --vltkpc-root /var/www/vhcnd/sources",
+    "exitCode": 1,
+    "firstMismatchReasons": [
+      [
+        "source-file-unreadable",
+        1231
+      ]
+    ],
+    "itemsChecked": 1231,
+    "mismatchCount": 1231,
+    "noFabricationStatus": "fail",
+    "out": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/outputs/e2r-validation-current-stat.audit.json",
+    "sourceLinesValid": 0
+  },
+  "distinctSourcePaths": 12,
+  "epicId": "E_M2R",
+  "feature": "migrate-vltkpc-to-vhcnd",
+  "purpose": "Validation probe for vhcnd ServerNew source provenance remediation readiness.",
+  "rowIdentityRemapProbe": [
+    {
+      "ambiguousByNumericSpriteKey": 146,
+      "filename": "GoldItem.txt",
+      "items": 171,
+      "noMatchByNumericSpriteKey": 13,
+      "uniqueByNumericSpriteKey": 12
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "amulet.txt",
+      "items": 40,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 40
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "armor.txt",
+      "items": 280,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 280
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "belt.txt",
+      "items": 40,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 40
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "boot.txt",
+      "items": 80,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 80
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "cuff.txt",
+      "items": 40,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 40
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "helm.txt",
+      "items": 280,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 280
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "horse.txt",
+      "items": 60,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 60
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "meleeweapon.txt",
+      "items": 120,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 120
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "pendant.txt",
+      "items": 40,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 40
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "rangeweapon.txt",
+      "items": 60,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 60
+    },
+    {
+      "ambiguousByNumericSpriteKey": 0,
+      "filename": "ring.txt",
+      "items": 20,
+      "noMatchByNumericSpriteKey": 0,
+      "uniqueByNumericSpriteKey": 20
+    }
+  ],
+  "rowProbeSamples": [
+    {
+      "filename": "GoldItem.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-梦龙法冠-2-10",
+          "key": [
+            "0",
+            "7",
+            "0",
+            "\\spr\\item\\equip\\cap\\obj-ma-cap03-2.spr",
+            "28",
+            "10"
+          ],
+          "matchCount": 0,
+          "matches": []
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-梦龙戒衫-3-10",
+          "key": [
+            "0",
+            "2",
+            "0",
+            "\\spr\\item\\equip\\armor\\obj-ma-cloth03-1.spr",
+            "22",
+            "10"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              14,
+              "TÃ¸ KhÂ«ng TÃ¶ Kim CÂµ Sa"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 4,
+          "itemId": "vltkpc-梦龙软绦-4-10",
+          "key": [
+            "0",
+            "6",
+            "0",
+            "\\spr\\item\\equip\\sash\\obj-sash06.spr",
+            "33",
+            "10"
+          ],
+          "matchCount": 18,
+          "matches": [
+            [
+              5,
+              "MÃ©ng Long HuyÌn Ti PhÂ¸t Â®Â¸i"
+            ],
+            [
+              55,
+              "BÆ¯ch HÂ¶i HÃ¥ng Linh Kim Ti Â®Â¸i"
+            ],
+            [
+              224,
+              "[Â§Ình thÃªi] HuyÌn ThiÆ t PhÂ¸t Â§Â¸i"
+            ],
+            [
+              274,
+              "[Â§Ình thÃªi] BÆ¯ch HÂ¶i HÃ¥ng Linh Kim Ty Â§Â¸i"
+            ],
+            [
+              845,
+              "[Â§Ình thÃªi] HuyÌn ThiÆ t PhÂ¸t Â§Â¸i"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "amulet.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-day-chuyen-đong-2-1",
+          "key": [
+            "0",
+            "4",
+            "0",
+            "\\spr\\item\\equip\\nick\\obj_neck01.spr",
+            "36",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Â§Ã¥ng HÂ¹ng LiÂªn"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-day-chuyen-đong-2-1-magic",
+          "key": [
+            "0",
+            "4",
+            "0",
+            "\\spr\\item\\equip\\nick\\obj_neck01.spr",
+            "36",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Â§Ã¥ng HÂ¹ng LiÂªn"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-ngan-hang-liem-3-2",
+          "key": [
+            "0",
+            "4",
+            "0",
+            "\\spr\\item\\equip\\nick\\obj_neck02.spr",
+            "36",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "NgÂ©n HÂ¹ng LiÂªn"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "armor.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-sa-di-phuc-2-1",
+          "key": [
+            "0",
+            "2",
+            "0",
+            "\\spr\\item\\equip\\armor\\obj-ma-cloth01-1.spr",
+            "22",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Sa Di phÃ´c"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-sa-di-phuc-2-1-magic",
+          "key": [
+            "0",
+            "2",
+            "0",
+            "\\spr\\item\\equip\\armor\\obj-ma-cloth01-1.spr",
+            "22",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Sa Di phÃ´c"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-tang-y-3-2",
+          "key": [
+            "0",
+            "2",
+            "0",
+            "\\spr\\item\\equip\\armor\\obj-ma-cloth01-1.spr",
+            "22",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "TÂ¨ng y"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "belt.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-nguu-bi-yeu-đai-2-1",
+          "key": [
+            "0",
+            "6",
+            "0",
+            "\\spr\\item\\equip\\sash\\obj-sash01.spr",
+            "32",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "NgÂ­u BÃ YÂªu Â§Â¸i"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-nguu-bi-yeu-đai-2-1-magic",
+          "key": [
+            "0",
+            "6",
+            "0",
+            "\\spr\\item\\equip\\sash\\obj-sash01.spr",
+            "32",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "NgÂ­u BÃ YÂªu Â§Â¸i"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-lang-bi-yeu-đai-3-2",
+          "key": [
+            "0",
+            "6",
+            "0",
+            "\\spr\\item\\equip\\sash\\obj-sash02.spr",
+            "32",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "Lang BÃ YÂªu Â§Â¸i"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "boot.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thao-ngoa-2-1",
+          "key": [
+            "0",
+            "5",
+            "0",
+            "\\spr\\item\\equip\\boots\\obj-shoes01.spr",
+            "26",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "ThÂ¶o Ngoa"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thao-ngoa-2-1-magic",
+          "key": [
+            "0",
+            "5",
+            "0",
+            "\\spr\\item\\equip\\boots\\obj-shoes01.spr",
+            "26",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "ThÂ¶o Ngoa"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-bo-ngoa-3-2",
+          "key": [
+            "0",
+            "5",
+            "0",
+            "\\spr\\item\\equip\\boots\\obj-shoes01.spr",
+            "26",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "BÃ¨ Ngoa"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "cuff.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thanh-đong-thu-trac-2-1",
+          "key": [
+            "0",
+            "8",
+            "0",
+            "\\spr\\item\\equip\\bangle\\obj-bangle01.spr",
+            "35",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Thanh Â§Ã¥ng ThÃ± TrÂ¹c"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thanh-đong-thu-trac-2-1-magic",
+          "key": [
+            "0",
+            "8",
+            "0",
+            "\\spr\\item\\equip\\bangle\\obj-bangle01.spr",
+            "35",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Thanh Â§Ã¥ng ThÃ± TrÂ¹c"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-luyen-đong-thu-trac-3-2",
+          "key": [
+            "0",
+            "8",
+            "0",
+            "\\spr\\item\\equip\\bangle\\obj-bangle02.spr",
+            "35",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "LuyÃn Â§Ã¥ng ThÃ± TrÂ¹c"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "helm.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-sa-di-gioi-co-2-1",
+          "key": [
+            "0",
+            "7",
+            "0",
+            "\\spr\\item\\equip\\cap\\obj-ma-cap01-1.spr",
+            "28",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Sa Di GiÃ­i CÂ« "
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-sa-di-gioi-co-2-1-magic",
+          "key": [
+            "0",
+            "7",
+            "0",
+            "\\spr\\item\\equip\\cap\\obj-ma-cap01-1.spr",
+            "28",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Sa Di GiÃ­i CÂ« "
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-tang-gioi-co-3-2",
+          "key": [
+            "0",
+            "7",
+            "0",
+            "\\spr\\item\\equip\\cap\\obj-ma-cap01-1.spr",
+            "28",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "TÂ¨ng GiÃ­i CÂ« "
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "horse.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-liet-hoang-ma-2-1",
+          "key": [
+            "0",
+            "10",
+            "0",
+            "\\spr\\item\\equip\\horse\\horse003.spr",
+            "40",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "LiÃt HoÂµng MÂ·"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-liet-hoang-ma-3-2",
+          "key": [
+            "0",
+            "10",
+            "0",
+            "\\spr\\item\\equip\\horse\\horse003.spr",
+            "40",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "LiÃt HoÂµng MÂ·"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 4,
+          "itemId": "vltkpc-hoang-ma-4-3",
+          "key": [
+            "0",
+            "10",
+            "0",
+            "\\spr\\item\\equip\\horse\\horse003.spr",
+            "40",
+            "3"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              5,
+              "HoÂµng MÂ·"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "meleeweapon.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thiet-truy-thu-2-1",
+          "key": [
+            "0",
+            "0",
+            "0",
+            "\\spr\\item\\equip\\closeweapon\\obj-sword01.spr",
+            "9",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "ThiÆ t TrÃ±y thÃ±"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-thiet-truy-thu-2-1-magic",
+          "key": [
+            "0",
+            "0",
+            "0",
+            "\\spr\\item\\equip\\closeweapon\\obj-sword01.spr",
+            "9",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "ThiÆ t TrÃ±y thÃ±"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-cang-kiem-3-2",
+          "key": [
+            "0",
+            "0",
+            "0",
+            "\\spr\\item\\equip\\closeweapon\\obj-sword02.spr",
+            "9",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "Cang KiÆ m"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "pendant.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-huan-y-huong-nang-2-1",
+          "key": [
+            "0",
+            "9",
+            "0",
+            "\\spr\\item\\equip\\waist\\obj-waist01.spr",
+            "36",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "HuÂ©n Y HÂ­Â¬ng Nang"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-huan-y-huong-nang-2-1-magic",
+          "key": [
+            "0",
+            "9",
+            "0",
+            "\\spr\\item\\equip\\waist\\obj-waist01.spr",
+            "36",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "HuÂ©n Y HÂ­Â¬ng Nang"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-mat-li-huong-nang-3-2",
+          "key": [
+            "0",
+            "9",
+            "0",
+            "\\spr\\item\\equip\\waist\\obj-waist02.spr",
+            "36",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "MÂ¹t LÌ HÂ­Â¬ng Nang"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "rangeweapon.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-kim-tien-tieu-2-1",
+          "key": [
+            "0",
+            "1",
+            "0",
+            "\\spr\\item\\equip\\rangeweapon\\obj-adart01.spr",
+            "15",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Kim TiÌn tiÂªu"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-kim-tien-tieu-2-1-magic",
+          "key": [
+            "0",
+            "1",
+            "0",
+            "\\spr\\item\\equip\\rangeweapon\\obj-adart01.spr",
+            "15",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "Kim TiÌn tiÂªu"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-thieu-lam-tao-nhan-tieu-3-2",
+          "key": [
+            "0",
+            "1",
+            "0",
+            "\\spr\\item\\equip\\rangeweapon\\obj-adart01.spr",
+            "15",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "ThiÆ u LÂ©m TÂ¸o NhÂ©n TiÂªu"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "ring.txt",
+      "samples": [
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-hoang-ngoc-gioi-chi-2-1",
+          "key": [
+            "0",
+            "3",
+            "0",
+            "\\spr\\item\\equip\\ring\\obj-ring01.spr",
+            "37",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "HoÂµng NgÃ¤c GiÃ­i ChÃ"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 2,
+          "itemId": "vltkpc-hoang-ngoc-gioi-chi-2-1-magic",
+          "key": [
+            "0",
+            "3",
+            "0",
+            "\\spr\\item\\equip\\ring\\obj-ring01.spr",
+            "37",
+            "1"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              3,
+              "HoÂµng NgÃ¤c GiÃ­i ChÃ"
+            ]
+          ]
+        },
+        {
+          "catalogLine": 3,
+          "itemId": "vltkpc-nhan-qua-tram-3-2",
+          "key": [
+            "0",
+            "3",
+            "0",
+            "\\spr\\item\\equip\\ring\\obj-ring02.spr",
+            "37",
+            "2"
+          ],
+          "matchCount": 1,
+          "matches": [
+            [
+              4,
+              "CÂ¶m LÂ·m ThÂ¹ch GiÃ­i ChÃ"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceFiles": [
+    {
+      "catalogMaxLine": 172,
+      "filename": "GoldItem.txt",
+      "items": 171,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/GoldItem.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/GoldItem.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 6332,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/GoldItem.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 21,
+      "filename": "amulet.txt",
+      "items": 40,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/amulet.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/amulet.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 22,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/amulet.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 141,
+      "filename": "armor.txt",
+      "items": 280,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/armor.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/armor.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 292,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/armor.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 21,
+      "filename": "belt.txt",
+      "items": 40,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/belt.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/belt.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 22,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/belt.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 41,
+      "filename": "boot.txt",
+      "items": 80,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/boot.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/boot.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 42,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/boot.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 21,
+      "filename": "cuff.txt",
+      "items": 40,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/cuff.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/cuff.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 22,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/cuff.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 141,
+      "filename": "helm.txt",
+      "items": 280,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/helm.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/helm.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 143,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/helm.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 61,
+      "filename": "horse.txt",
+      "items": 60,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/horse.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/horse.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 333,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/horse.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 61,
+      "filename": "meleeweapon.txt",
+      "items": 120,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/meleeweapon.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/meleeweapon.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 72,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/meleeweapon.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 21,
+      "filename": "pendant.txt",
+      "items": 40,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/pendant.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/pendant.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 22,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/pendant.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 31,
+      "filename": "rangeweapon.txt",
+      "items": 60,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/rangeweapon.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/rangeweapon.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 32,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/rangeweapon.txt",
+      "vhcndVnExists": true
+    },
+    {
+      "catalogMaxLine": 11,
+      "filename": "ring.txt",
+      "items": 20,
+      "lineCountCoversCatalog": true,
+      "sourcePath": "Client/Settings/item/ring.txt",
+      "vhcnd004": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/item/004/ring.txt",
+      "vhcnd004Exists": true,
+      "vhcnd004LineCount": 12,
+      "vhcndVn": "/var/www/vhcnd/sources/ServerNew/_bin_v2_/gs/Settings/vn/ring.txt",
+      "vhcndVnExists": true
+    }
+  ],
+  "validationDecision": {
+    "constraints": [
+      "Non-GoldItem rows are remappable by numeric/sprite key (1060/1060 unique across 11 files), but same-line preservation is not valid because vhcnd files include different/header rows.",
+      "GoldItem cannot use numeric/sprite key alone: 12 unique, 146 ambiguous, 13 no-match among 171 items. First execution bead must produce deterministic GoldItem remap or stop before implementation.",
+      "Current stat audit still fails as expected before E_M2R implementation: source-file-unreadable via Client/Settings/item/*.txt under /var/www/vhcnd/sources."
+    ],
+    "feasibility": "READY_WITH_CONSTRAINTS",
+    "realityGate": "PASS"
+  }
+}

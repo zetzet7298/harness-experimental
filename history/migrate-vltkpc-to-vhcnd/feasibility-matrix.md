@@ -89,3 +89,32 @@ E_M2 has now executed. The integration readiness section above is historical for
 ## Updated outcome
 
 READY for validation of E_M2R only. Execution beads should remain uncreated until validating accepts the current story pack in `current-work.md`.
+
+---
+
+## E_M2R validation result
+
+Validation decision: `READY WITH CONSTRAINTS`.
+
+Reality gate:
+
+- Mode fit: PASS (`high_risk_feature` remains appropriate; provenance touches all 1,231 catalog items and gates broad rebrand).
+- Repo fit: PASS (target game-source scripts/catalog exist; vhcnd `ServerNew/_bin_v2_/gs/Settings/item/004` and `Settings/vn` roots exist).
+- Assumptions: PASS WITH CONSTRAINTS (all 12 source files exist; non-GoldItem remap is deterministic by numeric/sprite key; GoldItem remains the first execution bead's gating probe).
+- Smaller path: PASS (only E_M2R beads were created; E_M3..E_M7 remain gated).
+- Proof surface: PASS (`history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-validation-evidence.md` and `e2r-validation-summary.json`).
+
+Created current-work beads:
+
+1. `mig-e2r-probe-njc` — E_M2R probe: vhcnd source row remap evidence.
+2. `mig-e2r-implementation-651` — E_M2R implementation: translate catalog provenance and audit policy. Depends on probe.
+3. `mig-e2r-audit-rerun-d4u` — E_M2R audit rerun: US-011 ordered audits on vhcnd provenance. Depends on implementation.
+4. `mig-e2r-synthesis-30w` — E_M2R synthesis: go/no-go for resuming E_M3. Depends on audit rerun.
+
+Bead review:
+
+- `bv --robot-triage --graph-root mig-e2r-probe-njc` reports 4 open beads, 1 actionable, 3 blocked, no cycles.
+- `mig-e2r-probe-njc` is the only actionable start bead and explicitly blocks implementation unless GoldItem remap is solved or reported as `[BLOCKED]`.
+- `bv --robot-suggest`, `bv --robot-insights`, and `bv --robot-priority` were run. Suggestions were label/priority heuristics only; no critical bead-structure issue was found.
+
+Approval status: execution is **not** auto-approved. Human approval is required before invoking `khuym:swarming`.
