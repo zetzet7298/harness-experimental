@@ -55,3 +55,22 @@ The VHCND source for `GoldItem.txt` is significantly expanded compared to legacy
   - Catalog now has `0` `Client/Settings/*` source paths and no `/var/www/vltkpc`/`/var/www/vltkunity` absolute source paths.
 
 > Note: This is an unblock pass for swarming continuity. Final canonical Gold mapping still requires reviewer confirmation for non-suggested rows.
+
+
+## 2026-05-19 Heuristic assist for remaining 100 Gold rows
+
+To reduce manual review load for gate `mig-ja5`, generated:
+- `history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-heuristic-assist.csv`
+
+Scope:
+- Only rows still missing `selected_vhcnd_line` (100 rows).
+- No template overwrite performed.
+
+Heuristic currently emitted:
+- Parse `H5_ID` old-line token and pick nearest candidate line in `candidate_vhcnd_lines`.
+- Marked all recommendations as `low` confidence (assist-only, non-canonical).
+
+Use:
+1. Reviewer cross-checks each `recommended_line` in `GoldItem.txt`.
+2. Copy confirmed values into `e2r-golditem-manual-map-template.csv`.
+3. Re-run stat audit to confirm no-fabrication remains pass.
