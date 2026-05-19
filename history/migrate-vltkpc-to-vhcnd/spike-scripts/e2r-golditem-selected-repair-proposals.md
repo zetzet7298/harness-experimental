@@ -20,3 +20,8 @@ Mục tiêu: sửa nhanh các dòng đã chọn nhưng không nằm trong candid
 3. Chạy lại:
    - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.py`
    - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py`
+
+
+## Operator command
+- Dry-run: `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py`
+- Apply: `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply`

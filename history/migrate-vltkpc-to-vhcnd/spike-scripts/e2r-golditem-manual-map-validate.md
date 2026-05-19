@@ -1,6 +1,6 @@
 # E2R GoldItem Manual Map Validation
 
-Generated (UTC): `2026-05-19T15:13:50.518865+00:00`
+Generated (UTC): `2026-05-19T15:21:40.580578+00:00`
 
 - GoldItem data lines: **5945**
 - Selected rows: **49/149**

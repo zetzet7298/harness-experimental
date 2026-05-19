@@ -163,3 +163,12 @@ Generated proposal set for 48 invalid selected lines (`not-in-candidate-list`):
 - `e2r-golditem-selected-repair-simulation.json`
 
 Simulation result indicates proposal application would reduce validator issues from 48 to 0 without changing selected-row count.
+
+
+## 2026-05-19 Repair apply helper
+
+Added helper script to operationalize repair proposals:
+- `e2r-golditem-apply-repair-proposals.py`
+- `e2r-golditem-apply-repair-report.json`
+
+Baseline dry-run result: `change_count=48` (no template mutation in dry-run mode).

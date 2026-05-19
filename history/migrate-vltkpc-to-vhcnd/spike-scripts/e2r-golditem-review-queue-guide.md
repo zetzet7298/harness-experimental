@@ -68,3 +68,12 @@ Mục tiêu: tăng tốc review 100 dòng Gold còn thiếu `selected_vhcnd_line
 - `e2r-golditem-selected-repair-simulation.json`
 
 Dùng để xử lý nhanh các lỗi `not-in-candidate-list` trước khi đóng gate.
+
+
+## Apply repair proposals (operator-safe)
+- Dry-run (không sửa template):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py`
+- Apply thật (ghi vào template):
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply`
+- Báo cáo thay đổi:
+  - `e2r-golditem-apply-repair-report.json`
