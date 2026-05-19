@@ -409,3 +409,11 @@ Updated `e2r-run-on-approval.sh` with explicit safety gate:
 - requires `E2R_CONFIRM=YES` before apply flow can run.
 
 This prevents accidental finalize execution from partially-set environments.
+
+
+## 2026-05-19 Approval command printer
+
+Added command-printer utility to reduce env typo risk:
+- `e2r-print-approval-command.py`
+
+Outputs a copy-paste safe command with `E2R_CONFIRM=YES` and all required variables.

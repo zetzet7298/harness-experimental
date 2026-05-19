@@ -30,3 +30,10 @@ python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-approve-and-finalize.p
 ```bash
 E2R_DECIDED_BY="<human>" E2R_MODE="accept-provisional" E2R_NOTE="Provisional accepted by human" bash history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-on-approval.sh
 ```
+
+
+## Print command helper (avoid typo)
+
+```bash
+python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-print-approval-command.py   --decided-by "<human>"   --mode accept-provisional   --note "Provisional accepted by human"
+```
