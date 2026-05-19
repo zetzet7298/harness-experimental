@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-19T15:32:17.154940+00:00",
+  "generated_at_utc": "2026-05-19T15:41:59.033810+00:00",
   "current_one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0",
   "current_gate_status": "blocked",
   "options": [
@@ -20,18 +20,15 @@
     },
     {
       "id": "B_provisional_accept",
-      "label": "Áp repair proposals + chấp nhận provisional để mở tiếp",
+      "label": "Giữ 100 dòng chưa canonical nhưng mở tiếp theo provisional đã kiểm chứng",
       "expected_gate_status_after_action": "ready-provisional-approved",
       "commands": [
-        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-proposals.py --apply --verify",
-        "Sửa e2r-gate-decision.json: accept_provisional_for_e_m3_to_e_m7=true + decided_by + decided_at",
-        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-gate-readiness-check.py",
-        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py"
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-run-option-b.py --accept-provisional --decided-by \"<human>\"",
+        "python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason \"Provisional accepted by human\" --append-verdict-note"
       ],
       "preconditions": [
-        "repair apply thành công",
-        "validator status pass (dự kiến)",
-        "human chấp thuận provisional rõ ràng"
+        "validator status pass (đã đạt)",
+        "human chấp thuận provisional rõ ràng trong decision file"
       ]
     }
   ],
@@ -39,6 +36,6 @@
     "selected_rows": 49,
     "total_rows": 149,
     "missing_selected_rows": 100,
-    "map_issue_count": 48
+    "map_issue_count": 0
   }
 }

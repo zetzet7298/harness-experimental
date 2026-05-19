@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-19T15:37:04.918840+00:00",
+  "generated_at_utc": "2026-05-19T15:41:24.875647+00:00",
   "one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0",
   "gate_status": "blocked",
   "snapshot": {
-    "generated_at_utc": "2026-05-19T15:37:04.876753+00:00",
-    "snapshot_id": "20260519T153704Z",
+    "generated_at_utc": "2026-05-19T15:41:24.818081+00:00",
+    "snapshot_id": "20260519T154124Z",
     "template": {
       "path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
       "total_rows": 149,
@@ -31,9 +31,9 @@
     }
   },
   "diff": {
-    "generated_at_utc": "2026-05-19T15:37:04.876753+00:00",
-    "current_snapshot_id": "20260519T153704Z",
-    "previous_snapshot_id": "20260519T153438Z",
+    "generated_at_utc": "2026-05-19T15:41:24.818081+00:00",
+    "current_snapshot_id": "20260519T154124Z",
+    "previous_snapshot_id": "20260519T154107Z",
     "delta": {
       "selected_rows": 0,
       "remaining_rows": 0,

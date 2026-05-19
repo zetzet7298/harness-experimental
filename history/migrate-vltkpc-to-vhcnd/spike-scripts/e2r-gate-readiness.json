@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-19T15:37:43.446867+00:00",
+  "generated_at_utc": "2026-05-19T15:41:24.868253+00:00",
   "gate_status": "blocked",
   "facts": {
     "selected_rows": 49,
@@ -8,8 +8,8 @@
     "stat_audit_status": "pass",
     "no_fabrication_status": "pass",
     "accept_provisional_for_e_m3_to_e_m7": false,
-    "map_validate_status": "fail",
-    "map_validate_issue_count": 48
+    "map_validate_status": "pass",
+    "map_validate_issue_count": 0
   },
   "required_to_close_mig_ja5": {
     "path_a_canonical": [

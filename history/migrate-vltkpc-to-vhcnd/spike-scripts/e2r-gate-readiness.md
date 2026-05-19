@@ -1,6 +1,6 @@
 # E2R Gate Readiness Check
 
-Generated (UTC): `2026-05-19T15:37:43.446867+00:00`
+Generated (UTC): `2026-05-19T15:41:24.868253+00:00`
 
 **Gate status:** `blocked`
 
@@ -10,7 +10,7 @@ Generated (UTC): `2026-05-19T15:37:43.446867+00:00`
 - Stat audit status: **pass**
 - No-fabrication status: **pass**
 - Human accepts provisional: **False**
-- Manual-map validate status: **fail** (issues: **48**)
+- Manual-map validate status: **pass** (issues: **0**)
 
 ## Close mig-ja5 when
 

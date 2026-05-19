@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-05-19T15:26:43.653689+00:00",
-  "mode": "dry-run",
+  "generated_at_utc": "2026-05-19T15:41:07.618595+00:00",
+  "mode": "apply",
   "template": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
   "proposals": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-selected-repair-proposals.csv",
-  "backup_path": null,
+  "backup_path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-backups/e2r-golditem-manual-map-template.20260519T154107Z.csv",
   "change_count": 48,
   "changes_preview": [
     {
@@ -247,6 +247,25 @@
       "to": "872"
     }
   ],
-  "verify_requested": false,
-  "verify_runs": []
+  "verify_requested": true,
+  "verify_runs": [
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "status=pass selected=49/149 issues=0\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.md\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot-summary.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-ops-one-shot-summary.md\n",
+      "stderr_tail": ""
+    }
+  ]
 }

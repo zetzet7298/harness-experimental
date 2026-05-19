@@ -240,3 +240,13 @@ Added guarded close utility:
 Behavior:
 - never closes unless `gate_status` is ready (`ready-canonical` or `ready-provisional-approved`) AND `--confirm` is provided.
 - optional verdict addendum write with `--append-verdict-note`.
+
+
+## 2026-05-19 Option B technical prep executed
+
+Executed `e2r-run-option-b.py` without provisional accept flag.
+
+Resulting technical state:
+- manual-map validator: `status=pass`, `issue_count=0`
+- gate status remains `blocked` only because human provisional decision flag is still false
+- decision packet refreshed to reflect new baseline (map issues now 0)

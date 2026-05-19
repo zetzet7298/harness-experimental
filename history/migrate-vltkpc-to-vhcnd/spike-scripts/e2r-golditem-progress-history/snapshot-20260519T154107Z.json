@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-19T15:41:24.818081+00:00",
-  "snapshot_id": "20260519T154124Z",
+  "generated_at_utc": "2026-05-19T15:41:07.716788+00:00",
+  "snapshot_id": "20260519T154107Z",
   "template": {
     "path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
     "total_rows": 149,
