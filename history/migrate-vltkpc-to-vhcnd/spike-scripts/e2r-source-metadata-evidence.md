@@ -401,3 +401,11 @@ Added shell entrypoint for post-approval execution:
 - `e2r-run-on-approval.sh`
 
 This runs preflight -> approve-and-finalize -> go/no-go + pulse refresh in one command using env vars.
+
+
+## 2026-05-19 Approval shell safety guard
+
+Updated `e2r-run-on-approval.sh` with explicit safety gate:
+- requires `E2R_CONFIRM=YES` before apply flow can run.
+
+This prevents accidental finalize execution from partially-set environments.

@@ -8,6 +8,7 @@ set -euo pipefail
 MODE="${E2R_MODE:-}"
 DECIDED_BY="${E2R_DECIDED_BY:-}"
 NOTE="${E2R_NOTE:-Approved by human}"
+CONFIRM="${E2R_CONFIRM:-}"
 
 if [[ -z "$MODE" || -z "$DECIDED_BY" ]]; then
   echo "[E2R] Missing required env vars."
@@ -17,6 +18,12 @@ fi
 
 if [[ "$MODE" != "accept-provisional" && "$MODE" != "canonical-first" ]]; then
   echo "[E2R] Invalid E2R_MODE: $MODE"
+  exit 2
+fi
+
+if [[ "$CONFIRM" != "YES" ]]; then
+  echo "[E2R] Safety stop: set E2R_CONFIRM=YES to execute apply flow."
+  echo "Example: E2R_CONFIRM=YES E2R_DECIDED_BY=... E2R_MODE=... bash .../e2r-run-on-approval.sh"
   exit 2
 fi
 
