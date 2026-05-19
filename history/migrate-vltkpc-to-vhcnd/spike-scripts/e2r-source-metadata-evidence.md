@@ -373,3 +373,13 @@ Added a single-file operator bundle for handoff/final decision:
 - `history/migrate-vltkpc-to-vhcnd/e2r-operator-evidence-bundle.md`
 
 Bundle contains current status snapshot + indexed links + quick-copy finalize commands for both decision paths.
+
+
+## 2026-05-19 Artifact integrity check
+
+Added integrity checker for finalize handoff bundle:
+- `e2r-artifact-integrity-check.py`
+- `e2r-artifact-integrity-check.md`
+- `e2r-artifact-integrity-check.json`
+
+Current result: `status=pass`, `missing=0`.

@@ -206,3 +206,11 @@ Packet này tóm tắt 2 nhánh quyết định cuối kèm lệnh thực thi t�
   - `e2r-decision-simulation.json`
   - `e2r-approve-and-finalize-report.provisional-preview.json`
   - `e2r-approve-and-finalize-report.canonical-preview.json`
+
+
+## Artifact integrity check
+- Chạy kiểm tra toàn vẹn gói handoff:
+  - `python3 history/migrate-vltkpc-to-vhcnd/spike-scripts/e2r-artifact-integrity-check.py`
+- Output:
+  - `e2r-artifact-integrity-check.md`
+  - `e2r-artifact-integrity-check.json`
