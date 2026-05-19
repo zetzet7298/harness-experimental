@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-05-19T15:53:29.248654+00:00",
+  "objective": "$khuym:swarming for E_M2R gate mig-ja5",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Technical mapping validity ready (selected mapping has no validator issues).",
+      "status": "proven",
+      "evidence": {
+        "validate_status": "pass",
+        "issue_count": 0
+      }
+    },
+    {
+      "id": "R2",
+      "text": "Gate readiness computed and available in canonical artifact.",
+      "status": "proven",
+      "evidence": {
+        "gate_status": "blocked"
+      }
+    },
+    {
+      "id": "R3",
+      "text": "Bead mig-ja5 closed only when guard conditions satisfied.",
+      "status": "missing",
+      "evidence": {
+        "close_report_closed": false,
+        "close_gate_status": "blocked"
+      }
+    },
+    {
+      "id": "R4",
+      "text": "Human decision explicit for provisional path.",
+      "status": "missing",
+      "evidence": {
+        "accept_provisional": false
+      }
+    },
+    {
+      "id": "R5",
+      "text": "Operator has single-command next step guidance.",
+      "status": "proven",
+      "evidence": {
+        "finalize_next_command_exists": true
+      }
+    }
+  ],
+  "overall_status": "incomplete",
+  "blocking_requirements": [
+    "R3",
+    "R4"
+  ],
+  "current_one_line": "E2R_GATE status=blocked selected=49/149 remaining=100 completion=32.89% delta_selected=0 delta_remaining=0"
+}

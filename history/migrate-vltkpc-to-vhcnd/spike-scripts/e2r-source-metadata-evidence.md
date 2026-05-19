@@ -277,3 +277,14 @@ Current snapshot:
 - accept_provisional=false
 
 This confirms only human decision path remains for provisional opening.
+
+
+## 2026-05-19 Swarming completion audit artifact
+
+Added requirement-by-requirement completion audit:
+- `e2r-swarming-completion-audit.json`
+- `e2r-swarming-completion-audit.md`
+
+Current audit result: `overall=incomplete`, blocked by:
+- R3: bead close not executed yet
+- R4: human provisional acceptance not set
