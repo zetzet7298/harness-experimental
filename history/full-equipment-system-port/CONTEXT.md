@@ -103,7 +103,7 @@ From the quick scout. Downstream agents read these before planning.
 
 ### Deferred To Planning
 
-- [ ] Determine exact VHCND active package/table precedence for every equipment source table before generating more catalog rows.
+- [x] Determine exact VHCND active package/table precedence for every equipment source table before generating more catalog rows: S25 records `sourceResolution.precedence` for each active table and audits `selected-first-existing`. Precedence is Client root → Client item/004 → ServerNew root → ServerNew item/004; the active rows currently selected all come from `ServerNew/_bin_v2_/gs/Settings/...`, with rank 3 for root tables and rank 4 for item/004-only tables.
 - [x] Reconcile H5 `PC_MAX_RESIST` with active VHCND `GameDataDef.h` value: S23 confirmed `sources/Client/Classes/gamecore/GameDataDef.h:134` defines `MAX_RESIST = 150`; H5 `PC_MAX_RESIST = 150` is correct, while `resistMax = 95` remains only a per-call tighter-cap test example.
 - [ ] Decide how to represent extended slots in the portrait UI without hiding any slot: likely collapsible side slot groups plus central character preview and bottom bag tabs.
 - [x] Quantify visual coverage (S24): current catalog has `candidate=0`, `missing-npcres-mapping=6304`, `missing-resource-resolution=3245`, `preview-passed-loadout-evidence=3`, `unsafeResolvedVisualItems=0`; local copied SPR evidence has `uniqueBasenames=296`, `fileCopies=503`, `resolvedItemsWithAllLocalSources=3`; runtime manifest has `passedGeneratedEntries=9`. Full visual coverage remains incomplete.
