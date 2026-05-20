@@ -216,3 +216,15 @@ Validation passed from `/var/www/vltk-h5-survivors/game-source`:
 4. `npm run typecheck` ✅
 5. `npm run check:runtime-isolation` ✅
 6. `npm run build` ✅
+
+## S6 Magic Attribute Parity Addendum — 2026-05-20
+
+S6 made magic attribute coverage source-backed and fail-fast:
+
+- `scripts/vltk-build-equipment-seed.py` parses VHCND `KMagicAttrib.h` at build time for enum-defined attribute names.
+- Generated catalog no longer emits `magic_unknown_*` for ids present in the active VHCND enum.
+- New `scripts/vltk-audit-equipment-magic-attribute-parity.py` reports every catalog attribute key with implemented/unsupported/unknown status.
+- Current S6 audit result: 59 keys, 23 implemented, 36 explicitly unsupported/deferred, 0 unknown, 0 uncategorized.
+- Stat coverage now surfaces those deferred runtime cases from the S6 audit instead of hiding them as no-ops.
+
+Validation passed: seed rebuild, magic attribute parity audit, stat coverage audit, PBT (225 tests), typecheck, runtime isolation, and build.
