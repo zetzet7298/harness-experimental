@@ -42,7 +42,7 @@ Positive:
 
 - Agents have explicit routing before editing docs, game code, or legacy assets.
 - Brownfield state can be documented without moving implementation files.
-- GitNexus repo parameters remain unambiguous for H5, PC, and cross-repo work.
+- GitNexus repo parameters remain unambiguous for H5, PC, harness, and cross-repo work.
 
 Tradeoffs:
 

@@ -18,7 +18,7 @@ This repository is now the Codex CLI harness/control workspace. The game impleme
 - Do H5 game code, runtime assets, packets, and Vite/Phaser validation in `/var/www/vltk-h5-survivors/game-source`.
 - Do not query this harness repo as the H5 source. For H5 code use GitNexus `repo: "vltk-h5-survivors"`, which is registered to `/var/www/vltk-h5-survivors/game-source`.
 - For legacy PC source/tables use GitNexus `repo: "vhcnd"`, registered to `/var/www/vhcnd`.
-- For combined search use GitNexus `repo: "@vltk-porting"`; inspect each result's `_repo` field (`h5` or `pc`) before acting.
+- For combined search use GitNexus `repo: "@vltk-porting"`; inspect each result's `_repo` field (`h5`, `pc`, or `harness`) before acting.
 
 ## Source Of Truth
 
@@ -102,13 +102,15 @@ For VHCND-to-H5 porting, use the GitNexus group `vltk-porting`:
 
 - H5 member: `h5 -> vltk-h5-survivors -> /var/www/vltk-h5-survivors/game-source`.
 - PC member: `pc -> vhcnd -> /var/www/vhcnd`.
+- Harness member: `harness -> harness-experimental -> /var/www/vltk-h5-survivors/harness-experimental`.
 - Harness repo: `/var/www/vltk-h5-survivors/harness-experimental`; do not use it for H5 source queries.
 - Query H5 only with `repo: "vltk-h5-survivors"`.
 - Query PC source/tables only with `repo: "vhcnd"`.
-- Query both repos with `repo: "@vltk-porting"`; results include `_repo` so agents can see whether evidence came from `h5` or `pc`.
+- Query all three porting repos with `repo: "@vltk-porting"`; results include `_repo` so agents can see whether evidence came from `h5`, `pc`, or `harness`.
 - For PC engine evidence, prefer GitNexus queries/context for symbols such as `KItemChangeRes`, `GetHorseRes`, `GetWeaponRes`, `KItem`, and `KItemGenerator`; use `vhcnd-item-research` scripts for decoded PAK/table rows.
 - Refresh H5 index with `gitnexus analyze /var/www/vltk-h5-survivors/game-source --name vltk-h5-survivors --force --no-stats --skip-agents-md`.
-- Refresh PC index with `GITNEXUS_NO_GITIGNORE=1 gitnexus analyze /var/www/vhcnd --name vhcnd --force --no-stats`.
+- Refresh PC index with `GITNEXUS_NO_GITIGNORE=1 gitnexus analyze /var/www/vhcnd --name vhcnd --force --no-stats --skip-agents-md --skip-skills`.
+- Refresh harness index with `gitnexus analyze /var/www/vltk-h5-survivors/harness-experimental --name harness-experimental --force --no-stats --skip-agents-md --skip-skills`.
 - After either refresh, run `gitnexus group sync vltk-porting --skip-embeddings`.
 
 ## Asset Porting Rule
@@ -134,7 +136,7 @@ This harness repository is not the H5 game source index. Use explicit repo param
 | --- | --- | --- |
 | H5 game source | `vltk-h5-survivors` | `/var/www/vltk-h5-survivors/game-source` |
 | VHCND legacy source | `vhcnd` | `/var/www/vhcnd` |
-| Cross-repo group | `@vltk-porting` | `h5` + `pc` members |
+| Cross-repo group | `@vltk-porting` | `h5` + `pc` + `harness` members |
 
 When calling MCP tools from this harness, always pass `repo`. Do not omit `repo`, because multiple repos are indexed.
 

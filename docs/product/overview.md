@@ -23,7 +23,8 @@ source.
 - Legacy PC tables/source/assets: `/var/www/vhcnd`.
 - GitNexus H5 repo: `vltk-h5-survivors`.
 - GitNexus PC repo: `vhcnd`.
-- GitNexus cross-repo group: `@vltk-porting`.
+- GitNexus harness repo: `harness-experimental`.
+- GitNexus cross-repo group: `@vltk-porting` (`h5`, `pc`, and `harness` members).
 
 ## Product Principles
 
