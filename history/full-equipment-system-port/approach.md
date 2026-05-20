@@ -1,7 +1,7 @@
 # Approach — Full Equipment System Port
 
-**Mode:** `high_risk_feature`  
-**Shape:** Epic map + current-story candidate; no current story pack, execution beads, or implementation until the work shape is approved and `khuym:validating` accepts feasibility.  
+**Mode:** `high_risk_feature`
+**Shape:** Epic map + current-story candidate; no current story pack, execution beads, or implementation until the work shape is approved and `khuym:validating` accepts feasibility.
 **Date:** 2026-05-20
 
 ## Mode Gate
@@ -146,8 +146,8 @@ Planning has stopped at the approval gate with an epic map and current-story can
 
 ## S7 Planning Addendum — Equip Condition Parity
 
-**Date:** 2026-05-20  
-**Current story:** `history/full-equipment-system-port/current-story-pack-s7.md`  
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s7.md`
 **Why now:** S6 made catalog magic keys source-backed and exposed unsupported stat semantics. The next safest E2 slice is equip-condition parity because runtime equip/unequip must fail or pass exactly like VHCND before deeper stat-vector and UI stories can be trusted.
 
 ### S7 Reality Basis
@@ -170,8 +170,8 @@ Planning has prepared only S7. No execution beads have been created. Next skill:
 
 ## S8 Planning Addendum — Stat Vector Fixtures and Internal Magic Damage
 
-**Date:** 2026-05-20  
-**Current story:** `history/full-equipment-system-port/current-story-pack-s8.md`  
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s8.md`
 **Why now:** S8 depends on S6 magic-key visibility and S7 equip-condition parity. The largest remaining source-backed numeric combat group is internal magic damage (`internal-magic-damage-story-s8`, 355 catalog rows), so implementing it gives measurable parity progress before broader unsupported systems.
 
 ### S8 Reality Basis
@@ -194,8 +194,8 @@ Planning has prepared only S8. No execution beads have been created. Next skill:
 
 ## S15 Planning Addendum — In-Run Resolver Parity
 
-**Date:** 2026-05-20  
-**Current story:** `history/full-equipment-system-port/current-story-pack-s15.md`  
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s15.md`
 **Why now:** S13 proved the canonical smoke-loadout visual identity and local copied SPRs; S14 made catalog visual status measurable. The next safest E4 slice is to prove that the same out-of-run equipped loadout is resolved by `GameScene` inside the run, with an inspectable resolver status instead of relying only on a broad screenshot diff.
 
 ### S15 Reality Basis
@@ -217,3 +217,34 @@ Planning has prepared only S8. No execution beads have been created. Next skill:
 ### Planning Handoff
 
 Planning has prepared only S15. No execution beads have been created. Next skill: `khuym:validating` for S15 feasibility, resolver observability, and proof commands.
+
+
+## S16 Planning Addendum — Equipment UI Centered Popup + Continuous Bag Scroll
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s16.md`
+**Why now:** The latest locked UI decisions D13-D14 are player-facing and conflict with the current `EquipmentScene`: item popup is lower-panel anchored and bag browsing still uses page buttons. This is the next safest slice because it updates interaction contracts without touching equipment formulas or visual asset generation.
+
+### S16 Reality Basis
+
+- H5 `EquipmentScene.ts` currently renders footer `‹` / `›` pagination controls and updates `bagOffset` by `PAGE_SIZE`.
+- H5 `EquipmentScene.ts` currently renders page indicator text from `bagPageCount()` and opens the popup from a lower `panelY = 342` anchor.
+- Existing `equipmentScene.unit.test.ts` protects old pagination behavior, so S16 must update tests to enforce drag/scroll behavior instead.
+- GitNexus impact for `EquipmentScene` is LOW: direct importer is `src/game/createGame.ts`, then `src/main.ts`.
+
+### S16 Validation Questions
+
+1. Can the patch keep the 5×5 mobile matrix while replacing page stepping with drag/wheel scroll state?
+2. Can tap-vs-drag be protected with a movement threshold so scrolling does not accidentally select an item?
+3. Can the popup be centered with explicit viewport center math and still fit portrait mobile height?
+4. Can browser automation prove popup center and scroll behavior through `agent-browser`/Playwright without relying on OCR?
+
+### Planning Handoff
+
+Planning prepared S16 and validation approved one execution bead (`mig-v6l`). The execution outcome below records the implemented proof.
+
+### S16 Execution Outcome
+
+S16 has been implemented and validated. The equipment bag now uses hold/drag vertical scrolling over the existing 5×5 mobile matrix instead of page-by-page controls, and the item detail popup is centered in the portrait viewport. The implementation preserves seed/catalog modes, slot filtering, one-cell-per-item display, tap-vs-drag suppression, runtime isolation from `/var/www/vhcnd`, and Vietnamese-safe popup title rendering.
+
+Proof is recorded in `validation-s16.md`; browser screenshots are `/tmp/s16-equipment-scrolled.png` and `/tmp/s16-equipment-centered-popup.png`.
