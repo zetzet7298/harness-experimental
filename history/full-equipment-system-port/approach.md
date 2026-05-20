@@ -294,3 +294,13 @@ S19 passed: typecheck, property tests, runtime isolation, production build, GitN
 ### S20 Execution Outcome
 
 S20 handoff is recorded in `history/full-equipment-system-port/handoff-s20.md`. It states S16-S19 are complete, maps D1-D14 to evidence/gaps, and identifies the next required story as S21 Equipment Visual Batch Preview Expansion because full visual coverage remains incomplete beyond the preview-backed smoke set.
+
+## S21 Planning Addendum — Equipment Visual Batch Preflight Repair
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s21.md`
+**Why now:** S20 identified full visual coverage as the next gap. S21 repaired the preview-gated batch preflight path before running larger shards, because a fresh current-catalog plan could contain an empty visual slot and crash shard job generation.
+
+### S21 Execution Outcome
+
+S21 passed. Shard jobs now support empty visual slots through explicit `--clear-slot`, loadout packet generation can clear seed slots deterministically, stale Python smoke assertions were updated to the S16 centered-popup contract, and fresh/existing plan dry-runs plus Python/TypeScript/property/runtime-isolation/build gates passed. S21 does not claim full visual coverage; it makes the next preview-reviewed shard safe to run.
