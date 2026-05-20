@@ -27,10 +27,18 @@ These are fixed. Planning must implement them exactly.
 - **D8:** Equipment seed data is required for testing: the seed inventory should make equip/unequip easy, contain representative and coverage-driven items across slots/quality/series/stat bins, and include known smoke loadouts; any cap such as current 125-item seed limit must be revisited if it conflicts with full coverage.
 - **D9:** Visual asset porting remains gated: resolve aliases and item rows, verify engine resource mapping, create packet, copy/move required source SPR/assets into `game-source`, generate preview report, pass preview, then compose/wire runtime assets. Candidate status cannot be treated as visual proof.
 - **D10:** Planning must separate evidence extraction, formula parity, UI redesign, runtime visual wiring, and validation into independently reviewable slices because the feature is high-risk and cross-cutting.
+- **D11:** All user-facing equipment/runtime/UI text must be Vietnamese only; do not show Chinese text or mixed Chinese/Vietnamese labels to the player. Source Chinese/Vietnamese/mojibake aliases may remain as internal provenance only, not UI copy.
+  - Rationale: the user explicitly requires Vietnamese-only user-facing output.
+- **D12:** Mounts/horses must not be assigned the green quality tier. If VHCND source tables expose mount-like rows through generic quality logic, the H5 catalog/seed/UI must classify them according to VHCND evidence while excluding green mount quality.
+  - Rationale: the user explicitly clarified that mounts do not have green quality.
+- **D13:** The equipment detail popup/panel opened by tapping an item must be centered on the screen, while still fitting portrait mobile layout and preserving VLTK-style tooltip hierarchy.
+  - Rationale: the user explicitly clarified the popup placement requirement.
+- **D14:** The equipment/bag browsing interaction should not use page-by-page pagination. It should be redesigned as a hold/drag vertical continuous scroll, behaving like an infinite-feeling scroll list/grid for mobile equipment browsing.
+  - Rationale: the user explicitly rejected the current pagination feel and requested hold-and-slide vertical scrolling.
 
 ### Agent's Discretion
 
-Agents may choose the internal data schema, pagination, responsive layout details, script sharding, and validation implementation as long as they preserve D1-D10 and remain evidence-first.
+Agents may choose the internal data schema, continuous-scroll implementation details, responsive layout details, script sharding, and validation implementation as long as they preserve D1-D14 and remain evidence-first.
 
 ## Specific Ideas And References
 
@@ -64,6 +72,10 @@ From the quick scout. Downstream agents read these before planning.
 - Rings map to `ring1` and `ring2` allowed slots even though catalog defaults to `ring1`; keep dual-slot logic and extend it carefully to new equip slots.
 - Runtime visual correctness is currently enforced through preview reports and `passed-generated` manifest entries; do not bypass this with direct SPR wiring.
 - Existing package scripts include `check:no-runtime-vhcnd` before build; retain and extend this isolation guard where needed.
+- User-facing strings must be Vietnamese-only; decoded Chinese names/aliases are allowed only in source provenance, audits, or internal matching metadata.
+- Mount/horses are a special quality case: do not synthesize or display green-quality mounts.
+- Equipment detail popup/panel must open centered on the viewport; do not anchor it only beside the tapped slot/item.
+- Equipment/bag browsing should use hold/drag vertical continuous scrolling instead of page-by-page pagination.
 
 ### Integration Points
 

@@ -190,3 +190,30 @@ Planning has prepared only S7. No execution beads have been created. Next skill:
 ### Planning Handoff
 
 Planning has prepared only S8. No execution beads have been created. Next skill: `khuym:validating` for S8 feasibility and proof commands.
+
+
+## S15 Planning Addendum — In-Run Resolver Parity
+
+**Date:** 2026-05-20  
+**Current story:** `history/full-equipment-system-port/current-story-pack-s15.md`  
+**Why now:** S13 proved the canonical smoke-loadout visual identity and local copied SPRs; S14 made catalog visual status measurable. The next safest E4 slice is to prove that the same out-of-run equipped loadout is resolved by `GameScene` inside the run, with an inspectable resolver status instead of relying only on a broad screenshot diff.
+
+### S15 Reality Basis
+
+- H5 `GameScene.loadEquipmentVisuals()` already follows the intended resolver order: passed-generated whole-loadout manifest, dynamic layered parts, unresolved audit/report, then hard fallback when reporting fails.
+- H5 `visualResolver.ts` already gates whole-loadout manifest entries by `status === 'passed-generated'` and run/idle sprite-set equality.
+- Existing Playwright smoke pre-seeds the canonical loadout, starts from `EquipmentScene`, enters `GameScene`, waits for resolver/texture loading, and screenshots the in-run frame.
+- S15 must strengthen proof around the runtime decision seam: equipped ids, run/idle basenames, selected resolver path, selected manifest/parts, and fallback status must be testable.
+- Current locked decisions D11-D14 apply: user-visible text Vietnamese-only/no Chinese, no green-quality mounts, centered equipment popup, and continuous-scroll equipment browsing if S15 touches popup/UI.
+
+### S15 Validation Questions
+
+1. Can validation observe the resolver path in the current browser/runtime without code changes?
+2. If not, what is the smallest non-user-facing debug/status seam to expose for tests?
+3. Does the canonical smoke loadout select the preview-passed manifest and local copied source assets, or does it currently fall through to parts/fallback?
+4. Which existing visual audits cover local source-copy and no-symlink guarantees strongly enough for S15 close?
+5. Can tests include a visible-text check for Chinese characters without flagging internal provenance ids that are never displayed to the player?
+
+### Planning Handoff
+
+Planning has prepared only S15. No execution beads have been created. Next skill: `khuym:validating` for S15 feasibility, resolver observability, and proof commands.
