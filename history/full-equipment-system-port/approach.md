@@ -304,3 +304,28 @@ S20 handoff is recorded in `history/full-equipment-system-port/handoff-s20.md`. 
 ### S21 Execution Outcome
 
 S21 passed. Shard jobs now support empty visual slots through explicit `--clear-slot`, loadout packet generation can clear seed slots deterministically, stale Python smoke assertions were updated to the S16 centered-popup contract, and fresh/existing plan dry-runs plus Python/TypeScript/property/runtime-isolation/build gates passed. S21 does not claim full visual coverage; it makes the next preview-reviewed shard safe to run.
+
+## S47 Planning Addendum — Mask Template Evidence Preflight
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s47.md`
+**Why now:** S46 removed the generic `missing-npcres-mapping` bucket and left `missing-mask-template-mapping=1764` as the largest true visual blocker. Mask visuals are not normal equipment layers: VHCND sets `m_MaskType`, resolves an NPC template row, then uses `NpcResType`/NPC resource tables. The next safest slice is to make that source identity explicit before copying or wiring any SPRs.
+
+### S47 Reality Basis
+
+- VHCND `KItemList.cpp:1280-1288` equips mask by setting `Npc[nNpcIdx].m_MaskType` from `GetItemResIdx()` when positive, otherwise from `GetBaseMagic()`.
+- VHCND `KuiItemdesc.cpp:959-976` documents the tooltip/preview lookup: `nNpcTemplateId = pItem->GetBaseMagic()`, `nNpcTempRow = nNpcTemplateId + 2`, then `NpcResType` from `g_NpcSetting`, then NPC resource path/action sprite.
+- VHCND `KNpc.cpp:10575-10641` documents runtime transform: `ReSetRes(0)` uses `m_MaskType + 2` from `NpcS.txt` and initializes `m_DataRes` with the resolved `NpcResType`.
+- Current H5 normalization marks all mask rows as `missing-mask-template-mapping` and does not yet persist `maskTemplateId`, `NpcS` row, or `NpcResType` evidence.
+- Quick source scout shows mask table rows carry the template id in the first base value slot (`Min1`, e.g. generated `Mask.txt` row 1 has `54`; gold mask rows such as `GoldItem.txt:4369` have `1311`). Current runtime baseAttributes omit that blank-type first base slot, so S47 must read the raw row field rather than reusing parsed baseAttributes.
+
+### S47 Validation Questions
+
+1. Can the normalizer source `maskTemplateId` from the same raw base-magic field VHCND uses without changing stat/base-attribute parity?
+2. Can the generated index/catalog preserve `maskTemplateId`, `maskTemplateRowNumber`, `maskNpcName`, and `maskNpcResType` while keeping masks unresolved until NPC resource tables and SPRs are preview-gated?
+3. Can the generic `missing-mask-template-mapping` bucket be replaced by more precise source-backed statuses such as `missing-mask-npcres-kind-mapping` / `missing-mask-template-row` without creating any runtime visual candidate?
+4. Can validation prove `candidate=0`, `unsafeResolvedVisualItems=0`, runtime isolation, and stable catalog regeneration after the status split?
+
+### Planning Handoff
+
+S47 is a bounded evidence/classification slice, not visual wiring. It may read VHCND source tables during generation, but runtime data/assets must remain local to `game-source`, and no symlink or direct `/var/www/vhcnd` runtime dependency is allowed.
