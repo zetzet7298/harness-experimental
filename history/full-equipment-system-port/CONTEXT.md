@@ -104,7 +104,7 @@ From the quick scout. Downstream agents read these before planning.
 ### Deferred To Planning
 
 - [ ] Determine exact VHCND active package/table precedence for every equipment source table before generating more catalog rows.
-- [ ] Reconcile H5 `PC_MAX_RESIST = 95` with the currently indexed VHCND `GameDataDef.h` value of `MAX_RESIST = 150`; if package/source variants differ, choose the active engine value with evidence.
+- [x] Reconcile H5 `PC_MAX_RESIST` with active VHCND `GameDataDef.h` value: S23 confirmed `sources/Client/Classes/gamecore/GameDataDef.h:134` defines `MAX_RESIST = 150`; H5 `PC_MAX_RESIST = 150` is correct, while `resistMax = 95` remains only a per-call tighter-cap test example.
 - [ ] Decide how to represent extended slots in the portrait UI without hiding any slot: likely collapsible side slot groups plus central character preview and bottom bag tabs.
 - [ ] Quantify visual coverage: how many catalog items have `candidate`, `missing-npcres-mapping`, `missing-resource-resolution`, `passed-generated`, and copied local source assets.
 - [ ] Decide whether seed inventory remains coverage-sampled or adds a generated test-mode catalog browser for all equipment rows; D8 requires easy testing without making the normal bag unusable.
