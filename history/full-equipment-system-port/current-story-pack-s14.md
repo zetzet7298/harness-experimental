@@ -30,3 +30,10 @@ Make equipment visual coverage measurable and safe at catalog scale. The repo mu
 - Do not batch-port all remaining missing visual rows in S14.
 - Do not mark missing NpcRes/resource rows as failures unless they are wired/resolved unsafely.
 - Do not add symlinks or runtime reads from `/var/www/vhcnd`.
+
+## Execution Evidence — 2026-05-20
+
+- Added `scripts/vltk-audit-equipment-visual-status.py` and `data/vltk-normalized/equipment-visual-status.audit.json`.
+- Current visual status distribution is 9552 total items: 6304 `missing-npcres-mapping`, 3245 `missing-resource-resolution`, and 3 `preview-passed-loadout-evidence` rows.
+- Unsafe resolved visual rows: `0`; every resolved basename has passed preview evidence and local copied source SPRs, with no symlink sources.
+- Repaired `tests/test_vltk_porting_smoke.py` so Python smoke assertions match the current expanded 9552-row catalog and new visual-status audit.
