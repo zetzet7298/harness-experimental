@@ -85,10 +85,10 @@ Use the smallest skill set that covers the task. If a task needs both data ident
 | Task | Use skill | When to use / rule |
 | --- | --- | --- |
 | Navigate or inspect repo code/docs | `srcwalk` | Use before raw bash/grep/glob/read; read paths only after `srcwalk` identifies them. |
-| Look up VLTK item stats, requirements, options, GoldItem rows, skills, table evidence, encoding, or PAK source rows | `vltk-item-research` | Research only; return concrete source paths/lines, decoded names, provenance, and uncertainty notes. |
-| Port/extract/preview/compose/wire VHCND `.spr`, character equipment animation, NpcRes parts, horse/weapon/body visuals, or H5 spritesheets | `vltk-spr-porting` | Use index/packet workflow in `/var/www/vltk-h5-survivors/game-source`, require visual preview gate, copy source SPRs into game-source before runtime use. |
-| Port/fix VHCND maps, minimaps, Region_C/Region_S, Ground.dat, BuildinObj.Dat, map enemies, map aspect/zoom/object alignment | `vltk-map-porting` | Use before map runtime or asset changes; preserve PC render coordinates (`y/2`, no vertical stretch), copy assets into game-source, and validate map packet/runtime tests. |
-| Resolve an equipped character or item visual from names | `vltk-item-research` then `vltk-spr-porting` | Identify item/row/mapping first; only port after engine mapping and preview evidence. |
+| Look up VLTK item stats, requirements, options, GoldItem rows, skills, table evidence, encoding, or PAK source rows | `vhcnd-item-research` | Research only; return concrete source paths/lines, decoded names, provenance, and uncertainty notes. |
+| Port/extract/preview/compose/wire VHCND `.spr`, character equipment animation, NpcRes parts, horse/weapon/body visuals, or H5 spritesheets | `vhcnd-spr-porting` | Use index/packet workflow in `/var/www/vltk-h5-survivors/game-source`, require visual preview gate, copy source SPRs into game-source before runtime use. |
+| Port/fix VHCND maps, minimaps, Region_C/Region_S, Ground.dat, BuildinObj.Dat, map enemies, map aspect/zoom/object alignment | `vhcnd-map-porting` | Use before map runtime or asset changes; preserve PC render coordinates (`y/2`, no vertical stretch), copy assets into game-source, and validate map packet/runtime tests. |
+| Resolve an equipped character or item visual from names | `vhcnd-item-research` then `vhcnd-spr-porting` | Identify item/row/mapping first; only port after engine mapping and preview evidence. |
 | Build or adjust Phaser/Vite gameplay code | `game-studio:phaser-2d-game` | Use in `/var/www/vltk-h5-survivors/game-source` for scenes, simulation/render split, input, cameras, sprites, HUD integration, and Phaser patterns. |
 | Browser smoke test or screenshot game behavior | `game-studio:game-playtest` | Use for localhost playtest, HUD/debug checks, screenshots, console/runtime issue capture. |
 | Write or update ADRs, playbooks, product docs, or technical runbooks | `document-writer` | Keep docs concise, structured, linked to source-of-truth files, and scoped to the current change. |
@@ -106,7 +106,7 @@ For VHCND-to-H5 porting, use the GitNexus group `vltk-porting`:
 - Query H5 only with `repo: "vltk-h5-survivors"`.
 - Query PC source/tables only with `repo: "vhcnd"`.
 - Query both repos with `repo: "@vltk-porting"`; results include `_repo` so agents can see whether evidence came from `h5` or `pc`.
-- For PC engine evidence, prefer GitNexus queries/context for symbols such as `KItemChangeRes`, `GetHorseRes`, `GetWeaponRes`, `KItem`, and `KItemGenerator`; use `vltk-item-research` scripts for decoded PAK/table rows.
+- For PC engine evidence, prefer GitNexus queries/context for symbols such as `KItemChangeRes`, `GetHorseRes`, `GetWeaponRes`, `KItem`, and `KItemGenerator`; use `vhcnd-item-research` scripts for decoded PAK/table rows.
 - Refresh H5 index with `gitnexus analyze /var/www/vltk-h5-survivors/game-source --name vltk-h5-survivors --force --no-stats --skip-agents-md`.
 - Refresh PC index with `GITNEXUS_NO_GITIGNORE=1 gitnexus analyze /var/www/vhcnd --name vhcnd --force --no-stats`.
 - After either refresh, run `gitnexus group sync vltk-porting --skip-embeddings`.

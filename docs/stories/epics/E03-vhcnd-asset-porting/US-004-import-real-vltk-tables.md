@@ -31,7 +31,7 @@ requirements, and uncertainty notes.
 - Expected source lane currently documented in `game-source/src/data/README.md`:
   `vhcnd/Settings/item/meleeweapon.txt`, `vhcnd/Settings/item/GoldItem.txt`,
   and `vhcnd/Settings/item/magicattrib.txt`.
-- Use `vltk-item-research` before changing data contracts.
+- Use `vhcnd-item-research` before changing data contracts.
 
 ## Validation
 

@@ -1,14 +1,14 @@
 ---
-name: vltk-skill-porting
+name: vhcnd-skill-porting
 description: "Port VHCND/JX combat skills into the H5 game with strict source-backed parity. Use whenever porting or fixing skill behavior, projectile count/direction/speed/cooldown, homing, hit/collision impact effects, skill animation/effect/SFX, PAK/.spr/.wav extraction, active Skills.txt/Missles.txt/script evidence, visual mismatch, wrong sprite scale, or proving PC-vs-H5 parity. Requires 100% evidence-first workflow: no invented mechanics, no guessed level scaling, no reused visuals/scales from another skill, and no runtime wiring unless active VHCND table/script/engine plus visual proof is recorded."
 ---
 
-# VLTK Skill Porting
+# VHCND Skill Porting
 
 ## Non-Negotiables
 
 - Treat `/var/www/vhcnd` as legacy source evidence and `/var/www/vltk-h5-survivors/game-source` as the only H5 runtime/edit target.
-- Do not make the H5 app read `/var/www/vhcnd` at runtime; copy/extract assets into `game-source` first.
+- Do not make the H5 app read `/var/www/vhcnd` at runtime; do not use symlink/symbolic-link to `/var/www/vhcnd` or any out-of-scope root; move/copy extracted assets into `game-source` first.
 - Do not infer projectile count, form, direction, speed, cooldown, homing, hit/collision impact, animation, or SFX from names or memory.
 - Stop and report `blocked: missing evidence` when active table/script/engine proof is unavailable.
 - Mark any user-requested deviation as `explicit override`, never as VHCND parity.
@@ -34,7 +34,7 @@ description: "Port VHCND/JX combat skills into the H5 game with strict source-ba
 Use the project extractor for active PAK script/table evidence:
 
 ```bash
-python3 /var/www/vltk-h5-survivors/harness-experimental/.codex/skills/vltk-item-research/scripts/vltk_extract_tables.py \
+python3 /var/www/vltk-h5-survivors/harness-experimental/.codex/skills/vhcnd-item-research/scripts/vltk_extract_tables.py \
   --client-dir /var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/bin/Client \
   --source-root /var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3 \
   --out /tmp/vltk-skill-evidence \

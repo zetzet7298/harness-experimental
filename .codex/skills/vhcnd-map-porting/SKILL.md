@@ -1,15 +1,15 @@
 ---
-name: vltk-map-porting
+name: vhcnd-map-porting
 description: "Port and fix VHCND/JX maps into the H5 Phaser runtime with source-backed parity. Use when Codex needs to port a map, minimap, Region_C/Region_S data, Ground.dat, BuildinObj.Dat, map object rendering, map enemy templates, map camera/zoom/aspect, tile backgrounds, collision/obstacle interpretation, or debug visual issues such as stretched maps, oversized gates/buildings, broken house seams, missing trees/objects, wrong minimap scale, or runtime map cache problems."
 ---
 
-# VLTK Map Porting
+# VHCND Map Porting
 
 ## Core Rule
 
 Port maps evidence-first. Do not tune map scale, object size, or offsets by eye until the PC source/table/render path has been checked and the uncertainty is recorded.
 
-Never make the H5 runtime read `/var/www/vhcnd` directly. Copy or generate runtime assets under `/var/www/vltk-h5-survivors/game-source`.
+Never make the H5 runtime read `/var/www/vhcnd` directly. Do not use symlink/symbolic-link from runtime asset folders to `/var/www/vhcnd` or any out-of-scope root. Move/copy generated runtime assets under `/var/www/vltk-h5-survivors/game-source` before wiring.
 
 ## Required Context
 
@@ -25,7 +25,7 @@ Use `srcwalk` before raw source search. Use `git diff` to inspect recent map fix
 
 1. Identify the exact map target: user-facing name, VLTK map id, PC path, minimap, and whether enemies/NPCs/obstacles are in scope.
 2. Extract or verify active PC data sources: `MapList.ini`, `.wor`, minimap image, `Region_C.dat`, `Region_S.dat`, `Ground.dat`, `BuildinObj.Dat`, and NPC tables.
-3. Decode/copy source assets into `game-source`; do not wire assets from `/var/www/vhcnd` at runtime.
+3. Decode and move/copy required source/runtime assets into `game-source`; do not wire assets from `/var/www/vhcnd` at runtime and do not use symlinks.
 4. Parse map rect from `.wor`; preserve both source dimensions and render dimensions.
 5. Render ground from `Ground.dat` and build-in objects from `BuildinObj.Dat` using PC coordinate rules.
 6. Generate tiled runtime backgrounds and metadata under `public/assets/maps/vhcnd/<slug>/` and `data/vltk-normalized/maps/`.

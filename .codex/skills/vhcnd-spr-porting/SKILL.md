@@ -1,9 +1,9 @@
 ---
-name: vltk-spr-porting
+name: vhcnd-spr-porting
 description: "Port VLTK/JX/SwordOnline .spr assets and character equipment animations into H5/game runtimes safely. Use this skill for port, preview, extract, convert, normalize, compose, or wire VHCND character sprites, NpcRes parts, equipment visuals, title/effect SPRs, PAK assets, Phaser, H5, spritesheets, or copied runtime assets."
 ---
 
-# VLTK SPR Porting
+# VHCND SPR Porting
 
 ## Core Rule
 

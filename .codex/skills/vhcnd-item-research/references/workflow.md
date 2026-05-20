@@ -1,4 +1,4 @@
-# VLTK Item Research Workflow
+# VHCND Item Research Workflow
 
 ## 1. Identify The Data Source
 
@@ -16,7 +16,7 @@ Use `srcwalk files` for likely filenames and `srcwalk find` for exact strings wh
 Run the extractor rather than manually rewriting PAK logic:
 
 ```bash
-python3 .codex/skills/vltk-item-research/scripts/vltk_extract_tables.py \
+python3 .codex/skills/vhcnd-item-research/scripts/vltk_extract_tables.py \
   --client-dir /path/to/swrod3/bin/Client \
   --source-root /path/to/swrod3 \
   --out /tmp/vltk-decoded \
@@ -78,4 +78,4 @@ For Vietnamese users, answer in Vietnamese with concise concrete evidence:
 - Encoding note: ...
 ```
 
-If a name is not found, list the closest hits and why they may or may not be the same item. If the answer will be used for porting, include a handoff note with canonical name, aliases, source row, and item fields, then switch to `vltk-spr-porting` for preview/compose work.
+If a name is not found, list the closest hits and why they may or may not be the same item. If the answer will be used for porting, include a handoff note with canonical name, aliases, source row, and item fields, then switch to `vhcnd-spr-porting` for preview/compose work.

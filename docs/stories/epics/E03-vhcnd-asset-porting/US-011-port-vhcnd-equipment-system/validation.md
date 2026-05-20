@@ -39,7 +39,7 @@ python3 scripts/vltk-build-equipment-visual-shard-jobs.py --shard 0
 python3 scripts/vltk-run-equipment-visual-shard.py --jobs data/vltk-normalized/equipment-visual-jobs/shard-000.json --start 2 --limit 2 --workers 2 --dry-run
 python3 scripts/vltk-plan-equipment-visual-parts.py
 python3 scripts/vltk-build-equipment-visual-parts-packet.py
-python3 scripts/vltk-extract-required-sprs.py --packet data/vltk-normalized/port-packets/equipment-visual-parts-all.json --slug equipment-visual-parts-all --workers auto --extractor /var/www/vltk-h5-survivors/harness-experimental/.codex/skills/vltk-item-research/scripts/vltk_extract_tables.py
+python3 scripts/vltk-extract-required-sprs.py --packet data/vltk-normalized/port-packets/equipment-visual-parts-all.json --slug equipment-visual-parts-all --workers auto --extractor /var/www/vltk-h5-survivors/harness-experimental/.codex/skills/vhcnd-item-research/scripts/vltk_extract_tables.py
 python3 scripts/vltk-export-equipment-visual-parts.py --workers auto
 python3 scripts/vltk-audit-equipment-visual-part-coverage.py
 npm run typecheck

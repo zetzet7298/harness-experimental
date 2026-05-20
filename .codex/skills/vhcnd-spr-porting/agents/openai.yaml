@@ -1,4 +1,4 @@
 interface:
-  display_name: "VLTK SPR Porting"
-  short_description: "Port and debug VLTK SPR visuals in H5."
-  default_prompt: "Use this skill to port, compose, and debug VLTK character/equipment SPR visuals, including per-direction layer issues and runtime cache/preset pitfalls."
+  display_name: "VHCND SPR Porting"
+  short_description: "Port and debug VHCND SPR visuals in H5."
+  default_prompt: "Use $vhcnd-spr-porting to port, compose, and debug VHCND character/equipment SPR visuals, including per-direction layer issues and runtime cache/preset pitfalls."

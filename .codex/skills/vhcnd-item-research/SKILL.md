@@ -1,9 +1,9 @@
 ---
-name: vltk-item-research
-description: Research local VLTK/JX/SwordOnline item and equipment data, including PAK extraction, legacy Vietnamese/Chinese encodings, item rows, magic options, quality tiers, GoldItem rows, AddItem parameters, and code paths such as KBasPropTbl, KItemGenerator, KItem, Skills.txt, magicattrib.txt, helm/armor/weapon/horse tables. Use when the user asks to find, decode, understand, compare, or export VLTK items, trang bị, thuộc tính, phẩm chất, option, skill, or source/data table evidence. For SPR asset porting or runtime spritesheet work, use the separate vltk-spr-porting skill.
+name: vhcnd-item-research
+description: Research local VLTK/JX/SwordOnline item and equipment data, including PAK extraction, legacy Vietnamese/Chinese encodings, item rows, magic options, quality tiers, GoldItem rows, AddItem parameters, and code paths such as KBasPropTbl, KItemGenerator, KItem, Skills.txt, magicattrib.txt, helm/armor/weapon/horse tables. Use when the user asks to find, decode, understand, compare, or export VLTK items, trang bị, thuộc tính, phẩm chất, option, skill, or source/data table evidence. For SPR asset porting or runtime spritesheet work, use the separate vhcnd-spr-porting skill.
 ---
 
-# VLTK Item Research
+# VHCND Item Research
 
 ## Quick Workflow
 
@@ -19,7 +19,7 @@ description: Research local VLTK/JX/SwordOnline item and equipment data, includi
 Use the extractor for repeatable decoding:
 
 ```bash
-python3 .codex/skills/vltk-item-research/scripts/vltk_extract_tables.py \
+python3 .codex/skills/vhcnd-item-research/scripts/vltk_extract_tables.py \
   --client-dir /path/to/swrod3/bin/Client \
   --source-root /path/to/swrod3 \
   --out /tmp/vltk-decoded \
@@ -35,7 +35,7 @@ Useful flags:
 
 ## Porting Handoff
 
-If research will feed SPR/H5 work, stop at identity and evidence: canonical name, aliases, source row, item fields, resource table inputs, and uncertainty. Do not choose or wire runtime animation SPRs here; hand off to `vltk-spr-porting`, which owns preview gates, copied SPR source, PAK manifest cache, and composer/wire decisions.
+If research will feed SPR/H5 work, stop at identity and evidence: canonical name, aliases, source row, item fields, resource table inputs, and uncertainty. Do not choose or wire runtime animation SPRs here; hand off to `vhcnd-spr-porting`, which owns preview gates, moving/copying SPR source into game-source, PAK manifest cache, and composer/wire decisions.
 
 When handing off, always include:
 - Active package-order evidence (`package.ini` + extracted `update*.pak` row).
@@ -56,7 +56,7 @@ Read only what is needed:
 - Item display names may be Vietnamese, while `magicattrib.txt` option names can remain Chinese.
 - Do not translate silently. Say whether a term is original text, decoded text, or inferred translation.
 - For equipment options, distinguish base attributes, requirements, generated magic attributes, and GoldItem fixed options.
-- If the task moves from lookup into character SPR porting, switch to `vltk-spr-porting`.
+- If the task moves from lookup into character SPR porting, switch to `vhcnd-spr-porting`.
 - When a corrected alias is discovered, update `data/vltk-normalized/aliases.json` instead of relying on memory.
 - Treat inventory sprites such as `obj-*.spr` and `horse*.spr` as item evidence only, not character animation proof.
-- If the user reports “đúng item name nhưng sai visual”, do not re-argue item mapping in this skill; hand off immediately with row evidence to `vltk-spr-porting` for layer/direction/runtime diagnosis.
+- If the user reports “đúng item name nhưng sai visual”, do not re-argue item mapping in this skill; hand off immediately with row evidence to `vhcnd-spr-porting` for layer/direction/runtime diagnosis.

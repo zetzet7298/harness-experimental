@@ -29,7 +29,7 @@ runtime wiring, and never be loaded from `/var/www/vhcnd` at H5 runtime.
 ## Design Notes
 
 - Resolve item identity with item-research evidence before visual work.
-- Use `vltk-spr-porting` workflow for extraction, preview, copy, and composition.
+- Use `vhcnd-spr-porting` workflow for extraction, preview, copy, and composition.
 - Keep preview/report files under `data/vltk-normalized/previews/`.
 
 ## Validation
