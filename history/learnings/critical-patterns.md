@@ -17,3 +17,11 @@ E_M2R đã đạt `ready-canonical` và bead đã đóng, nhưng `go-no-go` từ
 
 **Full entry:** history/learnings/20260519-e2r-canonical-gate-review-compounding.md
 
+## [20260520] Catalog-driven audits before parity claims
+**Category:** pattern
+**Feature:** full-equipment-system-port
+**Tags:** [equipment, generated-catalogs, audits, no-fabrication]
+
+S7 found generated catalog requirement keys (`magic_item_needreborn`, `magic_item_needtongban`) that old expected lists did not cover. Root cause: static expectations lag behind source-generated data, letting reachable PC branches avoid labels, seed coverage, or runtime classification. Future rule: before closing any VHCND catalog/parity slice, enumerate observed keys from the generated runtime catalog and drive labels, seed coverage, and runtime/audit classification from that observed set.
+
+**Full entry:** history/learnings/20260520-s7-requirement-parity-compounding.md
