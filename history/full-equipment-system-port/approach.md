@@ -166,3 +166,27 @@ Planning has stopped at the approval gate with an epic map and current-story can
 ### Planning Handoff
 
 Planning has prepared only S7. No execution beads have been created. Next skill: `khuym:validating` for S7 feasibility and proof commands.
+
+
+## S8 Planning Addendum — Stat Vector Fixtures and Internal Magic Damage
+
+**Date:** 2026-05-20  
+**Current story:** `history/full-equipment-system-port/current-story-pack-s8.md`  
+**Why now:** S8 depends on S6 magic-key visibility and S7 equip-condition parity. The largest remaining source-backed numeric combat group is internal magic damage (`internal-magic-damage-story-s8`, 355 catalog rows), so implementing it gives measurable parity progress before broader unsupported systems.
+
+### S8 Reality Basis
+
+- H5 already computes many PC-backed fields: base stats, vitality/energy HP/mana, weapon damage, external elemental flats, resists, attack rating, and physical damage buckets.
+- VHCND `KNpcAttribModify.cpp` has explicit additive handlers for internal physical/fire/cold/lightning/poison magic damage using `nValue[0]` for positive rows.
+- Generated S6 audit proves those keys are source enum-backed but unsupported; after S7D, `magic_item_nouser` is no longer part of S8.
+
+### S8 Validation Questions
+
+1. Do all catalog rows for the six internal-magic keys carry deterministic non-negative values that can be mapped without RNG?
+2. Which `CharacterStats` field names should represent internal magic scalar/min/max values without colliding with external `fireDamage/coldDamage/...` skill additive fields?
+3. Can fixture tests cite generated catalog rows and source formulas strongly enough to prove stat-vector parity for this slice?
+4. Does changing `CharacterStats` affect UI/run-start snapshot serialization or property tests beyond expected new fields?
+
+### Planning Handoff
+
+Planning has prepared only S8. No execution beads have been created. Next skill: `khuym:validating` for S8 feasibility and proof commands.
