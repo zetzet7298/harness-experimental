@@ -284,3 +284,13 @@ S18 passed. `game-source/.gitignore` now explicitly ignores local `artifacts/` b
 ### S19 Execution Outcome
 
 S19 passed: typecheck, property tests, runtime isolation, production build, GitNexus changed-scope check, and browser smoke all passed. The only non-blocking warning is the existing production bundle-size warning, recorded for future release/performance work.
+
+## S20 Planning Addendum — Handoff / Review Pack
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s20.md`
+**Why now:** S20 summarizes the pushed S16-S19 chain and prevents premature full-context completion claims.
+
+### S20 Execution Outcome
+
+S20 handoff is recorded in `history/full-equipment-system-port/handoff-s20.md`. It states S16-S19 are complete, maps D1-D14 to evidence/gaps, and identifies the next required story as S21 Equipment Visual Batch Preview Expansion because full visual coverage remains incomplete beyond the preview-backed smoke set.
