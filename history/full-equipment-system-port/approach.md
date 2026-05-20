@@ -142,3 +142,27 @@ Validation should decide the exact command list, but expected proof includes:
 ## Planning Handoff
 
 Planning has stopped at the approval gate with an epic map and current-story candidate. After human approval, planning recommends moving to `khuym:validating` for S1/S2/S3 feasibility only. Do not create execution beads until validation proves the source/table/slot/catalog path and updates the proof commands. Future visual/UI/formula stories stay queued, not bead-created, until their prerequisites are validated.
+
+
+## S7 Planning Addendum — Equip Condition Parity
+
+**Date:** 2026-05-20  
+**Current story:** `history/full-equipment-system-port/current-story-pack-s7.md`  
+**Why now:** S6 made catalog magic keys source-backed and exposed unsupported stat semantics. The next safest E2 slice is equip-condition parity because runtime equip/unequip must fail or pass exactly like VHCND before deeper stat-vector and UI stories can be trusted.
+
+### S7 Reality Basis
+
+- VHCND `KItemList::CanEquip` checks slot fit before looping all requirement rows.
+- VHCND `EnoughAttrib` handles level, strength, dexterity, vitality, energy, faction, series, sex, prohibited faction/series, learned skill, reborn count, city-owner, bangzhu, and companion-slot requirements.
+- H5 currently implements the common level/stat/faction/series/sex branches only. Missing branches need either state-backed implementation or explicit fail-closed unsupported status.
+
+### S7 Validation Questions
+
+1. Which requirement keys actually appear in the current generated catalog, and how many rows/items use each?
+2. Does the current seed inventory include every reachable requirement key without fabricating rows?
+3. Can unsupported VHCND branches be safely fail-closed without breaking existing smoke loadouts?
+4. Do tests cover candidate-self-satisfying stat requirements, slot mismatch, dual-ring slots, and unsupported requirement messages?
+
+### Planning Handoff
+
+Planning has prepared only S7. No execution beads have been created. Next skill: `khuym:validating` for S7 feasibility and proof commands.
