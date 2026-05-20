@@ -31,3 +31,13 @@ S13 is necessary before claiming visual parity for the user's smoke equipment ex
 - Do not silently rename the ring row into the staff weapon. If localization mapping is wrong, repair or document it with source rows.
 - Do not make runtime read from `/var/www/vhcnd`; copying from build-time evidence into `game-source` is allowed.
 - Do not compose/wire new runtime assets unless preview evidence is already `passed`.
+
+## Post-Execution Validation — 2026-05-20
+
+**Decision:** `PASSED — S13 COMPLETE`
+
+- Identity ambiguity resolved: the user-facing staff is catalog row 98 (`GoldItem.txt:98`, weapon, `obj-staff13.spr`), while row 97 is retained as a ring and no longer satisfies the staff name.
+- Catalog gate defaults are current ids and no longer stale; dry-run/apply both produced `required=12`, `copied=12`, `skipped=0`.
+- All copied smoke SPRs are repo-local files under `/var/www/vltk-h5-survivors/game-source/public/assets/character/vhcnd/source/smoke-3piece-tu-la-giang-sa-dich-khai/`; symlink/runtime isolation gate passed.
+- Visual coverage gate passed through dynamic layered parts for the smoke loadout (`allRequiredPassed=true`, no required failures).
+- User-facing E2E proof: `$browser-navigation` against port 5173 seeded the smoke loadout, started a run, captured `/tmp/s13-equipment-screen.png` and `/tmp/s13-game-run-screen.png`, and confirmed `layeredCount=6` with staff/body part textures loaded. Playwright smoke also passed after installing the missing local Chromium browser cache.

@@ -40,3 +40,11 @@ Make the user-specified smoke loadout visual gate source-backed and repeatable f
 - Do not wire unreviewed candidate SPRs.
 - Do not use symlink or make runtime read `/var/www/vhcnd`.
 - Do not fix unrelated gold-name localization rows unless they block the smoke identity.
+
+## Execution Evidence — 2026-05-20
+
+- Corrected smoke identity pins to current catalog ids: `vhcnd-tu-la-phat-ket-31-2-10`, `vhcnd-giang-sa-bao-41-3-10`, and staff/weapon row `vhcnd-搂虄ch-kh赂i-l么c-ng盲c-tr颅卯ng-98-2-10`. Row 97 is now documented as the ring `Địch Khái Long Ban Chỉ`, not the staff.
+- Repaired catalog visuals from passed packet evidence: Tu La `MA_HD_010`, Giáng Sa `MA_BD/LH/RH_034`, Địch Khái staff `MA_RW_026` + `MA_LW_000`, both HR01/RD01.
+- `python3 scripts/vltk-port-loadout.py --mode catalog-gate --dry-run` => `required=12 copied=12 skipped=0`; apply copied the same 12 local SPRs into `game-source`.
+- Regenerated dynamic part sheets/manifest for the newly copied body/weapon/head parts; `python3 scripts/vltk-audit-equipment-visual-coverage.py` now reports `allRequiredPassed=true` for `smoke-3piece`.
+- Runtime isolation and E2E passed: `npm run check:runtime-isolation`, `npm run typecheck`, `npm run build`, `npx vitest --run --testTimeout=120000` (241/241), `$browser-navigation` at `http://localhost:5173` with smoke localStorage seed (layeredCount=6; required part textures present), and `npm run test:smoke` passed in Chromium.
