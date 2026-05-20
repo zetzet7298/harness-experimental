@@ -87,3 +87,17 @@ Final validation passed from `/var/www/vltk-h5-survivors/game-source`:
 9. `npm run build` ✅
 
 Build warnings remain non-blocking existing Vite/Rolldown chunk-size/plugin-timing warnings; runtime isolation passed during both explicit check and `prebuild`.
+
+
+## S7D Follow-up Addendum — 2026-05-20
+
+Completion audit before S8 found `magic_item_nouser` also appears in generated `magicAttributes` (for example mask rows), not only in `requirements`. S7D added fail-closed evaluation for requirement-like magic/base attributes so those source-backed restrictions are not bypassed when normalization emits them outside `requirements`.
+
+Additional validation passed from `/var/www/vltk-h5-survivors/game-source`:
+
+1. `python3 scripts/vltk-audit-equipment-magic-attribute-parity.py` ✅ (`magic_item_nouser` now implemented; implemented count `24`, unsupported count `35`)
+2. `python3 scripts/vltk-audit-equipment-requirement-parity.py` ✅
+3. `npx vitest run tests/properties/equipment.unit.test.ts` ✅ (`85` tests)
+4. `npm run typecheck` ✅
+5. `npm run test:pbt` ✅ (`17` files, `231` tests)
+6. `npm run check:runtime-isolation` ✅

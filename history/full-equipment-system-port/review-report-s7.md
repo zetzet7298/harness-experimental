@@ -34,3 +34,8 @@ From `/var/www/vltk-h5-survivors/game-source`:
 ## Remaining Parity Blockers
 
 S7 does not implement full learned-skill, reborn, city/tong, or companion systems. Current behavior is intentionally fail-closed for those requirement keys until those player-state systems are ported. The next E2 story should move to broader stat-vector parity (S8) unless planning finds a stricter prerequisite.
+
+
+## S7D Follow-up Review
+
+PASS. Completion audit found and fixed one S7 gap: `magic_item_nouser` can be emitted as a magic/base attribute, so `canEquipItem` now evaluates requirement-like attributes in addition to explicit `requirements`. The magic attribute parity audit now classifies `magic_item_nouser` as implemented instead of unsupported, and PBT increased to 231 tests.
