@@ -136,9 +136,17 @@ This harness repository is not the H5 game source index. Use explicit repo param
 | --- | --- | --- |
 | H5 game source | `vltk-h5-survivors` | `/var/www/vltk-h5-survivors/game-source` |
 | VHCND legacy source | `vhcnd` | `/var/www/vhcnd` |
+| Harness/control workspace | `harness-experimental` | `/var/www/vltk-h5-survivors/harness-experimental` |
 | Cross-repo group | `@vltk-porting` | `h5` + `pc` + `harness` members |
 
 When calling MCP tools from this harness, always pass `repo`. Do not omit `repo`, because multiple repos are indexed.
+
+For cross-repo work, prefer:
+
+- H5 runtime/game code: `repo: "@vltk-porting/h5"` or `repo: "vltk-h5-survivors"`.
+- VHCND legacy source/table evidence: `repo: "@vltk-porting/pc"` or `repo: "vhcnd"`.
+- Harness/docs/skills/process: `repo: "@vltk-porting/harness"` or `repo: "harness-experimental"`.
+- Combined search: `repo: "@vltk-porting"`; inspect `_repo` before acting.
 
 <!-- gitnexus:end -->
 
