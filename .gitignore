@@ -26,3 +26,10 @@ history/*/spike-scripts/fnv1a-probe.csv
 .beads/beads.db-*
 .beads/.sync.lock
 .beads/last-touched
+
+# Extra bulky spike raw artifacts (keep md/json evidence instead)
+history/*/spike-scripts/*.preview.csv
+history/*/spike-scripts/*-backup*.csv
+history/*/spike-scripts/*-suggestions.csv
+history/*/spike-scripts/*-remaining.csv
+history/*/spike-scripts/*-review-queue.csv
