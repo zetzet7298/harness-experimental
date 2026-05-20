@@ -274,3 +274,13 @@ S17 validation passed with no active remediation required. Active harness docs/`
 ### S18 Execution Outcome
 
 S18 passed. `game-source/.gitignore` now explicitly ignores local `artifacts/` browser/playtest evidence dumps and documents that `public/assets/character/vhcnd/wardrobe-debug/` remains tracked intentionally because runtime code uses it. Heavy local caches/build outputs remain ignored, and `npm run check:no-runtime-vhcnd` passed.
+
+## S19 Planning Addendum — Full Validation Chain
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s19.md`
+**Why now:** S19 proves the accumulated S16-S18 state after player-facing UI, isolation audit, and gitignore hygiene.
+
+### S19 Execution Outcome
+
+S19 passed: typecheck, property tests, runtime isolation, production build, GitNexus changed-scope check, and browser smoke all passed. The only non-blocking warning is the existing production bundle-size warning, recorded for future release/performance work.
