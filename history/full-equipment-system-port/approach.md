@@ -264,3 +264,13 @@ Proof is recorded in `validation-s16.md`; browser screenshots are `/tmp/s16-equi
 ### S17 Execution Outcome
 
 S17 validation passed with no active remediation required. Active harness docs/`.codex` skills and active game-source docs/scripts have no old source-name or `/var/www/vltkunity` references, runtime `src/` and `public/` have no forbidden-root literals and no symlinks, and `npm run check:no-runtime-vhcnd` passed. The "cần xử lý tiếp" list is empty for active scope; archival migration history remains unchanged as evidence.
+
+## S18 Planning Addendum — Heavy Artifact / Gitignore Policy
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s18.md`
+**Why now:** After S17 proved active reference/runtime isolation, S18 addresses the user's request to put unused/heavy outputs into gitignore while preserving required runtime/evidence assets.
+
+### S18 Execution Outcome
+
+S18 passed. `game-source/.gitignore` now explicitly ignores local `artifacts/` browser/playtest evidence dumps and documents that `public/assets/character/vhcnd/wardrobe-debug/` remains tracked intentionally because runtime code uses it. Heavy local caches/build outputs remain ignored, and `npm run check:no-runtime-vhcnd` passed.
