@@ -62,3 +62,28 @@ The label command failed exactly on the two S7 requirement gaps. That is an acti
 ## Execution Approval Scope
 
 The validated work is S7 only: requirement parity audit, fail-closed requirement handling/labels, seed coverage updates, and validation artifacts. S7 must not implement portrait redesign, visual SPR porting, or full skill/reborn/companion systems beyond explicit fail-closed requirement semantics unless a source-backed catalog row forces a narrower state addition and tests prove it.
+
+
+## S7 Execution Validation Addendum — 2026-05-20
+
+S7 execution completed the requirement parity chain:
+
+- Added `scripts/vltk-audit-equipment-requirement-parity.py` and generated `data/vltk-normalized/equipment-requirement-parity.audit.json`.
+- Requirement audit result: 8 catalog requirement keys, 6 normal implemented keys, 2 fail-closed implemented keys (`magic_item_needreborn`, `magic_item_needtongban`), 0 unknown/uncategorized failures, 0 missing labels, 0 missing seed coverage.
+- Runtime now fails closed for unsupported VHCND state gates (`needskill`, `needreborn`, `needcity`, `needbangzhu`, `needtongban`) and implements source-backed prohibited faction/series gates (`magic_item_nouser`, `magic_item_noseries`) when player state exists.
+- Vietnamese labels now cover every observed catalog attribute and requirement key; `equipment-label-coverage.audit.json` passes with 59 attribute keys and 8 requirement keys.
+- Seed coverage now expects and includes `magic_item_needreborn` and `magic_item_needtongban` without increasing the 125-item mobile bag cap.
+
+Final validation passed from `/var/www/vltk-h5-survivors/game-source`:
+
+1. `python3 scripts/vltk-build-equipment-seed.py` ✅ (`9552` catalog items, `15` equipped slots)
+2. `python3 scripts/vltk-audit-equipment-requirement-parity.py` ✅
+3. `python3 scripts/vltk-audit-equipment-seed-coverage.py` ✅ (`125` bag items, `0` gaps)
+4. `python3 scripts/vltk-audit-equipment-label-coverage.py` ✅ (`attrMissing=0`, `reqMissing=0`)
+5. `python3 scripts/vltk-audit-equipment-stat-coverage.py` ✅
+6. `npm run test:pbt` ✅ (`17` files, `230` tests)
+7. `npm run typecheck` ✅
+8. `npm run check:runtime-isolation` ✅
+9. `npm run build` ✅
+
+Build warnings remain non-blocking existing Vite/Rolldown chunk-size/plugin-timing warnings; runtime isolation passed during both explicit check and `prebuild`.
