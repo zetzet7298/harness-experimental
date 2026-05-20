@@ -199,3 +199,20 @@ During `khuym:reviewing`, acceptance gaps were found and fixed:
 - Runtime isolation is now a reusable package gate (`npm run check:runtime-isolation`) and is wired into `prebuild`; it scans `src/` and `public/` for `/var/www/vhcnd` literals and symlinks.
 
 Post-fix validation passed: normalizer, seed build, table/stat/series/quality/seed audits, `npm run test:pbt` (225 tests), `npm run typecheck`, `npm run check:runtime-isolation`, and `npm run build`.
+
+## S5 Formula Ledger Addendum — 2026-05-20
+
+S5 resolved the deferred formula planning question about `PC_MAX_RESIST`:
+
+- Active local VHCND source evidence is `MAX_RESIST = 150` at `sources/Client/Classes/gamecore/GameDataDef.h:134`, not the stale H5 value `95`.
+- H5 `PC_MAX_RESIST` is now `150` and formula/stat audits agree with the source-backed ledger.
+- `scripts/vltk-audit-equipment-formula-parity.py` is ledger-backed and validates VHCND source path/line markers plus H5 markers for every S5 pivot.
+
+Validation passed from `/var/www/vltk-h5-survivors/game-source`:
+
+1. `python3 scripts/vltk-audit-equipment-formula-parity.py` ✅
+2. `python3 scripts/vltk-audit-equipment-stat-coverage.py` ✅
+3. `npm run test:pbt` ✅ (`17 files`, `225 tests`)
+4. `npm run typecheck` ✅
+5. `npm run check:runtime-isolation` ✅
+6. `npm run build` ✅
