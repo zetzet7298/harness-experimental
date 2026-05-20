@@ -39,4 +39,4 @@ detect_changes(repo="vltk-h5-survivors", scope="all")
 
 ## Remaining Gap
 
-S41 closes the generic preview-candidate bucket. Full visual coverage is still incomplete because explicit unresolved buckets remain: `missing-local-source-spr=204`, `missing-npcres-mapping=6304`, and `missing-resource-row-no-fallback=82`. S41 does not compose or wire runtime visuals; later stories must address those unresolved buckets or promote passed evidence through parts export/runtime manifest for player-facing visuals.
+S41 closes the generic preview-candidate bucket. Full visual coverage is still incomplete because explicit unresolved buckets remain: `missing-local-source-spr=204`, `missing-npcres-mapping=6276`, `missing-npcres-row=6`, and `missing-resource-row-no-fallback=82`. S41 does not compose or wire runtime visuals; later stories must address those unresolved buckets or promote passed evidence through parts export/runtime manifest for player-facing visuals.
