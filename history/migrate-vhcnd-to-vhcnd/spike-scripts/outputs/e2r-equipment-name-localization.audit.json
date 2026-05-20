@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "catalog": "src/data/equipmentCatalog.json",
+  "totalItems": 1231,
+  "localizedNameCount": 1231,
+  "localizedNameCountByQuality": {
+    "gold": 171,
+    "magic": 500,
+    "normal": 560
+  },
+  "cjkCanonicalNameCount": 0,
+  "firstLocalizedExamples": [
+    {
+      "id": "vhcnd-梦龙法冠-2-10",
+      "canonicalName": "Mộng Long Chính Hồng Tăng Mão",
+      "originalName": "梦龙法冠",
+      "localizedSource": {
+        "line": 2,
+        "matchReason": "GoldItem Chinese set prefix mapped to VNG set; item matched by unique inferred slot from VNG image/name.",
+        "path": "https://volammienphi.vnggames.com/cam-nang/trang-bi/trang-bi-hoang-kim-mon-phai-thieu-lam.html",
+        "sourceKind": "official-vng-equipment-handbook-page"
+      }
+    },
+    {
+      "id": "vhcnd-梦龙戒衫-3-10",
+      "canonicalName": "Mộng Long Kim Ti Chính Hồng Cà Sa",
+      "originalName": "梦龙戒衫",
+      "localizedSource": {
+        "line": 3,
+        "matchReason": "GoldItem Chinese set prefix mapped to VNG set; item matched by unique inferred slot from VNG image/name.",
+        "path": "https://volammienphi.vnggames.com/cam-nang/trang-bi/trang-bi-hoang-kim-mon-phai-thieu-lam.html",
+        "sourceKind": "official-vng-equipment-handbook-page"
+      }
+    },
+    {
+      "id": "vhcnd-梦龙软绦-4-10",
+      "canonicalName": "Mộng Long Huyền Ti Phát Đái",
+      "originalName": "梦龙软绦",
+      "localizedSource": {
+        "line": 4,
+        "matchReason": "GoldItem Chinese set prefix mapped to VNG set; item matched by unique inferred slot from VNG image/name.",
+        "path": "https://volammienphi.vnggames.com/cam-nang/trang-bi/trang-bi-hoang-kim-mon-phai-thieu-lam.html",
+        "sourceKind": "official-vng-equipment-handbook-page"
+      }
+    },
+    {
+      "id": "vhcnd-梦龙护腕-5-1-10",
+      "canonicalName": "Mộng Long Phật Pháp Huyền Bội",
+      "originalName": "梦龙护腕",
+      "localizedSource": {
+        "line": 5,
+        "matchReason": "Vietnamese localized goldequip.txt evidence table maps the same GoldItem row number to a user-facing item name; used only when VNG set+slot evidence is missing or ambiguous.",
+        "path": "data/vltk-normalized/localized-golditem-line-names.json",
+        "sourceKind": "local-vhst-vietnamese-golditem-table"
+      }
+    },
+    {
+      "id": "vhcnd-梦龙僧鞋-6-10",
+      "canonicalName": "Mộng Long Đạt Ma Tăng Hài",
+      "originalName": "梦龙僧鞋",
+      "localizedSource": {
+        "line": 6,
+        "matchReason": "GoldItem Chinese set prefix mapped to VNG set; item matched by unique inferred slot from VNG image/name.",
+        "path": "https://volammienphi.vnggames.com/cam-nang/trang-bi/trang-bi-hoang-kim-mon-phai-thieu-lam.html",
+        "sourceKind": "official-vng-equipment-handbook-page"
+      }
+    }
+  ],
+  "firstCjkExamples": [],
+  "localizedCjkCanonicalNameCount": 0,
+  "vngGoldNameSource": {
+    "path": "data/vltk-normalized/vng-gold-equipment-name-sources.json",
+    "source": "VNG Võ Lâm Miễn Phí official equipment handbook pages",
+    "schoolCount": 10,
+    "setCount": 27,
+    "itemNameCount": 133,
+    "supplementalItemNameCount": 9,
+    "totalVietnameseGoldNameEvidenceCount": 142,
+    "rowMapPath": "data/vltk-normalized/gold-name-row-map.audit.json",
+    "verifiedGoldRowMapCount": 171,
+    "verifiedGoldRowMapCountsBySourceKind": {
+      "official-vng-equipment-handbook-page": 113,
+      "local-vhst-vietnamese-golditem-table": 39,
+      "official-vng-ctc-event-page": 6,
+      "official-vng-zing-supplemental-event-page": 13
+    },
+    "ambiguousGoldRowMapCount": 0,
+    "unmatchedGoldRowMapCount": 0,
+    "remainingGoldRowsWithoutVerifiedVietnameseRowMap": 0,
+    "appliedToCatalog": true
+  },
+  "completeForActivePakLocalizedRows": true,
+  "notes": [
+    "Canonical names prefer active update01.pak TCVN Vietnamese item-table rows so the H5 equipment UI matches the PC D-key wardrobe where localized rows exist.",
+    "GoldItem.txt is absent from active PAK package order in this source mirror and only exists as loose GBK Chinese; gold display names are applied only when a Vietnamese row-map entry is source-backed.",
+    "Official VNG Hoàng Kim môn phái pages, supplemental Zing evidence, official VNG CTC rows, and local Vietnamese GoldItem-line evidence are applied only through data/vltk-normalized/gold-name-row-map.audit.json when the row has source-backed proof."
+  ]
+}

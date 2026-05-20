@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.300456+00:00",
+  "gate_status": "ready-canonical",
+  "bead_status": "closed",
+  "map_issue_count": 0,
+  "remaining_rows": 0,
+  "accept_provisional": false,
+  "preflight": {
+    "option_a_canonical_ready": true,
+    "option_b_ready_to_finalize": false,
+    "option_b_ready_to_request_human": false
+  },
+  "next_step_label": "canonical-close-now",
+  "next_step_command": "python3 history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason \"Canonical mapping completed\" --append-verdict-note",
+  "completion_audit_overall": "complete",
+  "completion_audit_blockers": []
+}

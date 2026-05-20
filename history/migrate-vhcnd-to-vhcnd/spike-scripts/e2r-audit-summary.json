@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-19T00:00:00Z",
+  "outputs": [
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-stat-coverage.audit.json",
+      "exists": true,
+      "status": "pass",
+      "topLevelKeys": [
+        "catalog",
+        "catalogAttributeCounts",
+        "catalogAttributeKeyCount",
+        "completeForCurrentCatalog",
+        "flags",
+        "formulaMarkers",
+        "handledCaseCount",
+        "missingFormulaMarkers"
+      ],
+      "noFabricationStatus": "pass",
+      "sourceLinesValid": 1231,
+      "itemsChecked": 1231
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-quality-coverage.audit.json",
+      "exists": true,
+      "status": null,
+      "topLevelKeys": [
+        "catalog",
+        "completeForUserMentionedQualitySet",
+        "expectedUserMentionedTiers",
+        "firstSourceByQuality",
+        "missingExpectedTiers",
+        "notes",
+        "presentQualities",
+        "qualityCounts"
+      ]
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-series-coverage.audit.json",
+      "exists": true,
+      "status": null,
+      "topLevelKeys": [
+        "catalogAnomalies",
+        "catalogSeriesCounts",
+        "domain",
+        "expected",
+        "generatedBy",
+        "hiddenMagicActivation",
+        "inputs",
+        "notes"
+      ]
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-visual-coverage.audit.json",
+      "exists": false
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-visual-part-coverage.audit.json",
+      "exists": false
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-formula-parity.audit.json",
+      "exists": true,
+      "status": null,
+      "topLevelKeys": [
+        "generatedBy",
+        "markers",
+        "schemaVersion",
+        "series_conquer_multiplier",
+        "summary",
+        "targets"
+      ]
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-label-coverage.audit.json",
+      "exists": true,
+      "status": null,
+      "topLevelKeys": [
+        "attributeLabelMissing",
+        "attributeLabelOrphan",
+        "generatedBy",
+        "requirementLabelMissing",
+        "requirementLabelOrphan",
+        "schemaVersion",
+        "summary"
+      ]
+    },
+    {
+      "file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/outputs/e2r-equipment-name-localization.audit.json",
+      "exists": true,
+      "status": null,
+      "topLevelKeys": [
+        "catalog",
+        "cjkCanonicalNameCount",
+        "completeForActivePakLocalizedRows",
+        "firstCjkExamples",
+        "firstLocalizedExamples",
+        "localizedCjkCanonicalNameCount",
+        "localizedNameCount",
+        "localizedNameCountByQuality"
+      ]
+    }
+  ],
+  "iconAudit": {
+    "script": "scripts/vltk-audit-equipment-icon-coverage.py",
+    "exitCode": 1,
+    "status": "fail",
+    "note": "Script has no --out flag; console-only result indicates missing icon metadata for all catalog items (expected pre-existing gap, unrelated to vhcnd provenance remap)."
+  }
+}

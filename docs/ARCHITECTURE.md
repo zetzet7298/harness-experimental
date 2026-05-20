@@ -7,7 +7,7 @@ Current stack:
 
 - Vite + TypeScript + Phaser for the browser game runtime.
 - Local JSON fixtures through an offline gateway.
-- Python tooling for VLTKPC data/SPR normalization, extraction, preview, and
+- Python tooling for VHCND data/SPR normalization, extraction, preview, and
   composition.
 - No backend, database, auth, CI, deployment, or native shell is currently part
   of the product contract.
@@ -21,9 +21,9 @@ src/domain
           <- src/game/scenes
               <- src/main.ts
 
-data/vltk-normalized + public/assets/character/vltkpc/source
+data/vltk-normalized + public/assets/character/vhcnd/source
   <- scripts
-      <- composed runtime assets under public/assets/character/vltkpc
+      <- composed runtime assets under public/assets/character/vhcnd
 ```
 
 Keep these boundaries unless a story records a new architecture decision.
@@ -33,7 +33,7 @@ Keep these boundaries unless a story records a new architecture decision.
 - `src/domain/types.ts` defines transport-neutral game, inventory, VLTK bridge,
   and debug types.
 - `src/systems/simulation.ts` owns the offline survivor loop and should not load
-  Phaser, DOM, or VLTKPC files directly.
+  Phaser, DOM, or VHCND files directly.
 - `src/gateway/offlineGateway.ts` adapts local fixtures into run state.
 - `src/game/scenes/*` renders Phaser scenes and consumes simulation snapshots.
 - `src/ui/hudText.ts` formats HUD text from debug stats.
@@ -43,10 +43,10 @@ Keep these boundaries unless a story records a new architecture decision.
 - Normalized data lives under `game-source/data/vltk-normalized/`.
 - Preview reports live under `game-source/data/vltk-normalized/previews/`.
 - Copied raw SPR sources live under
-  `game-source/public/assets/character/vltkpc/source/`.
-- Runtime sheets live under `game-source/public/assets/character/vltkpc/`.
+  `game-source/public/assets/character/vhcnd/source/`.
+- Runtime sheets live under `game-source/public/assets/character/vhcnd/`.
 - Scripts under `game-source/scripts/` may read legacy evidence during build-time
-  tooling, but runtime code must not read `/var/www/vltkpc`.
+  tooling, but runtime code must not read `/var/www/vhcnd`.
 
 ## Discovery Before Shape
 

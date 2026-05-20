@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.262860+00:00",
+  "facts": {
+    "remaining_rows": 0,
+    "issue_count": 0,
+    "stat_pass": true,
+    "no_fabrication_pass": true,
+    "accept_provisional": false,
+    "gate_status": "ready-canonical"
+  },
+  "option_a_canonical_ready": true,
+  "option_b_ready_to_finalize": false,
+  "option_b_ready_to_request_human": false,
+  "recommended_next_command": "python3 history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason \"Canonical mapping completed\" --append-verdict-note"
+}

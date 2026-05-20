@@ -1,0 +1,11 @@
+{
+  "generated_at_utc": "2026-05-19T16:30:06.257336+00:00",
+  "preview_file": "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-canonical-autofill-complete.preview.csv",
+  "filled_nocandidate_rows": 1,
+  "selected_rows": 149,
+  "total_rows": 149,
+  "remaining_rows": 0,
+  "issue_count": 0,
+  "status": "pass",
+  "note": "Line 46 sourced from current equipmentCatalog entry for originalName 无尘软履."
+}

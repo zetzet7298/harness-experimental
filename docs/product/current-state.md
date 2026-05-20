@@ -13,16 +13,16 @@
 - HUD displays level, XP, equipped weapon, physical damage, defense, poison/all
   resist, unsupported equipment attribute count, FPS, elapsed time, kills, pool
   sizes, and stress target instructions.
-- VLTKPC equipped character runtime sheets are loaded by `PreloadScene` using
+- VHCND equipped character runtime sheets are loaded by `PreloadScene` using
   player sheet constants, with 8 mounted-run direction animations and separate
   mounted-idle standing animations.
 - `GameScene` supports keyboard/WASD and touch-anywhere joystick movement, with
   player facing selected from the movement vector.
-- VLTKPC asset/data porting scripts exist under `scripts/` with documented packet,
+- VHCND asset/data porting scripts exist under `scripts/` with documented packet,
   preview, source-copy, and compose workflow.
-- Normalized VLTKPC data artifacts exist under `data/vltk-normalized/`, including
+- Normalized VHCND data artifacts exist under `data/vltk-normalized/`, including
   aliases, equipment index, packets, previews, and a PAK SPR manifest.
-- Generated VLTKPC equipment catalog and seed inventory exist in
+- Generated VHCND equipment catalog and seed inventory exist in
   `game-source/src/data/equipmentCatalog.json` and `game-source/src/data/inventory.json`,
   covering all 11 PC equipment slots with one mobile bag cell per item.
 - Portrait `EquipmentScene` starts before runs, supports equip/unequip with
@@ -33,8 +33,8 @@
 - Current exact equipped loadout packets can be generated from catalog+inventory
   for mounted run/idle; they remain preview-gated and are not runtime-wired until
   visual review passes.
-- Runtime-copied SPR sources exist under `public/assets/character/vltkpc/source/`.
-- Smoke tests exist for the VLTKPC porting packet and alias behavior in
+- Runtime-copied SPR sources exist under `public/assets/character/vhcnd/source/`.
+- Smoke tests exist for the VHCND porting packet and alias behavior in
   `tests/test_vltk_porting_smoke.py`.
 - Equipment browser smoke screenshots exist under
   `game-source/artifacts/screenshots/2026-05-18-equipment-*.png` with a JSON
@@ -48,10 +48,10 @@
 - Brownfield harness synchronization is now established; future game-source work
   must keep product docs, story packets, validation matrix, and architecture docs
   current.
-- VLTKPC porting workflow is packet/preview/report based. Equipment data now has
+- VHCND porting workflow is packet/preview/report based. Equipment data now has
   catalog-wide table import, while arbitrary in-run visual composition still
   requires preview-gated asset generation for weapon/horse/body combinations.
-- Prototype data is partially generated from VLTKPC tables; non-equipment real
+- Prototype data is partially generated from VHCND tables; non-equipment real
   table import remains documented as a later story in `game-source/src/data/README.md`.
 
 ## Not Done
@@ -62,7 +62,7 @@
   `Bổng Đả ác Cẩu`, but no automatic pixel-diff gate exists yet.
 - No generalized non-equipment VLTK item/stat import has replaced `src/data/vltk-samples.json`.
 - Every magic/base attribute key present in the generated equipment catalog is now
-  mapped into runtime stat or audit fields; VLTKPC attributes outside the current
+  mapped into runtime stat or audit fields; VHCND attributes outside the current
   catalog still require source-backed handling before future expansion claims.
 - In-run equipment visual sync currently selects approved head/body combo sheets
   when available; arbitrary weapon/horse visual composition remains a later
@@ -74,14 +74,14 @@
 ## Evidence Snapshot
 
 - `game-source/package.json` defines `build` and `typecheck` scripts.
-- `game-source/src/game/constants.ts` points the player sheet at the VLTKPC
+- `game-source/src/game/constants.ts` points the player sheet at the VHCND
   equipped runtime PNG.
 - `game-source/scripts/README.md` documents the one-command loadout gate and
   preview-before-compose rule.
-- `game-source/docs/VLTKPC_SPR_PORTING_PLAYBOOK.md` documents the project-wide
+- `game-source/docs/VHCND_SPR_PORTING_PLAYBOOK.md` documents the project-wide
   asset porting workflow.
 - `game-source/tests/test_vltk_porting_smoke.py` verifies known good packet SPRs
   and alias resolution.
 
 - `game-source/src/domain/equipment.ts` contains the supported equipment requirement/stat aggregation rules.
-- `docs/validation/2026-05-18-vltkpc-equipment-system-port.md` records the equipment-system validation pass.
+- `docs/validation/2026-05-18-vhcnd-equipment-system-port.md` records the equipment-system validation pass.

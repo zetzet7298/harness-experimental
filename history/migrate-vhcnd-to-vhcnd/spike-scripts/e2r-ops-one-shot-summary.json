@@ -1,0 +1,77 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.109953+00:00",
+  "one_line": "E2R_GATE status=ready-canonical selected=149/149 remaining=0 completion=100.0% delta_selected=0 delta_remaining=0",
+  "gate_status": "ready-canonical",
+  "snapshot": {
+    "generated_at_utc": "2026-05-19T16:41:11.054231+00:00",
+    "snapshot_id": "20260519T164111Z",
+    "template": {
+      "path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
+      "total_rows": 149,
+      "selected_rows": 149,
+      "remaining_rows": 0,
+      "completion_pct": 100.0
+    },
+    "checklists": {
+      "easy": {
+        "done": 0,
+        "open": 7,
+        "total": 7
+      },
+      "medium": {
+        "done": 0,
+        "open": 30,
+        "total": 30
+      },
+      "hard": {
+        "done": 0,
+        "open": 63,
+        "total": 63
+      }
+    }
+  },
+  "diff": {
+    "generated_at_utc": "2026-05-19T16:41:11.054231+00:00",
+    "current_snapshot_id": "20260519T164111Z",
+    "previous_snapshot_id": "20260519T164048Z",
+    "delta": {
+      "selected_rows": 0,
+      "remaining_rows": 0,
+      "completion_pct": 0.0,
+      "checklists": {
+        "easy": {
+          "done_delta": 0,
+          "open_delta": 0
+        },
+        "medium": {
+          "done_delta": 0,
+          "open_delta": 0
+        },
+        "hard": {
+          "done_delta": 0,
+          "open_delta": 0
+        }
+      }
+    }
+  },
+  "runs": {
+    "snapshot": {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "mental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.md\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-diff-latest.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-diff-latest.md\nhistory dir: /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history\n",
+      "stderr_tail": ""
+    },
+    "gate": {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness-check.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "wrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness.md\ngate_status=ready-canonical\n",
+      "stderr_tail": ""
+    }
+  }
+}

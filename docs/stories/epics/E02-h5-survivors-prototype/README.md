@@ -2,7 +2,7 @@
 
 ## Goal
 
-Keep the browser-playable Phaser survivor prototype stable while the VLTKPC data
+Keep the browser-playable Phaser survivor prototype stable while the VHCND data
 and asset lanes mature.
 
 ## Stories

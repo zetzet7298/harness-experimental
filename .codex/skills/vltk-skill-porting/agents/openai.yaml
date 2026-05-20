@@ -1,3 +1,0 @@
-display_name: VLTK Skill Porting
-short_description: Port VLTKPC combat skills with evidence-backed parity.
-default_prompt: Port this VLTKPC skill into the H5 runtime using active PAK/table/script/engine evidence only, then validate parity.

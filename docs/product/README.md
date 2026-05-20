@@ -7,7 +7,7 @@ Start with:
 
 - `overview.md`: product goal, surfaces, non-goals, and source-of-truth routing.
 - `current-state.md`: everything already built, currently active, and not done.
-- `vltkpc-porting.md`: VLTKPC data/asset provenance, preview gates, and runtime
+- `vhcnd-porting.md`: VHCND data/asset provenance, preview gates, and runtime
   asset rules.
 - `roadmap.md`: near-term planned work and blocked/unknown items.
 

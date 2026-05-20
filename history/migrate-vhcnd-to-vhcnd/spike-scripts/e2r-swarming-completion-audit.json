@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-05-19T16:40:48.092164+00:00",
+  "objective": "$khuym:swarming for E_M2R gate mig-ja5",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Technical mapping validity ready",
+      "status": "proven",
+      "evidence": {
+        "validate_status": "pass",
+        "issue_count": 0
+      }
+    },
+    {
+      "id": "R2",
+      "text": "Gate readiness artifact exists",
+      "status": "proven",
+      "evidence": {
+        "gate_status": "ready-canonical"
+      }
+    },
+    {
+      "id": "R3",
+      "text": "Bead mig-ja5 closed with guard",
+      "status": "proven",
+      "evidence": {
+        "close_report_closed": true,
+        "close_gate_status": "ready-canonical"
+      }
+    },
+    {
+      "id": "R4",
+      "text": "Human provisional decision explicit (or canonical ready path)",
+      "status": "proven",
+      "evidence": {
+        "accept_provisional": false,
+        "gate_status": "ready-canonical"
+      }
+    },
+    {
+      "id": "R5",
+      "text": "Operator next-step command exists",
+      "status": "proven",
+      "evidence": {
+        "next_step_exists": true
+      }
+    }
+  ],
+  "overall_status": "complete",
+  "blocking_requirements": [],
+  "current_one_line": "E2R_GATE status=ready-canonical selected=149/149 remaining=0 completion=100.0% delta_selected=0 delta_remaining=0",
+  "dashboard_next_action": "Run safe close: python3 .../e2r-close-mig-ja5.py --confirm --reason \"...\" --append-verdict-note"
+}

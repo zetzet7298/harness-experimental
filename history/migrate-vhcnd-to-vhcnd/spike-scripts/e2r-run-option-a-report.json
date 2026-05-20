@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-05-19T16:36:50.852164+00:00",
+  "option": "A_canonical_first",
+  "runs": [
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "status=pass selected=149/149 issues=0\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.md\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-ops-one-shot.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "E2R_GATE status=ready-canonical selected=149/149 remaining=0 completion=100.0% delta_selected=100 delta_remaining=-100\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-ops-one-shot-summary.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-ops-one-shot-summary.md\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness-check.py"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "wrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness.json\nwrote /var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness.md\ngate_status=ready-canonical\n",
+      "stderr_tail": ""
+    }
+  ],
+  "gate_status_after_runs": "ready-canonical",
+  "is_ready_canonical": true
+}

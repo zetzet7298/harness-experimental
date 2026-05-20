@@ -5,7 +5,7 @@ Date: 2026-05-18
 ## Scope
 
 - Port Cái Bang skill `Bổng Đả ác Cẩu` (`SkillId=125`, `MissleId=47`) into H5 auto-fire lane.
-- Preserve VLTKPC package-order truth and produce side-by-side visual parity artifacts.
+- Preserve VHCND package-order truth and produce side-by-side visual parity artifacts.
 
 ## Commands Run
 
@@ -30,12 +30,12 @@ All commands completed successfully.
 - Side-by-side PNG: `data/vltk-normalized/previews/skill-bong-da-ac-cau-side-by-side.png`
 - Side-by-side GIF: `data/vltk-normalized/previews/skill-bong-da-ac-cau-side-by-side.gif`
 - Runtime sheets/meta:
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-main.png`
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-main.json`
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-impact.png`
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-impact.json`
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-precast.png`
-  - `public/assets/skills/vltkpc/bong-da-ac-cau-precast.json`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-main.png`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-main.json`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-impact.png`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-impact.json`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-precast.png`
+  - `public/assets/skills/vhcnd/bong-da-ac-cau-precast.json`
 
 ## Notes
 

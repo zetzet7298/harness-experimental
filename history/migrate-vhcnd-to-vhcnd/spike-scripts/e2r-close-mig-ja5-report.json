@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-05-19T16:37:06.518094+00:00",
+  "gate_status": "ready-canonical",
+  "ready_to_close": true,
+  "confirm_flag": true,
+  "closed": true,
+  "close_output": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"mig-ja5\",\"title\":\"E_M2R gate: canonical GoldItem mapping decision\",\"status\":\"closed\",\"closed_at\":\"2026-05-19T16:37:06.545781313+00:00\",\"close_reason\":\"Canonical mapping completed\"}]\n",
+    "stderr": ""
+  }
+}

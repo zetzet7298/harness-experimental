@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.229074+00:00",
+  "bead": {
+    "id": "mig-ja5",
+    "status": "closed"
+  },
+  "gate_status": "ready-canonical",
+  "one_line": "E2R_GATE status=ready-canonical selected=149/149 remaining=0 completion=100.0% delta_selected=0 delta_remaining=0",
+  "map_selected_rows": 149,
+  "map_total_rows": 149,
+  "map_remaining_rows": 0,
+  "map_issue_count": 0,
+  "accept_provisional": false,
+  "decided_by": "",
+  "next_action": "Run safe close: python3 .../e2r-close-mig-ja5.py --confirm --reason \"...\" --append-verdict-note"
+}

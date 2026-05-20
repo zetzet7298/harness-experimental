@@ -42,7 +42,7 @@ Use the routing in `AGENTS.md` before editing anything:
 - Harness/process/docs changes: `/var/www/vltk-h5-survivors/harness-experimental`.
 - H5 Phaser/Vite game source and runtime assets:
   `/var/www/vltk-h5-survivors/game-source`.
-- Legacy VLTKPC source/tables/assets: `/var/www/vltkpc`.
+- Legacy VHCND source/tables/assets: `/var/www/vhcnd`.
 
 ## What Counts As A Harness
 
@@ -70,7 +70,7 @@ The fastest way to understand the harness is to inspect a tiny example:
 ## Product Sources
 
 The current product contract is defined in `docs/product/` from the brownfield
-state of `/var/www/vltk-h5-survivors/game-source` and the ongoing VLTKPC porting
+state of `/var/www/vltk-h5-survivors/game-source` and the ongoing VHCND porting
 work.
 
 Current living artifacts:
@@ -78,7 +78,7 @@ Current living artifacts:
 - `docs/product/overview.md`: product goal and non-goals.
 - `docs/product/current-state.md`: what has been built, what is active, and
   what remains.
-- `docs/product/vltkpc-porting.md`: VLTKPC data/asset provenance and gates.
+- `docs/product/vhcnd-porting.md`: VHCND data/asset provenance and gates.
 - `docs/product/roadmap.md`: near-term next work.
 - `docs/stories/`: story packets and backlog created from current work.
 - `docs/TEST_MATRIX.md`: behavior-to-proof control panel.

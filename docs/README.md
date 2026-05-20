@@ -14,7 +14,7 @@ brownfield H5 game source at `/var/www/vltk-h5-survivors/game-source`.
 
 ## Folders
 
-- `product/`: current product truth for the H5 prototype and VLTKPC porting lane.
+- `product/`: current product truth for the H5 prototype and VHCND porting lane.
 - `stories/`: feature packets and backlog.
 - `decisions/`: durable decisions and tradeoffs.
 - `demo/`: concrete walkthroughs that show how the harness transforms input

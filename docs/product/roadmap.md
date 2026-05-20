@@ -3,7 +3,7 @@
 ## Now
 
 - Keep harness docs synchronized with the brownfield game-source state.
-- Preserve the playable offline Phaser prototype and VLTKPC porting gates.
+- Preserve the playable offline Phaser prototype and VHCND porting gates.
 - Validate the current state with `npm run build`, `npm run typecheck`, and the
   Python VLTK porting smoke test when docs or source contracts change.
 
@@ -19,7 +19,7 @@
 
 ## Later
 
-- Define progression, skill, enemy, map, and loot contracts from verified VLTKPC
+- Define progression, skill, enemy, map, and loot contracts from verified VHCND
   data.
 - Decide whether backend persistence is needed and record a decision before
   introducing server/API infrastructure.

@@ -2,7 +2,7 @@
 
 ## Scope
 
-Port Cái Bang `Kháng Long Hữu Hối` to H5 from active VLTKPC evidence, including level-20 spread behavior and copied local SPR/SFX runtime assets.
+Port Cái Bang `Kháng Long Hữu Hối` to H5 from active VHCND evidence, including level-20 spread behavior and copied local SPR/SFX runtime assets.
 
 ## Source Evidence
 
@@ -10,10 +10,10 @@ Port Cái Bang `Kháng Long Hữu Hối` to H5 from active VLTKPC evidence, incl
 - Active skill row: `/tmp/vltk-klhh-port/pak_utf8/settings__Skills.txt__slistcache.txt:129`.
 - Active missile row: `/tmp/vltk-klhh-port/pak_utf8/settings__Missles.txt__slistcache.txt:49`.
 - Active level script: `/tmp/vltk-klhh-port/pak_utf8/script__skill__gaibang.lua__slistcache.txt:109-132`.
-- Engine form enum: `/var/www/vltkpc/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/SkillDef.h:214-224`.
-- Engine move enum: `/var/www/vltkpc/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/SkillDef.h:104-115`.
-- Engine spread formula: `/var/www/vltkpc/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/KMissleSkill.cpp:870-1019`.
-- Dynamic override handling: `/var/www/vltkpc/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/KMissleSkill.cpp:1239-1272`.
+- Engine form enum: `/var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/SkillDef.h:214-224`.
+- Engine move enum: `/var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/SkillDef.h:104-115`.
+- Engine spread formula: `/var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/KMissleSkill.cpp:870-1019`.
+- Dynamic override handling: `/var/www/vhcnd/extracted_build_jxwin_soucgoc_hoiquanvolam/source_from_vmdk/SourceNew/swrod3/SwordOnline/Sources/Core/Src/Skill/KMissleSkill.cpp:1239-1272`.
 
 ## Confirmed Values
 
@@ -30,8 +30,8 @@ Port Cái Bang `Kháng Long Hữu Hối` to H5 from active VLTKPC evidence, incl
 ## Runtime Artifacts
 
 - Packet: `/var/www/vltk-h5-survivors/game-source/data/vltk-normalized/port-packets/skill-khang-long-huu-hoi.json`.
-- Runtime main sheet/meta: `/var/www/vltk-h5-survivors/game-source/public/assets/skills/vltkpc/khang-long-huu-hoi-main.png` and `.json`.
-- Copied source: `/var/www/vltk-h5-survivors/game-source/public/assets/skills/vltkpc/source/skill-khang-long-huu-hoi/`.
+- Runtime main sheet/meta: `/var/www/vltk-h5-survivors/game-source/public/assets/skills/vhcnd/khang-long-huu-hoi-main.png` and `.json`.
+- Copied source: `/var/www/vltk-h5-survivors/game-source/public/assets/skills/vhcnd/source/skill-khang-long-huu-hoi/`.
 - Side-by-side proof: `/var/www/vltk-h5-survivors/game-source/data/vltk-normalized/previews/skill-khang-long-huu-hoi-side-by-side.png` and `.gif`.
 - Browser smoke: `/var/www/vltk-h5-survivors/game-source/data/vltk-normalized/previews/browser/skill-khang-long-huu-hoi-smoke.png`.
 
@@ -46,7 +46,7 @@ Port Cái Bang `Kháng Long Hữu Hối` to H5 from active VLTKPC evidence, incl
 
 - H5 combat damage remains the simplified arcade damage model; PC magic damage values are recorded in the packet but not fully simulated.
 - Browser screenshot proves runtime load/no crash with active projectiles. The deterministic headless capture is not a frame-perfect PC-vs-H5 gameplay comparison.
-- Browser dev-server console still reports pre-existing equipped-character frame warnings for `vltkpc-equipped-tu-la-giang-sa-staff-phien-vu-idle` frames 98-111 and run frames 70-79. This pass did not address character sheet metadata.
+- Browser dev-server console still reports pre-existing equipped-character frame warnings for `vhcnd-equipped-tu-la-giang-sa-staff-phien-vu-idle` frames 98-111 and run frames 70-79. This pass did not address character sheet metadata.
 
 
 ## 2026-05-18 visual correction

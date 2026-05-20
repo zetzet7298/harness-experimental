@@ -29,7 +29,7 @@ python3 tests/test_vltk_porting_smoke.py
 | --- | --- | --- |
 | Harness source inspection | passed | Existing README, intake, architecture, test matrix, stories, decisions, and templates inspected. |
 | Game-source inspection | passed | Package scripts, Phaser scenes, simulation, gateway, scripts, docs, data, assets, and smoke test paths inspected. |
-| Product docs populated | passed | Brownfield overview, current state, VLTKPC porting, and roadmap added. |
+| Product docs populated | passed | Brownfield overview, current state, VHCND porting, and roadmap added. |
 | Story packets populated | passed | Done/active/planned work mapped to US-001 through US-005. |
 | Typecheck | passed | `npm run typecheck` passed in game-source. |
 | Build | passed | `npm run build` passed in game-source; Vite reported the existing large chunk warning. |
@@ -41,7 +41,7 @@ python3 tests/test_vltk_porting_smoke.py
 
 - `docs/product/overview.md`
 - `docs/product/current-state.md`
-- `docs/product/vltkpc-porting.md`
+- `docs/product/vhcnd-porting.md`
 - `docs/product/roadmap.md`
 - `docs/stories/backlog.md`
 - `docs/TEST_MATRIX.md`

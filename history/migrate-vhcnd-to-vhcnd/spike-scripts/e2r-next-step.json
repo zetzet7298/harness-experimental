@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.295650+00:00",
+  "label": "canonical-close-now",
+  "command": "python3 history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason \"Canonical mapping completed\" --append-verdict-note",
+  "source_preflight": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-preflight.json",
+  "facts": {
+    "remaining_rows": 0,
+    "issue_count": 0,
+    "stat_pass": true,
+    "no_fabrication_pass": true,
+    "accept_provisional": false,
+    "gate_status": "ready-canonical"
+  }
+}

@@ -11,7 +11,7 @@ normal
 ## Product Contract
 
 The browser prototype must boot locally, run an offline survivor loop, render the
-mounted VLTKPC player sheet, and expose HUD/stress signals useful for debugging.
+mounted VHCND player sheet, and expose HUD/stress signals useful for debugging.
 
 ## Relevant Product Docs
 
@@ -25,7 +25,7 @@ mounted VLTKPC player sheet, and expose HUD/stress signals useful for debugging.
 - Simulation updates player, enemies, projectiles, XP orbs, kills, levels, and
   stress target state.
 - HUD reports debug stats and stress controls.
-- Runtime player sheet is served from `game-source/public/assets`, not `/var/www/vltkpc`.
+- Runtime player sheet is served from `game-source/public/assets`, not `/var/www/vhcnd`.
 
 ## Design Notes
 

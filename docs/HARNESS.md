@@ -65,7 +65,7 @@ root at `/var/www/vltk-h5-survivors/game-source`. It includes:
 - Story templates and selected brownfield story packets.
 - Decision log template.
 - Validation report template.
-- Test matrix rows for current prototype and VLTKPC porting gates.
+- Test matrix rows for current prototype and VHCND porting gates.
 - Harness growth backlog.
 
 Harness v0 deliberately excludes:

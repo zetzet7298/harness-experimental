@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:11.335404+00:00",
+  "verdict": "GO",
+  "integrity_ok": true,
+  "preflight": {
+    "option_a_canonical_ready": true,
+    "option_b_ready_to_finalize": false,
+    "option_b_ready_to_request_human": false
+  },
+  "audit_overall": "complete",
+  "gate_status": "ready-canonical",
+  "next_step_label": "canonical-close-now",
+  "next_step_command": "python3 history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-close-mig-ja5.py --confirm --reason \"Canonical mapping completed\" --append-verdict-note",
+  "blockers": []
+}

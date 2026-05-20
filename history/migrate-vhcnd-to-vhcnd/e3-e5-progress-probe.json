@@ -1,0 +1,158 @@
+{
+  "generated_at_utc": "2026-05-19T16:59:10.090772+00:00",
+  "tracked_vhcnd_files": {
+    "/var/www/vltk-h5-survivors/harness-experimental": {
+      "count": 97,
+      "sample": [
+        ".beads/issues.jsonl",
+        "history/learnings/critical-patterns.md",
+        "history/migrate-vhcnd-to-vhcnd/CONTEXT.md",
+        "history/migrate-vhcnd-to-vhcnd/approach.md",
+        "history/migrate-vhcnd-to-vhcnd/current-work.md",
+        "history/migrate-vhcnd-to-vhcnd/discovery.md",
+        "history/migrate-vhcnd-to-vhcnd/e2r-operator-evidence-bundle.md",
+        "history/migrate-vhcnd-to-vhcnd/e2r-verdict.md",
+        "history/migrate-vhcnd-to-vhcnd/epic-map.md",
+        "history/migrate-vhcnd-to-vhcnd/feasibility-matrix.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-name-hash.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/audit-dryrun-evidence.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/audit-dryrun-summary.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e1-acceptance-evidence.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-approve-and-finalize-report.canonical-preview.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-approve-and-finalize-report.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-approve-and-finalize-report.provisional-preview.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-artifact-integrity-check.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-artifact-integrity-check.py",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-audit-summary.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-canonical-autofill-plus-fallback-report.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-canonical-autofill-preview-report.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-decision-simulation.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-decision-simulation.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-and-audit-report.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-next-command.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-preflight.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-preflight.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-finalize-preflight.py",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-decision-packet.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-decision-packet.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-gate-readiness.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-generate-next-step.py",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-go-no-go.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-go-no-go.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-apply-repair-report.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-validate.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T150522Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T150535Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T150708Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T151010Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T151350Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T152140Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T153438Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T153704Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T154107Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T154124Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T154405Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T154738Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T155035Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T155608Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160144Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160409Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160410Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160458Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160517Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160518Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160710Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T160711Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T161312Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T162015Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T162016Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-history/snapshot-20260519T162225Z.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-progress-snapshot.py",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-review-checklist-master.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-review-queue-guide.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-selected-repair-proposals.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-next-step.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-next-step.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-nongold-impl-evidence.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-operator-pulse.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-operator-pulse.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-ops-one-shot-summary.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-preview-repair-impact.json",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-print-approval-command.py",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-ready-for-human-approval.md",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-run-on-approval.sh",
+        "history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-run-option-a-report.json"
+      ]
+    },
+    "/var/www/vltk-h5-survivors/game-source": {
+      "count": 0,
+      "sample": []
+    }
+  },
+  "absolute_path_probe": {
+    "/var/www/vhcnd": {
+      "/var/www/vltk-h5-survivors/harness-experimental": {
+        "count": 14,
+        "files": [
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/e2r-verdict.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/epic-map.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/current-work.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/approach.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/CONTEXT.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/discovery.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-source-metadata-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/skills/vltk-map-porting/SKILL.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/skills/vltk-skill-porting/SKILL.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/skills/vltk-spr-porting/SKILL.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/skills/vltk-item-research/references/known-layout.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/specs/vltk-equipment-system/tasks.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/specs/vltk-equipment-system/design.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/.kiro/specs/vltk-equipment-system/requirements.md"
+        ]
+      },
+      "/var/www/vltk-h5-survivors/game-source": {
+        "count": 0,
+        "files": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "files": []
+      }
+    },
+    "/var/www/vhcnd": {
+      "/var/www/vltk-h5-survivors/harness-experimental": {
+        "count": 18,
+        "files": [
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/e2r-verdict.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/epic-map.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/feasibility-matrix.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-name-hash.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/current-work.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/approach.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/CONTEXT.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/discovery.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/residual-ref-patch-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/recovery-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e1-acceptance-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/remaining-root-move-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/mv-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/preflight-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/manifest-validation-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-source-metadata-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/field-edit-evidence.md",
+          "/var/www/vltk-h5-survivors/harness-experimental/docs/validation/2026-05-18-vhcnd-equipment-formula-icon-parity.md"
+        ]
+      },
+      "/var/www/vltk-h5-survivors/game-source": {
+        "count": 0,
+        "files": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "files": []
+      }
+    }
+  }
+}

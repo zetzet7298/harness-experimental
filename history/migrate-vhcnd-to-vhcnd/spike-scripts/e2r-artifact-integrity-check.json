@@ -1,0 +1,74 @@
+{
+  "generated_at_utc": "2026-05-19T16:41:10.900013+00:00",
+  "status": "pass",
+  "required_count": 17,
+  "missing_count": 0,
+  "missing": [],
+  "checks": [
+    {
+      "artifact": "e2r-control-dashboard.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-control-dashboard.json",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-finalize-preflight.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-finalize-preflight.json",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-next-step.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-next-step.json",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-swarming-completion-audit.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-swarming-completion-audit.json",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-gate-decision-packet.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-decision-simulation.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-ready-for-human-approval.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-operator-pulse.md",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-operator-pulse.json",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-approve-and-finalize.py",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-finalize-and-audit.py",
+      "exists": true
+    },
+    {
+      "artifact": "e2r-close-mig-ja5.py",
+      "exists": true
+    }
+  ],
+  "bundle_exists": true
+}

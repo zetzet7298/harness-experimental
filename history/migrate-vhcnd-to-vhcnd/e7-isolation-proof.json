@@ -1,0 +1,47 @@
+{
+  "generated_at_utc": "2026-05-19T17:04:57.910795+00:00",
+  "scopes": {
+    "harness_non_history": {
+      "vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      }
+    },
+    "game_source": {
+      "vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      }
+    },
+    "vhcnd_text_scan": {
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "/var/www/vhcnd": {
+        "count": 0,
+        "sample": []
+      },
+      "vhcnd": {
+        "count": 0,
+        "sample": []
+      }
+    }
+  }
+}

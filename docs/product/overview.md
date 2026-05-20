@@ -13,25 +13,25 @@ source.
 - Current mode: offline prototype with local JSON fixtures and no server API.
 - Current loop: mounted player, enemy spawning, auto projectiles, XP orbs, HUD
   debug stats, and stress target controls.
-- Current VLTKPC visual proof: composed equipped male run sheet loaded from
-  `public/assets/character/vltkpc/equipped-tu-la-giang-sa-staff-phien-vu-run.png`.
+- Current VHCND visual proof: composed equipped male run sheet loaded from
+  `public/assets/character/vhcnd/equipped-tu-la-giang-sa-staff-phien-vu-run.png`.
 
 ## Source Routing
 
 - Harness docs/process: `/var/www/vltk-h5-survivors/harness-experimental`.
 - H5 implementation/runtime assets: `/var/www/vltk-h5-survivors/game-source`.
-- Legacy PC tables/source/assets: `/var/www/vltkpc`.
+- Legacy PC tables/source/assets: `/var/www/vhcnd`.
 - GitNexus H5 repo: `vltk-h5-survivors`.
-- GitNexus PC repo: `vltkpc`.
+- GitNexus PC repo: `vhcnd`.
 - GitNexus cross-repo group: `@vltk-porting`.
 
 ## Product Principles
 
 - Keep the game playable offline until a story explicitly introduces backend or
   account persistence.
-- Do not read runtime assets directly from `/var/www/vltkpc`; copy verified SPR
+- Do not read runtime assets directly from `/var/www/vhcnd`; copy verified SPR
   sources into `game-source` before composition.
-- Treat decoded VLTKPC rows, packet JSON, copied SPRs, preview PNGs, and reports
+- Treat decoded VHCND rows, packet JSON, copied SPRs, preview PNGs, and reports
   as provenance artifacts, not disposable scratch files.
 - Keep simulation/domain logic transport-neutral so future live data can replace
   fixtures without rewriting the game loop.

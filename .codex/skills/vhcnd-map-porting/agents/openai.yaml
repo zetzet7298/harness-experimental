@@ -1,0 +1,4 @@
+interface:
+  display_name: "VLTK Map Porting"
+  short_description: "Port VHCND maps into H5 safely"
+  default_prompt: "Use $vltk-map-porting to port or fix a VHCND map with source-backed render parity."

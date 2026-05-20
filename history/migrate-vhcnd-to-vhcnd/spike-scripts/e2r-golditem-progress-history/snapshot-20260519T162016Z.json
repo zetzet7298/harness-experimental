@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-05-19T16:20:16.625041+00:00",
+  "snapshot_id": "20260519T162016Z",
+  "template": {
+    "path": "/var/www/vltk-h5-survivors/harness-experimental/history/migrate-vhcnd-to-vhcnd/spike-scripts/e2r-golditem-manual-map-template.csv",
+    "total_rows": 149,
+    "selected_rows": 49,
+    "remaining_rows": 100,
+    "completion_pct": 32.89
+  },
+  "checklists": {
+    "easy": {
+      "done": 0,
+      "open": 7,
+      "total": 7
+    },
+    "medium": {
+      "done": 0,
+      "open": 30,
+      "total": 30
+    },
+    "hard": {
+      "done": 0,
+      "open": 63,
+      "total": 63
+    }
+  }
+}

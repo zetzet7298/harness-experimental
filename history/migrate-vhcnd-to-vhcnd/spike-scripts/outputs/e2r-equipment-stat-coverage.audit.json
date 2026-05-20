@@ -1,0 +1,177 @@
+{
+  "catalog": "src/data/equipmentCatalog.json",
+  "catalogAttributeCounts": {
+    "magic_addcolddamage_v": 6,
+    "magic_adddefense_v": 139,
+    "magic_addfiredamage_v": 7,
+    "magic_addlightingdamage_v": 10,
+    "magic_addphysicsdamage_p": 160,
+    "magic_addphysicsdamage_v": 20,
+    "magic_addpoisondamage_v": 6,
+    "magic_allres_p": 84,
+    "magic_allskill_v": 15,
+    "magic_armordefense_v": 830,
+    "magic_attackratingenhance_p": 181,
+    "magic_attackratingenhance_v": 91,
+    "magic_coldres_p": 7,
+    "magic_damagetomana_p": 14,
+    "magic_dexterity_v": 9,
+    "magic_durability_v": 1062,
+    "magic_earthskill_v": 2,
+    "magic_fasthitrecover_v": 9,
+    "magic_fastwalkrun_p": 82,
+    "magic_fireres_p": 7,
+    "magic_fireskill_v": 4,
+    "magic_freezetimereduce_p": 3,
+    "magic_lifemax_v": 503,
+    "magic_lifereplenish_v": 9,
+    "magic_lightingres_p": 55,
+    "magic_lucky_v": 5,
+    "magic_manamax_v": 67,
+    "magic_manareplenish_v": 1,
+    "magic_metalskill_v": 3,
+    "magic_physicsres_p": 7,
+    "magic_poisonres_p": 450,
+    "magic_poisontimereduce_p": 1,
+    "magic_requirementreduce_p": 4,
+    "magic_staminamax_v": 91,
+    "magic_staminareplenish_v": 166,
+    "magic_steallifeenhance_p": 22,
+    "magic_stealmanaenhance_p": 24,
+    "magic_strength_v": 1,
+    "magic_stuntimereduce_p": 3,
+    "magic_visionradius_p": 17,
+    "magic_vitality_v": 10,
+    "magic_waterskill_v": 7,
+    "magic_weapondamagemax_v": 196,
+    "magic_weapondamagemin_v": 196,
+    "magic_woodskill_v": 4
+  },
+  "catalogAttributeKeyCount": 45,
+  "completeForCurrentCatalog": true,
+  "flags": {
+    "element_add_damage_participates_in_damage": {
+      "citation": "magic_add{fire,cold,lighting,poison}damage_v -> stats.{fire,cold,lightning,poison}Damage -> resolveSkillDamageBreakdown",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "skillFire.min + stats.fireDamage + stats.fireDamageMin",
+      "requiredCases": [
+        "magic_addfiredamage_v",
+        "magic_addcolddamage_v",
+        "magic_addlightingdamage_v",
+        "magic_addpoisondamage_v"
+      ],
+      "requiredDamageFields": [
+        "stats.fireDamage",
+        "stats.coldDamage",
+        "stats.lightningDamage",
+        "stats.poisonDamage"
+      ],
+      "status": "pass"
+    },
+    "pc_active_equip_links": {
+      "citation": "ACTIVED_EQUIP_BY_SLOT covers head/body/belt/weapon/foot/cuff/amulet/ring1/ring2/pendant/horse (KItemList.cpp:41-58)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "ACTIVED_EQUIP_BY_SLOT",
+      "status": "pass"
+    },
+    "pc_hidden_magic_activation": {
+      "citation": "activeMagicAttributes(item, activeCount) — KItemList.cpp:1019-1040 KItem::ApplyHiddenMagicAttribToNPC",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "activeMagicAttributes",
+      "status": "pass"
+    },
+    "pc_resist_cap": {
+      "citation": "export const PC_MAX_RESIST = 95 (GameDataDef.h:128 #define MAX_RESIST 95)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "PC_MAX_RESIST = 95",
+      "status": "pass"
+    },
+    "pc_resist_damage_formula": {
+      "citation": "applyPcResistDamage(damage, resist, resistMax) = floor(damage * (100 - clamp(resist, resistMax, PC_MAX_RESIST)) / 100) (KNpc.cpp:2151/2184/2211/2238/2266)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "damage * (100 - cappedByGlobalMax) / 100",
+      "status": "pass"
+    },
+    "pc_series_accrue_table": {
+      "citation": "SERIES_ACCRUE_TARGET = {0:2, 1:3, 2:1, 3:4, 4:0} (KMath.cpp:336-348 g_nAccrueSeries)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "SERIES_ACCRUE_TARGET",
+      "status": "pass"
+    },
+    "pc_series_conquer_table": {
+      "citation": "SERIES_CONQUER_TARGET = {0:1, 1:4, 2:3, 3:0, 4:2} (KMath.cpp:336-348 g_nConquerSeries)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "SERIES_CONQUER_TARGET",
+      "status": "pass"
+    },
+    "pc_typed_damage_breakdown": {
+      "citation": "resolveSkillDamageBreakdown references stats.{fire,cold,lightning,poison}Damage (KPlayer.cpp damage path)",
+      "evidence": "src/domain/equipment.ts",
+      "marker": "resolveSkillDamageBreakdown",
+      "status": "pass"
+    }
+  },
+  "formulaMarkers": {
+    "add_physics_percent_bucket_pc": true,
+    "all_resist_expands_elements": true,
+    "attack_rating_percent": true,
+    "base_attack_rating": true,
+    "base_dexterity_defense": true,
+    "base_strength_damage": true,
+    "current_add_physics_damage_pc": true,
+    "element_add_damage_participates_in_damage": true,
+    "leveladd_base_resists": true,
+    "leveladd_energy_mana": true,
+    "leveladd_vitality_life": true,
+    "lifemax_flat": true,
+    "lifemax_percent": true,
+    "pc_active_equip_links": true,
+    "pc_hidden_magic_activation": true,
+    "pc_resist_cap": true,
+    "pc_resist_damage_formula": true,
+    "pc_series_accrue_table": true,
+    "pc_series_conquer_table": true,
+    "pc_typed_damage_breakdown": true,
+    "weapon_damage_enhance_pc": true,
+    "weapon_dexterity_damage": true,
+    "weapon_strength_damage": true
+  },
+  "handledCaseCount": 79,
+  "missingFormulaMarkers": [],
+  "missingRuntimeCases": [],
+  "noFabricationCheck": {
+    "fileLineCounts": {
+      "ServerNew/_bin_v2_/gs/Settings/item/004/GoldItem.txt": 6332,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/amulet.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/armor.txt": 292,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/belt.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/boot.txt": 42,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/cuff.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/helm.txt": 143,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/horse.txt": 333,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/meleeweapon.txt": 72,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/pendant.txt": 22,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/rangeweapon.txt": 32,
+      "ServerNew/_bin_v2_/gs/Settings/item/004/ring.txt": 12
+    },
+    "itemsChecked": 1231,
+    "mismatches": [],
+    "sourceLinesValid": 1231,
+    "sourcePathPrefixesRequired": [
+      "Client/Settings/",
+      "ServerNew/_bin_v2_/gs/Settings/"
+    ],
+    "sourceRoot": "/var/www/vhcnd/sources",
+    "status": "pass"
+  },
+  "noopKeysPresentInCatalog": [],
+  "notes": [
+    "flags[].status=pass means equipment.ts contains the literal PC-parity marker for that flag (Req 14.3).",
+    "noFabricationCheck enforces every catalog item has a non-empty source.path under Client/Settings/ and a source.line within the actual VHCND source file (Req 14.5).",
+    "catalogAttributeCounts + missingRuntimeCases + noopKeysPresentInCatalog audit runtime stat-handling coverage for every key produced by the seed builder (Req 14.7).",
+    "Output is sort_keys=True / UTF-8 / trailing newline so reruns produce byte-identical files (Req 13.6 spillover for audit determinism)."
+  ],
+  "schemaVersion": 2,
+  "source": "src/domain/equipment.ts",
+  "status": "pass"
+}
