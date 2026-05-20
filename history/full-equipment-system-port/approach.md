@@ -248,3 +248,19 @@ Planning prepared S16 and validation approved one execution bead (`mig-v6l`). Th
 S16 has been implemented and validated. The equipment bag now uses hold/drag vertical scrolling over the existing 5×5 mobile matrix instead of page-by-page controls, and the item detail popup is centered in the portrait viewport. The implementation preserves seed/catalog modes, slot filtering, one-cell-per-item display, tap-vs-drag suppression, runtime isolation from `/var/www/vhcnd`, and Vietnamese-safe popup title rendering.
 
 Proof is recorded in `validation-s16.md`; browser screenshots are `/tmp/s16-equipment-scrolled.png` and `/tmp/s16-equipment-centered-popup.png`.
+
+## S17 Planning Addendum — Reference / Runtime Isolation Audit
+
+**Date:** 2026-05-20
+**Current story:** `history/full-equipment-system-port/current-story-pack-s17.md`
+**Why now:** After S16 player-facing UI work, the next E5 hygiene slice is to prove active instructions, repo-local skills, scripts, and runtime folders are still isolated from old PC roots and out-of-scope runtime dependencies.
+
+### S17 Reality Basis
+
+- `CONTEXT.md` D1-D2 require VHCND as evidence source only and local runtime assets/data under `game-source`.
+- `game-source` already ships `npm run check:no-runtime-vhcnd` for runtime source/public guardrails.
+- Earlier migration history may mention old roots as archival evidence; S17 only gates active docs/skills/scripts/runtime instructions.
+
+### S17 Execution Outcome
+
+S17 validation passed with no active remediation required. Active harness docs/`.codex` skills and active game-source docs/scripts have no old source-name or `/var/www/vltkunity` references, runtime `src/` and `public/` have no forbidden-root literals and no symlinks, and `npm run check:no-runtime-vhcnd` passed. The "cần xử lý tiếp" list is empty for active scope; archival migration history remains unchanged as evidence.
