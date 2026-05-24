@@ -1,0 +1,4 @@
+interface:
+  display_name: "JX1M Wuxia UI ImageGen"
+  short_description: "JX1M-style UI art cho survivors"
+  default_prompt: "Use this skill to generate or edit loading and HUD UI assets in JX1M wuxia style for the survivors project."
